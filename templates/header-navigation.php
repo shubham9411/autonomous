@@ -7,7 +7,7 @@
  * @since 1.0
  */
 
- ?><nav class="navbar navbar-default" id="site-header-nav">
+?><nav class="navbar navbar-default" id="site-header-nav">
 	<div class="container">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-menu" aria-expanded="false" aria-controls="navbar">

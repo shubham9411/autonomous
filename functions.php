@@ -28,6 +28,7 @@ if ( ! function_exists( 'anomous_setup' ) ) {
 		) );
 
 		add_image_size( 'anomous-thumbnail-avatar', 100, 100, true );
+		add_image_size( 'anomous-carousel', 1024, 768, true );
 
 		add_editor_style( array( 'css/editor-style.css' ) );
 
@@ -60,4 +61,9 @@ if ( ! function_exists( 'anomous_scripts' ) ) {
 /**
  * Walker class for top nav.
  */
-require( 'inc/walker-nav.php');
+require( 'inc/walker-nav.php' );
+
+/**
+ * Carousel Post type
+ */
+require( 'carousel-post-type.php' );
