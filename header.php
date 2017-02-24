@@ -1,4 +1,13 @@
-<!DOCTYPE html>
+<?php
+/**
+ * Header For Theme
+ *
+ * @package WordPress
+ * @subpackage Autonomous
+ * @since 1.0
+ */
+
+?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 	<head>
 		<meta charset="<?php bloginfo( 'charset' );?>">
@@ -8,15 +17,12 @@
 	</head>
 	<body>
 		<div class="page">
-			<header class="header" id="masthead">
-				<div class="container-fluid">
-					<div class="jumbotron">
-						<h2><?php _e( bloginfo() , 'anomous' ); ?></h2>
-						<p>Bootstrap is the most popular HTML, CSS, and JS framework for developing
-						responsive, mobile-first projects on the web.</p>
-					</div>
-					<p>This is some text.</p>
-					<p>This is another text.</p>
-				</div>
-				</header> <!-- .header-->
-				<div class="content">
+			<header class="header" id="header">
+			
+				<?php get_template_part( 'templates/header' , 'masthead' ); ?>
+
+				<?php get_template_part( 'templates/header' , 'navigation' ); ?>
+			
+			</header> <!-- .header-->
+
+			<div class="content">

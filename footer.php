@@ -1,4 +1,13 @@
+<?php
+/**
+ * Footer for the theme
+ *
+ * @package WordPress
+ * @subpackage Autonomous
+ * @since 1.0
+ */
 
+?>
 	</div> <!-- .content-->
 	<footer class="footer">
 		
