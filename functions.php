@@ -9,7 +9,7 @@
 
 if ( ! function_exists( 'anomous_setup' ) ) {
 	/**
-	 * function for setting up all the required things
+	 * Function for setting up all the required things
 	 *
 	 * @since 1.0
 	 */
@@ -23,13 +23,18 @@ if ( ! function_exists( 'anomous_setup' ) ) {
 		add_theme_support( 'custom-logo', array(
 			'width'          => 100,
 			'height'         => 100,
-			'flex-width'     => true,
-			'flex-height'    => true,
+			'flex-width'     => false,
+			'flex-height'    => false,
 		) );
 
 		add_image_size( 'anomous-thumbnail-avatar', 100, 100, true );
 
 		add_editor_style( array( 'css/editor-style.css' ) );
+
+		register_nav_menus( array(
+			'top'    => __( 'Top Menu' , 'anomous' ),
+			'social' => __( 'Social' , 'anomous' ),
+		) );
 	}
 	add_action( 'after_setup_theme' , 'anomous_setup' );
 }
@@ -51,3 +56,8 @@ if ( ! function_exists( 'anomous_scripts' ) ) {
 	}
 	add_action( 'wp_enqueue_scripts' , 'anomous_scripts' );
 }
+
+/**
+ * Walker class for top nav.
+ */
+require( 'inc/walker-nav.php');
