@@ -8,9 +8,10 @@
  */
 
 /**
-* Registers a new post type
-* @uses $wp_post_types Inserts new post type object into the list.
-*/
+ * Registers a new post type
+ *
+ * @uses $wp_post_types Inserts new post type object into the list.
+ */
 function anomous_carousel_post() {
 
 	$labels = array(
@@ -36,11 +37,12 @@ function anomous_carousel_post() {
 		'publicly_queryable'  => false,
 		'exclude_from_search' => true,
 		'has_archive'         => true,
-		'rewrite'             => array('slug' => 'carousel','with_front' => false),
+		'rewrite'             => array( 'slug' => 'carousel','with_front' => false ),
 		'capability_type'     => 'post',
 		'supports'            => array(
-			'title', 'thumbnail',
-			)
+			'title',
+			'thumbnail',
+		),
 	);
 
 	register_post_type( 'carousel_anomous', $args );
