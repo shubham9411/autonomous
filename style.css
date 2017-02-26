@@ -172,6 +172,15 @@ header a:hover:before {
 	.content a:before{
 		display: none;
 	}
+	.card{
+		margin-top: 2em;
+	}
+}
+
+/*===================Content========================*/
+.wrap{
+	padding-top: 2em;
+	padding-bottom: 2em;
 }
 /*--------------------------------------------------phone-------------------------------------------------*/
 
@@ -192,5 +201,8 @@ header a:hover:before {
 	header a:before,
 	.content a:before{
 		display: none;
+	}
+	.card{
+		margin-top: 2em;
 	}
 }

@@ -61,13 +61,13 @@ if ( ! function_exists( 'anomous_scripts' ) ) {
 /**
  * Function for printing News, Events and Notices
  *
- * @param string category Particular category for printing
+ * @param category string Particular category for printing.
  */
 function anomous_cards_home( $category ) {
 	/**
 	 * The WordPress Query class.
-	 * @link http://codex.wordpress.org/Function_Reference/WP_Query
 	 *
+	 * @link http://codex.wordpress.org/Function_Reference/WP_Query
 	 */
 	$categ = array(
 		'category_name'    => $category,
@@ -102,6 +102,12 @@ function anomous_widgets_init() {
 add_action( 'widgets_init', 'anomous_widgets_init' );
 
 /**
+ * Template Tags file.
+ */
+require( 'inc/template-tags.php' );
+
+
+/**
  * Walker class for top nav.
  */
 require( 'inc/walker-nav.php' );
@@ -109,4 +115,4 @@ require( 'inc/walker-nav.php' );
 /**
  * Carousel Post type
  */
-require( 'carousel-post-type.php' );
+require( 'inc/carousel-post-type.php' );

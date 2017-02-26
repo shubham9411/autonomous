@@ -11,12 +11,12 @@ get_header();
 ?>
 <section class="row-fluid">
 	<div id="carousel">
-		<?php get_template_part( 'templates/home' , 'carousel' ); ?>
+		<?php get_template_part( 'templates/home/home' , 'carousel' ); ?>
 	</div>
 </section>
 <main class="container main">
 	<div class="col-xs-12 col-md-8">
-		<?php get_template_part( 'templates/home' , 'content' ); ?>
+		<?php get_template_part( 'templates/home/home' , 'content' ); ?>
 	</div>
 	<div class="col-xs-12 col-md-4">
 		<?php get_sidebar(); ?>

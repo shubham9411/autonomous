@@ -19,9 +19,9 @@
 		<div class="page">
 			<header class="header" id="header">
 			
-				<?php get_template_part( 'templates/header' , 'masthead' ); ?>
+				<?php get_template_part( 'templates/header/header' , 'masthead' ); ?>
 
-				<?php get_template_part( 'templates/header' , 'navigation' ); ?>
+				<?php get_template_part( 'templates/header/header' , 'navigation' ); ?>
 			
 			</header> <!-- .header-->
 
