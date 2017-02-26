@@ -11,21 +11,108 @@ Text Domain: autonomous
 body{
 	word-wrap: break-word;
 }
+a{
+	position: relative;
+	text-decoration: none !important;
+}
+header a:before,
+.content a:before{
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 2px;
+	bottom: 0;
+	left: 0;
+	background-color: #0a6ebd;
+	visibility: hidden;
+	-webkit-transform: scaleX(0);
+	transform: scaleX(0);
+	-webkit-transition: all 0.3s ease-in-out 0s;
+	transition: all 0.3s ease-in-out 0s;
+}
+.content a:hover:before,
+header a:hover:before {
+	visibility: visible;
+	-webkit-transform: scaleX(1);
+	transform: scaleX(1);
+}
+/*========Masthead=========*/
+#site-header-nav{
+	margin-bottom: 0;
+	z-index: 1;
+}
+#site-title{
+	margin-top: 0;
+}
+#site-title a{
+	font-size: 0.5em;
+}
+#site-description{
+	font-size: 1.3em;
+	margin-top: 10px;
+}
 #masthead{
 	margin-bottom: 0;
-	padding-top: 15px;
+	padding-top: 0px;
 	padding-bottom: 15px;
 }
 
+/*========Carousel=========*/
 .item img{
 	width: 100%;
 	max-height: 35em;
 	min-height: 35em;
 	object-fit: cover;
+	padding: 0;
+}
+#carousel{
+	box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+	-webkit-box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
 .left.carousel-control,
 .right.carousel-control{
 	background-image: none;
+}
+
+/*============== main / cards ==============*/
+.card{
+	width: 100%;
+	padding: 1em;
+	display: inline-block;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+	transition: background-color .2s cubic-bezier(0.4, 0, 0.2, 1),box-shadow .3s cubic-bezier(0.4, 0, 0.2, 1),color .2s cubic-bezier(0.4, 0, 0.2, 1),fill .2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover {
+	box-shadow: 0 4px 5px rgba(0,0,0,0.4);
+}
+.notice{
+	border-top: 2px solid #FF5722; //Deep Orange 500
+}
+.event{
+	border-top: 2px solid #3F51B5; //Indigo 900
+}
+.news{
+	border-top: 2px solid #FFC107; //Amber 500
+}
+.main{
+	margin-top: 2em;
+}
+.card h4{
+	margin-top: 0;
+}
+.no-list{
+	list-style: none;
+	padding-left: 0;
+}
+.no-list li a{
+	color: #777;
+}
+.no-list li a:hover{
+	color: #333;
+}
+.no-list li a:before{
+	content: none;
 }
 /*========== Media Queries ============*/
 /*--------------------------------------------------Large-------------------------------------------------*/
@@ -51,6 +138,18 @@ body{
 		max-height: 20em;
 		min-height: 20em;
 	}
+	.site-title-nav{
+		float: none;
+		min-height: 65px;
+		height: auto;
+	}
+	.navbar-toggle{
+		z-index: 99;
+	}
+	header a:before,
+	.content a:before{
+		display: none;
+	}
 }
 /*--------------------------------------------------phone-------------------------------------------------*/
 
@@ -59,5 +158,17 @@ body{
 		width: 100%;
 		max-height: 15em;
 		min-height: 15em;
+	}
+	.site-title-nav{
+		float: none;
+		min-height: 65px;
+		height: auto;
+	}
+	.navbar-toggle{
+		z-index: 99;
+	}
+	header a:before,
+	.content a:before{
+		display: none;
 	}
 }

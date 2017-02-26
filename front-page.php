@@ -9,12 +9,17 @@
 
 get_header();
 ?>
-<div class="container" id="carousel">
-	<div class="col-xs-12 col-md-8">
+<section class="row-fluid">
+	<div id="carousel">
 		<?php get_template_part( 'templates/home' , 'carousel' ); ?>
+	</div>
+</section>
+<main class="container main">
+	<div class="col-xs-12 col-md-8">
+		<?php get_template_part( 'templates/home' , 'content' ); ?>
 	</div>
 	<div class="col-xs-12 col-md-4">
 		<?php get_sidebar(); ?>
 	</div>
-</div>
+</main>
 <?php get_footer(); ?>

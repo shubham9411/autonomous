@@ -59,6 +59,49 @@ if ( ! function_exists( 'anomous_scripts' ) ) {
 }
 
 /**
+ * Function for printing News, Events and Notices
+ *
+ * @param string category Particular category for printing
+ */
+function anomous_cards_home( $category ) {
+	/**
+	 * The WordPress Query class.
+	 * @link http://codex.wordpress.org/Function_Reference/WP_Query
+	 *
+	 */
+	$categ = array(
+		'category_name'    => $category,
+		'post_type'        => 'post',
+		'posts_per_page'   => 5,
+	);
+	$loop = new WP_Query( $categ );
+	while ( $loop->have_posts() ) :
+		$loop->the_post();
+	?>
+		<li><a href="<?php echo esc_url( the_permalink() );?>"><?php the_title(); ?></a></li>
+	<?php
+	endwhile;
+}
+
+/**
+ * Register widget area.
+ *
+ * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
+ */
+function anomous_widgets_init() {
+	register_sidebar( array(
+		'name'          => esc_html__( 'Sidebar', 'anomous' ),
+		'id'            => 'sidebar-1',
+		'description'   => esc_html__( 'Add widgets here.', 'anomous' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+}
+add_action( 'widgets_init', 'anomous_widgets_init' );
+
+/**
  * Walker class for top nav.
  */
 require( 'inc/walker-nav.php' );

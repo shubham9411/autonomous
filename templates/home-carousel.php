@@ -23,7 +23,7 @@ $post_count = $loop->post_count;
 	<ol class="carousel-indicators">
 	<?php
 	for ( $i = 0 ; $i < $post_count ; $i++ ) { ?>
-		<li data-target="#myCarousel" data-slide-to="<?php echo esc_attr( $i + 1 ); ?>" class="<?php echo esc_attr( 0 == $i ) ? 'active' : '' ; ?>"></li>
+		<li data-target="#myCarousel" data-slide-to="<?php echo esc_attr( $i ); ?>" class="<?php echo esc_attr( 0 == $i ) ? 'active' : '' ; ?>"></li>
 	<?php
 	}
 	?>
