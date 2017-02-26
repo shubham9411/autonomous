@@ -56,6 +56,19 @@ header a:hover:before {
 	padding-top: 0px;
 	padding-bottom: 15px;
 }
+#menu-top-navigation li a:focus:before{
+	visibility: visible;
+	-webkit-transform: scaleX(1);
+	transform: scaleX(1);
+}
+#menu-top-navigation .active a:before{
+	visibility: visible;
+	-webkit-transform: scaleX(1);
+	transform: scaleX(1);
+}
+.dropdown-menu a:hover:before{
+	display: none;
+}
 
 /*========Carousel=========*/
 .item img{
@@ -73,6 +86,10 @@ header a:hover:before {
 .right.carousel-control{
 	background-image: none;
 }
+.left.carousel-control:before,
+.right.carousel-control:before{
+	display: none;
+}
 
 /*============== main / cards ==============*/
 .card{
@@ -87,19 +104,24 @@ header a:hover:before {
 	box-shadow: 0 4px 5px rgba(0,0,0,0.4);
 }
 .notice{
-	border-top: 2px solid #FF5722; //Deep Orange 500
+	border-top: 4px solid #FF5722; //Deep Orange 500
 }
 .event{
-	border-top: 2px solid #3F51B5; //Indigo 900
+	border-top: 4px solid #3F51B5; //Indigo 900
 }
 .news{
-	border-top: 2px solid #FFC107; //Amber 500
+	border-top: 4px solid #FFC107; //Amber 500
 }
 .main{
 	margin-top: 2em;
 }
 .card h4{
 	margin-top: 0;
+}
+.card:hover h4 a:before{
+	visibility: visible;
+	-webkit-transform: scaleX(1);
+	transform: scaleX(1);
 }
 .no-list{
 	list-style: none;
