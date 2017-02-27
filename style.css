@@ -15,8 +15,13 @@ a{
 	position: relative;
 	text-decoration: none !important;
 }
-header a:before,
-.content a:before{
+ul{
+	list-style: none;
+	padding-left: 10px;
+}
+.header-text a:before,
+.main a:before,
+.nav a:before{
 	content: "";
 	position: absolute;
 	width: 100%;
@@ -30,11 +35,25 @@ header a:before,
 	-webkit-transition: all 0.3s ease-in-out 0s;
 	transition: all 0.3s ease-in-out 0s;
 }
-.content a:hover:before,
-header a:hover:before {
+.main a:hover:before,
+.header-text a:hover:before,
+.nav a:hover:before {
 	visibility: visible;
 	-webkit-transform: scaleX(1);
 	transform: scaleX(1);
+}
+.nounderline a:hover:before{
+	visibility: hidden;
+}
+.padding-zero{
+	padding: 0;
+}
+.margin-zero{
+	margin: 0;
+}
+.less-padding{
+	padding-left: 7.5px;
+	padding-right: 7.5px;
 }
 /*========Masthead=========*/
 #site-header-nav{
@@ -55,6 +74,16 @@ header a:hover:before {
 	margin-bottom: 0;
 	padding-top: 0px;
 	padding-bottom: 15px;
+}
+#masthead .container{
+	display: flex;
+	align-items: center;
+}
+.header-text{
+	margin-left: 2em;
+}
+.header-text h1{
+	line-height: 0.5em;
 }
 #menu-top-navigation li a:focus:before{
 	visibility: visible;
@@ -103,6 +132,11 @@ header a:hover:before {
 .card:hover {
 	box-shadow: 0 4px 5px rgba(0,0,0,0.4);
 }
+.card:hover h2 a:before{
+	visibility: visible;
+	-webkit-transform: scaleX(1);
+	transform: scaleX(1);
+}
 .notice{
 	border-top: 4px solid #FF5722; //Deep Orange 500
 }
@@ -115,13 +149,8 @@ header a:hover:before {
 .main{
 	margin-top: 2em;
 }
-.card h4{
+.card h2{
 	margin-top: 0;
-}
-.card:hover h4 a:before{
-	visibility: visible;
-	-webkit-transform: scaleX(1);
-	transform: scaleX(1);
 }
 .no-list{
 	list-style: none;
@@ -131,10 +160,43 @@ header a:hover:before {
 	color: #777;
 }
 .no-list li a:hover{
-	color: #333;
+	color: #D32F2F;
 }
 .no-list li a:before{
 	content: none;
+}
+/*===================Content========================*/
+.wrap{
+	padding-top: 2em;
+	padding-bottom: 2em;
+}
+.nav-links div{
+	display: inline-block;
+}
+.nav-previous{
+	float: left;
+}
+.nav-next{
+	float: right;
+}
+.screen-reader-text{
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	border: 0;
+}
+.screen-reader-text:active,
+.screen-reader-text:focus {
+	position: static;
+	width: auto;
+	height: auto;
+	margin: 0;
+	overflow: visible;
+	clip: auto;
 }
 /*========== Media Queries ============*/
 /*--------------------------------------------------Large-------------------------------------------------*/
@@ -168,19 +230,18 @@ header a:hover:before {
 	.navbar-toggle{
 		z-index: 99;
 	}
-	header a:before,
-	.content a:before{
+	.main a:before,
+	.header-text a:before,
+	.nav a:before{
 		display: none;
 	}
 	.card{
 		margin-top: 2em;
 	}
-}
-
-/*===================Content========================*/
-.wrap{
-	padding-top: 2em;
-	padding-bottom: 2em;
+	.no-list{
+		list-style: disc;
+		padding-left: 10px;
+	}
 }
 /*--------------------------------------------------phone-------------------------------------------------*/
 
@@ -198,11 +259,16 @@ header a:hover:before {
 	.navbar-toggle{
 		z-index: 99;
 	}
-	header a:before,
-	.content a:before{
+	.main a:before,
+	.header-text a:before,
+	.nav a:before{
 		display: none;
 	}
 	.card{
 		margin-top: 2em;
+	}
+	.no-list{
+		list-style: disc;
+		padding-left: 10px;
 	}
 }

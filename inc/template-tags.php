@@ -16,16 +16,14 @@ function autonomous_time_link() {
 	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 	$time_string = sprintf( $time_string,
 		get_the_date( DATE_W3C ),
-		get_the_date(),
-		get_the_modified_date( DATE_W3C ),
-		get_the_modified_date()
+		get_the_date()
 	);
 
 	// Wrap the time string in a link, and preface it with 'Posted on'.
-	return sprintf(
+	echo sprintf(
 		/* translators: %s: post date */
 		__( '<span class="sr-only">Posted on</span> %s', 'autonomous' ),
-		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>' // WPCS: XSS ok
 	);
 }
 
@@ -42,7 +40,7 @@ function autonomous_posted_on() {
 	);
 
 	// Finally, let's write all of this to the page.
-	echo '<span class="posted-on">' . autonomous_time_link() . '</span><span class="byline"> ' . $byline . '</span>';
+	echo '<span class="posted-on">' . autonomous_time_link() . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS ok.
 }
 
 /**
@@ -50,12 +48,10 @@ function autonomous_posted_on() {
  */
 function autonomous_entry_footer() {
 	$separate_meta = __( ', ', 'autonomous' );
-	$categories_list = get_the_category_list( $separate_meta );
-	$tags_list = get_the_tag_list( '', $separate_meta );
 	echo '<footer class="entry-footer">';
 	echo '<span class="cat-tags-links">';
-	echo '<span class="cat-links"><span class="sr-only">' . __( 'Categories', 'autonomous' ) . '</span>' . $categories_list . '</span>';
-	echo '<span class="tags-links"><span class="sr-only">' . __( 'Tags', 'autonomous' ) . '</span>' . $tags_list . '</span>';
+	echo '<span class="cat-links"><span class="sr-only">' . esc_html( __( 'Categories', 'autonomous' ) ) . '</span>' . get_the_category_list( $separate_meta ) . '</span>';
+	echo '<span class="tags-links"><span class="sr-only">' . esc_html( __( 'Tags', 'autonomous' ) ) . '</span>' . get_the_tag_list( '', $separate_meta ) . '</span>';
 	echo '</span>';
 	echo '</footer> <!-- .entry-footer -->';
 }

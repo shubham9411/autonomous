@@ -1266,7 +1266,7 @@ h6 .small,
 .h6 .small {
   font-size: 75%;
 }
-h1,
+/*h1,
 .h1 {
   font-size: 56px;
 }
@@ -1292,7 +1292,7 @@ h6,
 }
 p {
   margin: 0 0 11.5px;
-}
+}*/
 .lead {
   margin-bottom: 23px;
   font-size: 14px;

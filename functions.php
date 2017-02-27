@@ -61,7 +61,8 @@ if ( ! function_exists( 'anomous_scripts' ) ) {
 /**
  * Function for printing News, Events and Notices
  *
- * @param category string Particular category for printing.
+ * @since Autonomous 1.0
+ * @param string category Particular category for printing.
  */
 function anomous_cards_home( $category ) {
 	/**

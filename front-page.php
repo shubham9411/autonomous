@@ -9,16 +9,16 @@
 
 get_header();
 ?>
-<section class="row-fluid">
+<section class="container">
 	<div id="carousel">
 		<?php get_template_part( 'templates/home/home' , 'carousel' ); ?>
 	</div>
 </section>
 <main class="container main">
-	<div class="col-xs-12 col-md-8">
+	<div class="col-xs-12 col-md-9">
 		<?php get_template_part( 'templates/home/home' , 'content' ); ?>
 	</div>
-	<div class="col-xs-12 col-md-4">
+	<div class="col-xs-12 col-md-3 nounderline">
 		<?php get_sidebar(); ?>
 	</div>
 </main>

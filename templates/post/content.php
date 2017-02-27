@@ -20,7 +20,7 @@
 					if ( is_single() ) :
 						autonomous_posted_on();
 					else :
-						echo autonomous_time_link();
+						autonomous_time_link();
 					endif;
 				echo '</div><!-- .entry-meta -->';
 			endif;

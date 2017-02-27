@@ -20,7 +20,7 @@ get_header(); ?>
 				/* Start the Loop */
 				while ( have_posts() ) : the_post();
 
-					get_template_part( 'templates/post/content', get_post_format() );
+					get_template_part( 'templates/post/content' );
 
 					// If comments are open or we have at least one comment, load up the comment template.
 					if ( comments_open() || get_comments_number() ) :
@@ -28,10 +28,12 @@ get_header(); ?>
 					endif;
 
 					the_post_navigation( array(
-						'prev_text' => '<span class="sr-only">' . __( 'Previous Post', 'autonomous' ) . '</span><span aria-hidden="true" class="nav-subtitle">' . __( 'Previous', 'autonomous' ) . '</span> <span class="nav-title"><span class="nav-title-icon-wrapper"><i class="glyphicon glyphicon-arrow-left"></i></span>%title</span>',
-						'next_text' => '<span class="sr-only">' . __( 'Next Post', 'autonomous' ) . '</span><span aria-hidden="true" class="nav-subtitle">' . __( 'Next', 'autonomous' ) . '</span> <span class="nav-title">%title<span class="nav-title-icon-wrapper"><i class="glyphicon glyphicon-arrow-right"></i></span></span>',
+						'prev_text' => '<span class="sr-only">' . __( 'Previous Post', 'autonomous' ) . '</span><i class="glyphicon glyphicon-arrow-left"></i></span><span aria-hidden="true" class="nav-subtitle">' . __( 'Previous', 'autonomous' ) . '</span>',
+						'next_text' => '<span class="sr-only">' . __( 'Next Post', 'autonomous' ) . '</span><span aria-hidden="true" class="nav-subtitle">' . __( 'Next', 'autonomous' ) . '</span><i class="glyphicon glyphicon-arrow-right"></i>',
 					) );
-
+					?>
+					<div class="clearfix"></div>
+					<?php
 				endwhile; // End of the loop.
 			?>
 
