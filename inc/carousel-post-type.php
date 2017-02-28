@@ -25,7 +25,7 @@ function anomous_carousel_post() {
 		'search_items'        => __( 'Search Image', 'autonomous' ),
 		'not_found'           => __( 'No Image found', 'autonomous' ),
 		'not_found_in_trash'  => __( 'No Image found in Trash', 'autonomous' ),
-		'menu_name'           => __( 'Image', 'autonomous' ),
+		'menu_name'           => __( 'Carousel', 'autonomous' ),
 	);
 
 	$args = array(

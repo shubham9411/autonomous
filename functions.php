@@ -79,9 +79,23 @@ function anomous_cards_home( $category ) {
 	while ( $loop->have_posts() ) :
 		$loop->the_post();
 	?>
-		<li><a href="<?php echo esc_url( the_permalink() );?>"><?php the_title(); ?></a></li>
+		<li><a href="<?php echo esc_url( the_permalink() );?>" class="<?php echo esc_attr( anomous_new_class() );?>" ><?php the_title(); ?></a></li>
 	<?php
 	endwhile;
+}
+
+/**
+ * Returns the new post class for posts
+ */
+function anomous_new_class() {
+	global $post;
+	$post_date = get_the_date('Y-m-d');
+	$date_compare = date('Y-m-d', strtotime(' -7 day'));
+	$class= '';
+	if( $date_compare < $post_date ){
+		$class = 'new-post';
+	}
+	return $class;
 }
 
 /**

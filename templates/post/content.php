@@ -15,15 +15,6 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php
-			if ( 'post' === get_post_type() ) :
-				echo '<div class="entry-meta">';
-					if ( is_single() ) :
-						autonomous_posted_on();
-					else :
-						autonomous_time_link();
-					endif;
-				echo '</div><!-- .entry-meta -->';
-			endif;
 
 			if ( is_single() ) {
 				the_title( '<h1 class="entry-title">', '</h1>' );
@@ -57,9 +48,4 @@
 			) );
 		?>
 	</div><!-- .entry-content -->
-
-	<?php if ( is_single() ) : ?>
-		<?php autonomous_entry_footer(); ?>
-	<?php endif; ?>
-
 </article><!-- #post-## -->

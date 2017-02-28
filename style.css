@@ -55,6 +55,24 @@ ul{
 	padding-left: 7.5px;
 	padding-right: 7.5px;
 }
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 1.5em;
+}
+
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 1.5em;
+}
+
+.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
 /*========Masthead=========*/
 #site-header-nav{
 	margin-bottom: 0;
@@ -119,8 +137,16 @@ ul{
 .right.carousel-control:before{
 	display: none;
 }
-
+.navigation.post-navigation{
+	margin-top: 2em;
+}
 /*============== main / cards ==============*/
+.new-post:after{
+	content: "\00a0\00a0New";
+	color: red;
+	font-weight: 800;
+}
+
 .card{
 	width: 100%;
 	padding: 1em;
@@ -198,6 +224,62 @@ ul{
 	overflow: visible;
 	clip: auto;
 }
+/*========navbar===============*/
+#masthead{
+	background-color: #FF8A65;
+}
+#site-title a{
+	color: #000;
+}
+#site-title a:before{
+	background-color: #000;
+}
+#site-header-nav{
+	background-color: #FF7043;
+}
+#site-header-nav li a{
+	color: #000;
+}
+#site-header-nav li a:hover{
+	color: white;
+}
+#site-header-nav .current_page_item a{
+	background-color: #FF5722;
+	color: #fff;
+}
+#site-header-nav .dropdown-menu a:hover{
+	color: #000;
+	background-color: #FF7043;
+}
+#site-header-nav .dropdown-menu a:hover{
+	color: #fff;
+}
+.navbar-default .navbar-nav > .open > a, 
+.navbar-default .navbar-nav > .open > a:hover, 
+.navbar-default .navbar-nav > .open > a:focus{
+	background-color: #FF5722;
+}
+.logged-in.admin-bar #site-header-nav.navbar-fixed-top{
+	top: 32px;
+}
+.nav a:before{
+	background-color: white;
+}
+.navbar-brand.site-title-nav{
+	color: #000;
+}
+.navbar .navbar-toggle .icon-bar{
+	background-color: #000;
+}
+.nav-transition{
+	transition: 1s;
+}
+@media (max-width: 767px) {
+    .affix {
+        position: static;
+    }
+}
+
 /*========== Media Queries ============*/
 /*--------------------------------------------------Large-------------------------------------------------*/
 
