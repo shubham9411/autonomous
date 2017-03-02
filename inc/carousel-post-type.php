@@ -38,7 +38,7 @@ function anomous_carousel_post() {
 		'exclude_from_search' => true,
 		'has_archive'         => true,
 		'rewrite'             => array( 'slug' => 'carousel','with_front' => false ),
-		'capability_type'     => 'post',
+		'capability_type'     => 'manage_options',
 		'supports'            => array(
 			'title',
 			'thumbnail',

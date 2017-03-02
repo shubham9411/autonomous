@@ -23,7 +23,7 @@ if ( ! function_exists( 'anomous_setup' ) ) {
 		add_theme_support( 'custom-logo', array(
 			'width'          => 100,
 			'height'         => 100,
-			'flex-width'     => false,
+			'flex-width'     => true,
 			'flex-height'    => false,
 		) );
 
@@ -68,7 +68,7 @@ if ( ! function_exists( 'anomous_scripts' ) ) {
  * @since Autonomous 1.0
  * @param string category Particular category for printing.
  */
-function anomous_cards_home( $category ) {
+function anomous_tabs_home( $category ) {
 	/**
 	 * The WordPress Query class.
 	 *
@@ -83,7 +83,12 @@ function anomous_cards_home( $category ) {
 	while ( $loop->have_posts() ) :
 		$loop->the_post();
 	?>
-		<li><a href="<?php echo esc_url( the_permalink() );?>" class="<?php echo esc_attr( anomous_new_class() );?>" ><?php the_title(); ?></a></li>
+		<li>
+			<a href="<?php echo esc_url( the_permalink() );?>" class="list-group-item flash-home">
+				<p class="flash-date"><?php the_date(); ?></p>
+				<p class="<?php echo esc_attr( anomous_new_class() );?>"><?php the_title(); ?></p>
+			</a>
+		</li>
 	<?php
 	endwhile;
 }
@@ -94,7 +99,7 @@ function anomous_cards_home( $category ) {
 function anomous_new_class() {
 	global $post;
 	$post_date = get_the_date('Y-m-d');
-	$date_compare = date('Y-m-d', strtotime(' -7 day'));
+	$date_compare = date( 'Y-m-d', strtotime( '-7 day' ) );
 	$class= '';
 	if( $date_compare < $post_date ){
 		$class = 'new-post';

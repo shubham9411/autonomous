@@ -76,7 +76,7 @@ ul{
 /*========Masthead=========*/
 #site-header-nav{
 	margin-bottom: 0;
-	z-index: 1;
+	z-index: 5;
 }
 #site-title{
 	margin-top: 0;
@@ -92,6 +92,8 @@ ul{
 	margin-bottom: 0;
 	padding-top: 0px;
 	padding-bottom: 15px;
+	background-color: white;
+	border-bottom: 1px solid #ddd;
 }
 #masthead .container{
 	display: flex;
@@ -115,6 +117,9 @@ ul{
 }
 .dropdown-menu a:hover:before{
 	display: none;
+}
+.logged-in.admin-bar .navbar-fixed-top{
+	top: 32px;
 }
 
 /*========Carousel=========*/
@@ -183,6 +188,15 @@ ul{
 .no-list li a:before{
 	content: none;
 }
+.flash-home{
+	display: flex;
+}
+.flash-home p{
+	margin: 0;
+}
+.flash-date:after{
+	content: "\00a0\00a0\00a0\00a0|\00a0\00a0\00a0\00a0";
+}
 /*===================Content========================*/
 .wrap{
 	padding-top: 2em;
@@ -219,17 +233,22 @@ ul{
 .nav-transition{
 	transition: 1s;
 }
+.affix{
+	top: 0;
+	width: 100%;
+}
 @media (max-width: 767px) {
     .affix {
         position: static;
     }
 }
 /**======== Carousel CSS Code snippet by Hashif========**/
-
+#carousel{
+	margin: 0 15px;
+}
 #carousel .slide h3{
 	color: #fff;
 	font-size: 2em;
-	font-weight:700;
 }
 
 #carousel .slide h4{
@@ -387,9 +406,8 @@ ul{
 	.card{
 		margin-top: 2em;
 	}
-	.no-list{
-		list-style: disc;
-		padding-left: 10px;
+	.carousel-content{
+		display: none;
 	}
 }
 /*--------------------------------------------------phone-------------------------------------------------*/
@@ -416,13 +434,12 @@ ul{
 	.card{
 		margin-top: 2em;
 	}
-	.no-list{
-		list-style: disc;
-		padding-left: 10px;
-	}
 	.carousel-inner .item .container{
 		justify-content: center;
 		align-items: center;
 		padding-left: 0;
+	}
+	.carousel-content{
+		display: none;
 	}
 }

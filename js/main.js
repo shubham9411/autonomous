@@ -1,6 +1,8 @@
-jQuery(window).scroll(function(){
+jQuery(document).ready(function(){
+});
+function navbar_affix(){
 	if( jQuery( '#site-header-nav' ).hasClass( 'affix' ) ){
-		if( ! jQuery( '#site-header-nav' ).hasClass( 'navbar-fixed-top' )){
+		if( ! jQuery( '#site-header-nav' ).hasClass( 'navbar-fixed-top' ) && jQuery(window).width() > 767){
 			jQuery( '#site-header-nav' ).addClass( 'navbar-fixed-top' ).css( 'display','none' );
 			setTimeout(function() {
 				jQuery( '#site-header-nav' ).css( 'opacity', '0' ).css( 'display','block' );
@@ -12,8 +14,10 @@ jQuery(window).scroll(function(){
 	}
 	else
 		jQuery( '#site-header-nav' ).removeClass( 'navbar-fixed-top' );
+}
+jQuery(window).scroll(function(){
+	navbar_affix();
 });
-
 (function( $ ) {
 
     //Function to animate slider captions 

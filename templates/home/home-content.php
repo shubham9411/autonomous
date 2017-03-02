@@ -8,30 +8,31 @@
  */
 
 ?><div class="row-fluid">
-	<div class="col-xs-12 col-sm-6 col-md-4 less-padding">
-		<div class="card notice" id="notice">
+	<ul class="nav nav-tabs nav-justified">
+		<li role="presentation" class="active"><a data-toggle="tab" href="#announcements">Announcements</a></li>
+		<li role="presentation"><a data-toggle="tab" href="#event">Event</a></li>
+		<li role="presentation"><a data-toggle="tab" href="#notice">Notice</a></li>
+	</ul>
+	<div class="tab-content">
+		<div class="tab-pane fade in" id="notice">
 			<?php $category_id = get_cat_ID( 'notices' ); ?>
-			<h2><a href="<?php echo esc_url( get_category_link( $category_id ) );?>" title="Notices">Notices</a></h2>
-			<ul class="no-list">
-				<?php anomous_cards_home( 'notices' ); ?>
+			<ul class="list-group no-list">
+				<?php anomous_tabs_home( 'notices' ); ?>
+				<li class="text-right"><a href="<?php echo esc_url( get_category_link( $category_id ) );?>" title="Notices" class="list-group-item">Read More</a></li>
 			</ul>
 		</div>
-	</div>
-	<div class="col-xs-12 col-sm-6 col-md-4 less-padding">
-		<div class="card event" id="event">
+		<div class="tab-pane fade in" id="event">
 			<?php $category_id = get_cat_ID( 'events' ); ?>
-			<h2><a href="<?php echo esc_url( get_category_link( $category_id ) );?>" title="Events">Events</a></h2>
 			<ul class="no-list">
-				<?php anomous_cards_home( 'events' ); ?>
+				<?php anomous_tabs_home( 'events' ); ?>
+				<li class="text-right"><a href="<?php echo esc_url( get_category_link( $category_id ) );?>" title="Events" class="list-group-item">Read More</a></li>
 			</ul>
 		</div>
-	</div>
-	<div class="col-xs-12 col-sm-6 col-md-4 less-padding">
-		<div class="card news" id="news">
+		<div class="tab-pane fade in active" id="announcements">
 			<?php $category_id = get_cat_ID( 'news' ); ?>
-			<h2><a href="<?php echo esc_url( get_category_link( $category_id ) );?>" title="News">News</a></h2>
 			<ul class="no-list">
-				<?php anomous_cards_home( 'news' ); ?>
+				<?php anomous_tabs_home( 'news' ); ?>
+				<li class="text-right"><a href="<?php echo esc_url( get_category_link( $category_id ) );?>" title="News" class="list-group-item">Read More</a></	pli>
 			</ul>
 		</div>
 	</div>
