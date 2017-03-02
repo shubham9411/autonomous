@@ -47,11 +47,15 @@ if ( ! function_exists( 'anomous_scripts' ) ) {
 	 * @since 1.0
 	 */
 	function anomous_scripts() {
-		wp_enqueue_style( 'anomous-style' , get_stylesheet_uri() , array( 'anomous-bootstrap' ) , '1.0' , 'all' );
+		wp_enqueue_style( 'anomous-style' , get_stylesheet_uri() , array( 'anomous-bootstrap' , 'anomous-fa' , 'anomous-animate' ) , '1.0' , 'all' );
 
 		wp_enqueue_style( 'anomous-bootstrap' , get_theme_file_uri( '/css/bootstrap.css' ) , array() , '3.3.7' , 'all' );
 
-		wp_enqueue_script( 'anomous-main' , get_theme_file_uri( '/js/main.js' ) , array( 'jquery' ) , '1.0' , true );
+		wp_enqueue_style( 'anomous-fa' , get_theme_file_uri( '/css/font-awesome.css' ) , array() , '4.6.3' , 'all' );
+
+		wp_enqueue_style( 'anomous-animate' , get_theme_file_uri( '/css/animate.css' ) , array() , '3.5.1' , 'all' );
+
+		wp_enqueue_script( 'anomous-main' , get_theme_file_uri( '/js/main.js' ) , array( 'jquery' , 'anomous-bootstrap-js' ) , '1.0' , true );
 
 		wp_enqueue_script( 'anomous-bootstrap-js' , get_theme_file_uri( '/js/bootstrap.js' ) , array( 'jquery' ) , '3.3.7' , true );
 	}
@@ -116,6 +120,31 @@ function anomous_widgets_init() {
 }
 add_action( 'widgets_init', 'anomous_widgets_init' );
 
+/**
+ * Function For adding background images for Carousel
+ */
+function anomous_carousel() {
+	echo '<style type="text/css">' . "\n";
+	$args = array(
+		'post_type'      => 'carousel_anomous',
+		'posts_per_page' => 5,
+		);
+	$loop = new WP_Query( $args );
+	$post_count = $loop->post_count;
+	$i=1;
+	while ( $loop->have_posts() ) :
+		$loop->the_post();
+		echo '#carousel .slide' . $i . '{
+			background-image : url( ' . get_the_post_thumbnail_url( $post , $size = 'large' ) . ');
+			background-size: cover;
+			background-repeat: no-repeat;
+		}' . "\n";
+		$i++;
+	endwhile;
+	echo '</style>' . "\n";
+}
+
+add_action( 'wp_head' , 'anomous_carousel' );
 /**
  * Template Tags file.
  */
