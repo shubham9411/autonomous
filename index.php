@@ -28,6 +28,24 @@ get_header();
 			?>
 
 		</main><!-- #main -->
+		<nav aria-label="pagination">
+			<?php 
+			if ( get_next_posts_link() ):
+			?>
+			<li class="btn btn-primary alignleft">
+				<?php next_posts_link( 'Previous' ); ?>
+			</li>
+			<?php 
+			endif;
+			if( get_previous_posts_link() ):
+			?>
+			<li class="btn btn-primary alignright">
+				<?php previous_posts_link( 'Next' ); ?>
+			</li>
+			<?php 
+			endif;
+			?>
+		</nav>
 	</div><!-- #primary -->
 	<div class="col-xs-12 col-md-4">
 		<?php get_sidebar(); ?>

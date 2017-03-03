@@ -34,12 +34,25 @@
 
 	<div class="entry-content">
 		<?php
+			if( ! is_home() ):
+		?>
+		<p class="date">
+		<?php
+			the_date( );
+		?>
+		</p>
+		<?php
 			/* translators: %s: Name of current post */
 			the_content( sprintf(
 				__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'autonomous' ),
 				get_the_title()
 			) );
-
+			else :
+				the_excerpt( sprintf(
+				__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'autonomous' ),
+				get_the_title()
+			) );
+			endif;
 			wp_link_pages( array(
 				'before'      => '<div class="page-links">' . __( 'Pages:', 'autonomous' ),
 				'after'       => '</div>',

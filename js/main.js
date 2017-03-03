@@ -1,4 +1,5 @@
 jQuery(document).ready(function(){
+	pills_responsive();
 });
 function navbar_affix(){
 	if( jQuery( '#site-header-nav' ).hasClass( 'affix' ) ){
@@ -18,6 +19,18 @@ function navbar_affix(){
 jQuery(window).scroll(function(){
 	navbar_affix();
 });
+jQuery(window).resize(function(){
+	pills_responsive();
+});
+function pills_responsive(){
+	jQuerywindow = jQuery(window);
+	if ( jQuerywindow.width() > 768 ){
+		jQuery('.tabs-home').addClass('nav-justified');
+	}
+	else{
+		jQuery('.tabs-home').removeClass('nav-justified');
+	}
+}
 (function( $ ) {
 
     //Function to animate slider captions 

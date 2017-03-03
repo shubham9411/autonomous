@@ -23,8 +23,8 @@ get_header(); ?>
 					get_template_part( 'templates/post/content' );
 
 					the_post_navigation( array(
-						'prev_text' => '<span class="sr-only">' . __( 'Previous Post', 'autonomous' ) . '</span><i class="glyphicon glyphicon-arrow-left"></i></span><span aria-hidden="true" class="nav-subtitle">' . __( 'Previous', 'autonomous' ) . '</span>',
-						'next_text' => '<span class="sr-only">' . __( 'Next Post', 'autonomous' ) . '</span><span aria-hidden="true" class="nav-subtitle">' . __( 'Next', 'autonomous' ) . '</span><i class="glyphicon glyphicon-arrow-right"></i>',
+						'prev_text' => '<span class="sr-only">' . __( 'Previous Post', 'autonomous' ) . '</span><span aria-hidden="true" class="btn btn-primary nav-subtitle">' . __( 'Previous', 'autonomous' ) . '</span>',
+						'next_text' => '<span class="sr-only">' . __( 'Next Post', 'autonomous' ) . '</span><span aria-hidden="true" class="btn btn-primary nav-subtitle">' . __( 'Next', 'autonomous' ) . '</span>',
 					) );
 					?>
 					<div class="clearfix"></div>

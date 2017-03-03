@@ -8,7 +8,7 @@
  */
 
 ?><div class="row-fluid">
-	<ul class="nav nav-tabs nav-justified">
+	<ul class="nav nav-tabs tabs-home">
 		<li role="presentation" class="active"><a data-toggle="tab" href="#announcements">Announcements</a></li>
 		<li role="presentation"><a data-toggle="tab" href="#event">Event</a></li>
 		<li role="presentation"><a data-toggle="tab" href="#notice">Notice</a></li>

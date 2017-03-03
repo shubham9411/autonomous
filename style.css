@@ -138,6 +138,9 @@ ul{
 	margin-top: 2em;
 }
 /*============== main / cards ==============*/
+.date{
+	font-weight: 700;
+}
 .new-post:after{
 	content: "\00a0\00a0New";
 	color: red;
@@ -365,6 +368,81 @@ ul{
 .carousel-content{
 	background-color: rgba(0, 0, 0, 0.4 );
 	padding: 1em;
+}
+
+/*======PAgination ========*/
+.pagination{
+	display: flex;
+	justify-content: space-between;
+}
+nav .btn-primary a{
+	color: white;
+}
+.pagination a:hover{
+	color: #ddd;
+}
+.navigation.post-navigation{
+	margin: 1.5em 0 6em 0;
+}
+/**======Footer Widgets*/
+#footer-main{
+	background-color: #333;
+	color: #ccc;
+}
+#footer-main a{
+	color: #aaa;
+}
+#footer-main a:hover{
+	color: #bbb;
+}
+#footer-main .widget-title{
+	color: #ddd;
+}
+#footer-widgets{
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+#footer-widgets section{
+	padding: 1em;
+}
+#footer-second{
+	background-color: #424242;
+}
+#footer-widgets ul{
+	padding-left: 0;
+}
+#footer-widgets .address li{
+	padding-left: 20px;
+	position: relative;
+}
+#footer-widgets .address li i{
+	position: absolute;
+	top: 4px;
+	left: 0;
+}
+#footer-second .address{
+	padding: 1em;
+}
+#footer-second .container{
+	display: flex;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	justify-content: center;
+}
+#footer-second .container p{
+	margin: 0;
+}
+#footer-second .social{
+	display: flex;
+	justify-content: space-between;
+	font-size: 1.5em;
+	padding: 0 1em;
+}
+#footer-second .social div{
+	padding: 0 0.4em;
+}
+#footer-second .social .facebook{
 }
 /*========== Media Queries ============*/
 /*--------------------------------------------------Large-------------------------------------------------*/

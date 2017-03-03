@@ -38,6 +38,9 @@ if ( ! function_exists( 'anomous_setup' ) ) {
 		) );
 	}
 	add_action( 'after_setup_theme' , 'anomous_setup' );
+	add_theme_support( 'html5' ,array(
+		'gallery',
+	) );
 }
 
 if ( ! function_exists( 'anomous_scripts' ) ) {
@@ -122,6 +125,15 @@ function anomous_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'Footer', 'anomous' ),
+		'id'            => 'footer',
+		'description'   => esc_html__( 'Footer Widgets', 'anomous' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
 }
 add_action( 'widgets_init', 'anomous_widgets_init' );
 
@@ -150,6 +162,21 @@ function anomous_carousel() {
 }
 
 add_action( 'wp_head' , 'anomous_carousel' );
+
+if(!function_exists('anomous_custom_excerpt_length')){
+	function anomous_custom_excerpt_length(){
+		return 25;
+	}
+	add_filter( 'excerpt_length' , 'anomous_custom_excerpt_length' );
+}
+if(!function_exists('anomous_excerpt_more')){
+	function anomous_excerpt_more( $more ) {
+		return ' ...<a class="read-more" href="'. get_permalink( get_the_ID() ) . '">' . __('Read More', 'anomous') . '</a>';
+	}
+	add_filter( 'excerpt_more', 'anomous_excerpt_more' );
+}
+
+
 /**
  * Template Tags file.
  */
@@ -165,3 +192,5 @@ require( 'inc/walker-nav.php' );
  * Carousel Post type
  */
 require( 'inc/carousel-post-type.php' );
+
+define( 'JETPACK_DEV_DEBUG', true);
