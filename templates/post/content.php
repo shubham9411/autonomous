@@ -36,9 +36,9 @@
 		<?php
 			if( ! is_home() ):
 		?>
-		<p class="date">
+		<p class="entry-date">
 		<?php
-			the_date( );
+			echo esc_html(get_the_date());
 		?>
 		</p>
 		<?php

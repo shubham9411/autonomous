@@ -16,24 +16,18 @@
 	<div class="tab-content">
 		<div class="tab-pane fade in" id="notice">
 			<?php $category_id = get_cat_ID( 'notices' ); ?>
-			<ul class="list-group no-list">
-				<?php anomous_tabs_home( 'notices' ); ?>
-				<li class="text-right"><a href="<?php echo esc_url( get_category_link( $category_id ) );?>" title="Notices" class="list-group-item">Read More</a></li>
-			</ul>
+			<?php anomous_tabs_home( 'notices' ); ?>
+			<p class="text-right nounderline"><a href="<?php echo esc_url( get_category_link( $category_id ) );?>" title="Notices" class="btn btn-primary">Read More</a></p>
 		</div>
 		<div class="tab-pane fade in" id="event">
 			<?php $category_id = get_cat_ID( 'events' ); ?>
-			<ul class="no-list">
-				<?php anomous_tabs_home( 'events' ); ?>
-				<li class="text-right"><a href="<?php echo esc_url( get_category_link( $category_id ) );?>" title="Events" class="list-group-item">Read More</a></li>
-			</ul>
+			<?php anomous_tabs_home( 'events' ); ?>
+			<p class="text-right nounderline"><a href="<?php echo esc_url( get_category_link( $category_id ) );?>" title="Events" class="btn btn-primary">Read More</a></p>
 		</div>
 		<div class="tab-pane fade in active" id="announcements">
 			<?php $category_id = get_cat_ID( 'news' ); ?>
-			<ul class="no-list">
-				<?php anomous_tabs_home( 'news' ); ?>
-				<li class="text-right"><a href="<?php echo esc_url( get_category_link( $category_id ) );?>" title="News" class="list-group-item">Read More</a></	pli>
-			</ul>
+			<?php anomous_tabs_home( 'news' ); ?>
+			<p class="text-right nounderline"><a href="<?php echo esc_url( get_category_link( $category_id ) );?>" title="News" class="btn btn-primary">Read More</a></p>
 		</div>
 	</div>
 </div>

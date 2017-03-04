@@ -22,7 +22,7 @@
 			<div class="social">
 				<div class="facebook"><a href="#"><i class="fa fa-facebook"></i><span class="sr-only">Facebook</span></a></div>
 				<div class="twitter"><a href="#"><i class="fa fa-twitter"></i><span class="sr-only">Facebook</span></a></div>
-				<div class="youtube"><a href="#"><i class="fa fa-youtube"></i><span class="sr-only">Facebook</span></a></div>
+				<div class="youtube"><a href="#"><i class="fa fa-youtube-play"></i><span class="sr-only">Facebook</span></a></div>
 				<div class="g-plus"><a href="#"><i class="fa fa-google-plus"></i><span class="sr-only">Facebook</span></a></div>
 			</div>
 		</div>

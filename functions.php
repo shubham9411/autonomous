@@ -83,17 +83,27 @@ function anomous_tabs_home( $category ) {
 		'posts_per_page'   => 5,
 	);
 	$loop = new WP_Query( $categ );
+	?>
+	<table class="table table-home">
+	<tbody>
+	<?php
 	while ( $loop->have_posts() ) :
 		$loop->the_post();
 	?>
-		<li>
-			<a href="<?php echo esc_url( the_permalink() );?>" class="list-group-item flash-home">
-				<p class="flash-date"><?php the_date(); ?></p>
-				<p class="<?php echo esc_attr( anomous_new_class() );?>"><?php the_title(); ?></p>
-			</a>
-		</li>
+		 <tr>
+			<td class="table-date"><p class="flash-date entry-date"><?php echo esc_html(get_the_date()); ?></p></td>
+			<td class="table-info">
+				<a href="<?php echo esc_url( the_permalink() );?>" class="flash-home">
+					<p class="<?php echo esc_attr( anomous_new_class() );?>"><?php the_title(); ?></p>
+				</a>
+			</td>
+		</tr>
 	<?php
 	endwhile;
+	?>
+	</tbody>
+	</table>
+	<?php
 }
 
 /**

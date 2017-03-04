@@ -19,6 +19,13 @@ ul{
 	list-style: none;
 	padding-left: 10px;
 }
+a, button, input:focus, input[type="button"], input[type="reset"], input[type="submit"], textarea:focus {
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
 .header-text a:before,
 .main a:before,
 .nav a:before{
@@ -138,7 +145,7 @@ ul{
 	margin-top: 2em;
 }
 /*============== main / cards ==============*/
-.date{
+.entry-date{
 	font-weight: 700;
 }
 .new-post:after{
@@ -198,7 +205,7 @@ ul{
 	margin: 0;
 }
 .flash-date:after{
-	content: "\00a0\00a0\00a0\00a0|\00a0\00a0\00a0\00a0";
+	content: "\00a0\00a0\00a0\00a0";
 }
 /*===================Content========================*/
 .wrap{
@@ -406,6 +413,9 @@ nav .btn-primary a{
 #footer-widgets section{
 	padding: 1em;
 }
+#footer-widgets section iframe{
+	min-height: 15em;
+}
 #footer-second{
 	background-color: #424242;
 }
@@ -429,6 +439,7 @@ nav .btn-primary a{
 	padding-top: 10px;
 	padding-bottom: 10px;
 	justify-content: center;
+	color: #999;
 }
 #footer-second .container p{
 	margin: 0;
@@ -436,18 +447,64 @@ nav .btn-primary a{
 #footer-second .social{
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 	font-size: 1.5em;
 	padding: 0 1em;
+}
+.copyright{
+	display: flex;
+	align-items: center;
 }
 #footer-second .social div{
 	padding: 0 0.4em;
 }
-#footer-second .social .facebook{
+#footer-second .social div a{
+	color: #fff;
+}
+#footer-second .social .facebook a:hover{
+	color: #3b5998;
+}
+#footer-second .social .twitter a:hover{
+	color: #1da1f2;
+}
+#footer-second .social .youtube a:hover{
+	color: #cc181e;
+}
+#footer-second .social .g-plus a:hover{
+	color: #db4437;
+}
+.table-home tr{
+	border-color: transparent;
+}
+.table-home{
+	margin-top: 10px;
+}
+.table-home tbody tr td{
+	border-top: 0px;
+}
+.table-home tr td p{
+	margin: 0;
+}
+.table-date{
+	width: 20%;
+	font-size: 1.1em;
+}
+.table-info a{
+	font-size: 1.1em;
+}
+.table-info a:hover:before{
+	visibility: hidden;
+}
+.tabs-home li a{
+	font-size: 1.3em;
 }
 /*========== Media Queries ============*/
 /*--------------------------------------------------Large-------------------------------------------------*/
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1200px) and (max-width: 1440px){
+	.table-date{
+		width: 15%;
+	}
 }
 
 
@@ -487,6 +544,14 @@ nav .btn-primary a{
 	.carousel-content{
 		display: none;
 	}
+	.table-date{
+		width: 100%;
+	}
+	td {
+		display:block;
+		box-sizing:border-box;
+		clear:both
+	}
 }
 /*--------------------------------------------------phone-------------------------------------------------*/
 
@@ -519,5 +584,13 @@ nav .btn-primary a{
 	}
 	.carousel-content{
 		display: none;
+	}
+	.table-date{
+		width: 100%;
+	}
+	td {
+		display:block;
+		box-sizing:border-box;
+		clear:both
 	}
 }
