@@ -204,4 +204,9 @@ require( 'inc/walker-nav.php' );
  */
 require( 'inc/carousel-post-type.php' );
 
+/**
+ * Faculty Profiles
+ */
+require( 'inc/faculty-profiles.php' );
+
 define( 'JETPACK_DEV_DEBUG', true);

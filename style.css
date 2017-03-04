@@ -161,48 +161,17 @@ textarea:focus{
 }
 
 .card{
-	width: 100%;
 	padding: 1em;
 	display: inline-block;
-	box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+	box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 	transition: background-color .2s cubic-bezier(0.4, 0, 0.2, 1),box-shadow .3s cubic-bezier(0.4, 0, 0.2, 1),color .2s cubic-bezier(0.4, 0, 0.2, 1),fill .2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .card:hover {
-	box-shadow: 0 4px 5px rgba(0,0,0,0.4);
-}
-.card:hover h2 a:before{
-	visibility: visible;
-	-webkit-transform: scaleX(1);
-	transform: scaleX(1);
-}
-.notice{
-	border-top: 4px solid #FF5722; //Deep Orange 500
-}
-.event{
-	border-top: 4px solid #3F51B5; //Indigo 900
-}
-.news{
-	border-top: 4px solid #FFC107; //Amber 500
+	box-shadow: 0 8px 16px rgba(0,0,0,0.4);
 }
 .main{
 	margin-top: 2em;
-}
-.card h2{
-	margin-top: 0;
-}
-.no-list{
-	list-style: none;
-	padding-left: 0;
-}
-.no-list li a{
-	color: #777;
-}
-.no-list li a:hover{
-	color: #D32F2F;
-}
-.no-list li a:before{
-	content: none;
 }
 .flash-home{
 	display: flex;
@@ -508,6 +477,33 @@ nav .btn-primary a{
 .sidebar{
 	padding-top: 13px;
 }
+#faculty .card{
+	margin: 0 auto;
+	margin-top: 20px;
+	transition: 0.3s;
+	max-width: 20em;
+	margin-left: 1em;
+}
+#faculty .card:hover{
+	margin-top: 15px;
+	margin-bottom: 5px;
+}
+.faculty-details h3:first-child{
+	margin: 20px 0 10px 0;
+}
+.faculty-details h3{
+	margin: 5px 0;
+}
+.faculty-wrap{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	margin-bottom: 1em;
+}
+.faculty-wrap .well{
+	margin-top: 2em;
+	margin-bottom: 0.3em;
+}
 /*========== Media Queries ============*/
 /*--------------------------------------------------Large-------------------------------------------------*/
 
@@ -523,6 +519,9 @@ nav .btn-primary a{
 /*--------------------------------------------------tablet-------------------------------------------------*/
 
 @media only screen and (max-width: 991px) and (min-width: 768px) {
+	.faculty-wrap{
+		justify-content: center;
+	}
 }
 /*--------------------------------------------------phone-------------------------------------------------*/
 
@@ -558,6 +557,9 @@ nav .btn-primary a{
 		display:block;
 		box-sizing:border-box;
 		clear:both
+	}
+	.faculty-wrap{
+		justify-content: center;
 	}
 }
 /*--------------------------------------------------phone-------------------------------------------------*/
@@ -599,5 +601,8 @@ nav .btn-primary a{
 		display:block;
 		box-sizing:border-box;
 		clear:both
+	}
+	.faculty-wrap{
+		justify-content: center;
 	}
 }
