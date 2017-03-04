@@ -111,13 +111,14 @@ function anomous_tabs_home( $category ) {
  */
 function anomous_new_class() {
 	global $post;
-	$post_date = get_the_date('Y-m-d');
-	$date_compare = date( 'Y-m-d', strtotime( '-7 day' ) );
+	$post_id = get_the_ID();
+	$value = get_post_meta( $post_id, 'anomous_new_checkbox' , true );
 	$class= '';
-	if( $date_compare < $post_date ){
+	if( 1 == $value ){
 		$class = 'new-post';
+		return $class;
 	}
-	return $class;
+	return 'lol';
 }
 
 /**

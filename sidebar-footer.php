@@ -25,7 +25,7 @@ if ( ! is_active_sidebar( 'footer' ) ) {
 			</li>
 			<li>
 				<i class="fa fa-globe"></i>
-				<strong>Website:</strong>www.kecua.ac.in
+				<strong>Website:</strong> www.kecua.ac.in
 			</li>
 			<li>
 				<i class="fa fa-phone"></i>

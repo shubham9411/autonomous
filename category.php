@@ -27,7 +27,7 @@ get_header();
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
-	<div class="col-xs-12 col-md-3">
+	<div class="col-xs-12 col-md-3 sidebar">
 		<?php get_sidebar(); ?>
 	</div>
 </div><!-- .wrap -->

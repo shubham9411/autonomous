@@ -19,7 +19,13 @@ ul{
 	list-style: none;
 	padding-left: 10px;
 }
-a, button, input:focus, input[type="button"], input[type="reset"], input[type="submit"], textarea:focus {
+a,
+button,
+input:focus,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+textarea:focus{
     -webkit-transition: all 0.5s ease-in-out;
     -moz-transition: all 0.5s ease-in-out;
     -ms-transition: all 0.5s ease-in-out;
@@ -83,7 +89,7 @@ a, button, input:focus, input[type="button"], input[type="reset"], input[type="s
 /*========Masthead=========*/
 #site-header-nav{
 	margin-bottom: 0;
-	z-index: 5;
+	z-index: 99999;
 }
 #site-title{
 	margin-top: 0;
@@ -100,7 +106,7 @@ a, button, input:focus, input[type="button"], input[type="reset"], input[type="s
 	padding-top: 0px;
 	padding-bottom: 15px;
 	background-color: white;
-	border-bottom: 1px solid #ddd;
+	border-bottom: 1px solid transparent;
 }
 #masthead .container{
 	display: flex;
@@ -415,6 +421,7 @@ nav .btn-primary a{
 }
 #footer-widgets section iframe{
 	min-height: 15em;
+	margin-top: 23px;
 }
 #footer-second{
 	background-color: #424242;
@@ -498,13 +505,13 @@ nav .btn-primary a{
 .tabs-home li a{
 	font-size: 1.3em;
 }
+.sidebar{
+	padding-top: 13px;
+}
 /*========== Media Queries ============*/
 /*--------------------------------------------------Large-------------------------------------------------*/
 
 @media only screen and (min-width: 1200px) and (max-width: 1440px){
-	.table-date{
-		width: 15%;
-	}
 }
 
 

@@ -25,9 +25,9 @@
 			<p class="text-right nounderline"><a href="<?php echo esc_url( get_category_link( $category_id ) );?>" title="Events" class="btn btn-primary">Read More</a></p>
 		</div>
 		<div class="tab-pane fade in active" id="announcements">
-			<?php $category_id = get_cat_ID( 'news' ); ?>
-			<?php anomous_tabs_home( 'news' ); ?>
-			<p class="text-right nounderline"><a href="<?php echo esc_url( get_category_link( $category_id ) );?>" title="News" class="btn btn-primary">Read More</a></p>
+			<?php $category_id = get_cat_ID( 'announcements' ); ?>
+			<?php anomous_tabs_home( 'announcements' ); ?>
+			<p class="text-right nounderline"><a href="<?php echo esc_url( get_category_link( $category_id ) );?>" title="Announcements" class="btn btn-primary">Read More</a></p>
 		</div>
 	</div>
 </div>
