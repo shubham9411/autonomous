@@ -18,7 +18,8 @@ get_header();
 <div class="container wrap">
 	<div id="primary" class="col-xs-12 col-md-9 content-area">
 		<main id="main" class="site-main" role="main">
-
+		<h2><?php single_cat_title(); ?></h2>
+		<hr />
 			<?php
 			while ( have_posts() ) : the_post();
 				get_template_part( 'templates/post/content', 'category' );

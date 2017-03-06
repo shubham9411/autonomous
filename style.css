@@ -32,6 +32,12 @@ textarea:focus{
     -o-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
 }
+.no-padding{
+	padding: 0;
+}
+.no-margin{
+	margin: 0;
+}
 .header-text a:before,
 .main a:before,
 .nav a:before{

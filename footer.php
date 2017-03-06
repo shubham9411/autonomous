@@ -20,7 +20,7 @@
 				<p> B.T.K.I.T. Dwarahat © <?php echo current_time( 'Y' );?>. All Rights Reserved.</p>
 			</div>
 			<div class="social">
-				<div class="facebook"><a href="#"><i class="fa fa-facebook"></i><span class="sr-only">Facebook</span></a></div>
+				<div class="facebook"><a href="https://www.facebook.com/btkit.official" target="_blank"><i class="fa fa-facebook"></i><span class="sr-only">Facebook</span></a></div>
 				<div class="twitter"><a href="#"><i class="fa fa-twitter"></i><span class="sr-only">Twitter</span></a></div>
 				<div class="youtube"><a href="#"><i class="fa fa-youtube-play"></i><span class="sr-only">Youtube</span></a></div>
 				<div class="g-plus"><a href="#"><i class="fa fa-google-plus"></i><span class="sr-only">Google Plus</span></a></div>
