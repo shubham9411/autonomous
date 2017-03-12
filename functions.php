@@ -50,7 +50,7 @@ if ( ! function_exists( 'anomous_scripts' ) ) {
 	 * @since 1.0
 	 */
 	function anomous_scripts() {
-		wp_enqueue_style( 'anomous-style' , get_stylesheet_uri() , array( 'anomous-bootstrap' , 'anomous-fa' , 'anomous-animate' ) , '1.0' , 'all' );
+		wp_enqueue_style( 'anomous-style' , get_stylesheet_uri() , array( 'anomous-bootstrap', 'anomous-fa', 'anomous-animate' ) , '1.0' , 'all' );
 
 		wp_enqueue_style( 'anomous-bootstrap' , get_theme_file_uri( '/css/bootstrap.css' ) , array() , '3.3.7' , 'all' );
 
@@ -58,7 +58,7 @@ if ( ! function_exists( 'anomous_scripts' ) ) {
 
 		wp_enqueue_style( 'anomous-animate' , get_theme_file_uri( '/css/animate.css' ) , array() , '3.5.1' , 'all' );
 
-		wp_enqueue_script( 'anomous-main' , get_theme_file_uri( '/js/main.js' ) , array( 'jquery' , 'anomous-bootstrap-js' ) , '1.0' , true );
+		wp_enqueue_script( 'anomous-main' , get_theme_file_uri( '/js/main.js' ) , array( 'jquery', 'anomous-bootstrap-js' ) , '1.0' , true );
 
 		wp_enqueue_script( 'anomous-bootstrap-js' , get_theme_file_uri( '/js/bootstrap.js' ) , array( 'jquery' ) , '3.3.7' , true );
 	}
@@ -69,7 +69,7 @@ if ( ! function_exists( 'anomous_scripts' ) ) {
  * Function for printing News, Events and Notices
  *
  * @since Autonomous 1.0
- * @param string category Particular category for printing.
+ * @param string $category Particular category for printing.
  */
 function anomous_tabs_home( $category ) {
 	/**
@@ -91,7 +91,7 @@ function anomous_tabs_home( $category ) {
 		$loop->the_post();
 	?>
 		 <tr>
-			<td class="table-date"><p class="flash-date entry-date"><?php echo esc_html(get_the_date()); ?></p></td>
+			<td class="table-date"><p class="flash-date entry-date"><?php echo esc_html( get_the_date() ); ?></p></td>
 			<td class="table-info">
 				<a href="<?php echo esc_url( the_permalink() );?>" class="flash-home">
 					<p class="<?php echo esc_attr( anomous_new_class() );?>"><?php the_title(); ?></p>
@@ -113,8 +113,8 @@ function anomous_new_class() {
 	global $post;
 	$post_id = get_the_ID();
 	$value = get_post_meta( $post_id, 'anomous_new_checkbox' , true );
-	$class= '';
-	if( 1 == $value ){
+	$class = '';
+	if ( 1 == $value ) {
 		$class = 'new-post';
 		return $class;
 	}
@@ -159,11 +159,11 @@ function anomous_carousel() {
 		);
 	$loop = new WP_Query( $args );
 	$post_count = $loop->post_count;
-	$i=1;
+	$i = 1;
 	while ( $loop->have_posts() ) :
 		$loop->the_post();
-		echo '#carousel .slide' . $i . '{
-			background-image : url( ' . get_the_post_thumbnail_url( $post , $size = 'large' ) . ');
+		echo '#carousel .slide' . esc_html( $i ) . '{
+			background-image : url( ' . esc_attr( get_the_post_thumbnail_url( $post , $size = 'large' ) ) . ' );
 			background-size: cover;
 			background-repeat: no-repeat;
 		}' . "\n";
@@ -174,15 +174,23 @@ function anomous_carousel() {
 
 add_action( 'wp_head' , 'anomous_carousel' );
 
-if(!function_exists('anomous_custom_excerpt_length')){
-	function anomous_custom_excerpt_length(){
+if ( ! function_exists( 'anomous_custom_excerpt_length' ) ) {
+	/**
+	 * Function for returning the length of the Excerpts.
+	 */
+	function anomous_custom_excerpt_length() {
 		return 25;
 	}
 	add_filter( 'excerpt_length' , 'anomous_custom_excerpt_length' );
 }
-if(!function_exists('anomous_excerpt_more')){
+if ( ! function_exists( 'anomous_excerpt_more' ) ) {
+	/**
+	 * Function for returning the excerpt with read more link 
+	 *
+	 * @param string $more string with read more text.
+	 */
 	function anomous_excerpt_more( $more ) {
-		return ' ...<a class="read-more" href="'. get_permalink( get_the_ID() ) . '">' . __('Read More', 'anomous') . '</a>';
+		return ' ...<a class="read-more" href="'. get_permalink( get_the_ID() ) . '">' . __( 'Read More' , 'anomous' ) . '</a>';
 	}
 	add_filter( 'excerpt_more', 'anomous_excerpt_more' );
 }
@@ -208,5 +216,3 @@ require( 'inc/carousel-post-type.php' );
  * Faculty Profiles
  */
 require( 'inc/faculty-profiles.php' );
-
-define( 'JETPACK_DEV_DEBUG', true);

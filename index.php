@@ -18,7 +18,7 @@ get_header();
 <div class="container wrap">
 	<div id="primary" class="content-area col-xs-12 col-md-9">
 		<main id="main" class="site-main" role="main">
-		<?php if( have_posts() ): ?>
+		<?php if ( have_posts() ) : ?>
 			<?php
 				/* Start the Loop */
 				while ( have_posts() ) : the_post();
@@ -29,26 +29,26 @@ get_header();
 
 		</main><!-- #main -->
 		<nav aria-label="pagination">
-			<?php 
-			if ( get_next_posts_link() ):
+			<?php
+			if ( get_next_posts_link() ) :
 			?>
 			<li class="btn btn-primary alignleft">
 				<?php next_posts_link( 'Previous' ); ?>
 			</li>
-			<?php 
+			<?php
 			endif;
-			if( get_previous_posts_link() ):
+			if ( get_previous_posts_link() ) :
 			?>
 			<li class="btn btn-primary alignright">
 				<?php previous_posts_link( 'Next' ); ?>
 			</li>
-			<?php 
+			<?php
 			endif;
 			?>
 		</nav>
-		<?php else: ?>
+		<?php else : ?>
 			<main>
-				<h1 class="center"><?php _e( "No Result found " ); ?></h1>
+				<h1 class="center"><?php ecs_html_e( 'No Result found...' ); ?></h1>
 				<hr/>
 			</main>
 		<?php endif; ?>

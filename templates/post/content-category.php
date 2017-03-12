@@ -25,8 +25,6 @@
 	<div class="entry-content">
 		<hr />
 		<?php
-			// the_content();
-
 			wp_link_pages( array(
 				'before' => '<div class="page-links">' . __( 'Pages:', 'autonomous' ),
 				'after'  => '</div>',

@@ -34,7 +34,7 @@
 
 	<div class="entry-content">
 		<?php
-			if( ! is_home() && ! is_search() ):
+			if ( ! is_home() && ! is_search() ) :
 		?>
 		<p class="entry-date">
 		<?php

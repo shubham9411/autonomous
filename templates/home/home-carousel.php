@@ -33,19 +33,19 @@ $post_count = $loop->post_count;
 	$i = 0;
 	while ( $loop->have_posts() ) :
 		$loop->the_post();
-		$get_description = get_post(get_post_thumbnail_id())->post_excerpt;
+		$get_description = get_post( get_post_thumbnail_id() )->post_excerpt;
 	?>
-		<div class="item slide slide<?php echo esc_attr( 0 == $i ) ? ($i+1) . ' active' : ($i+1) ; ?>">
+		<div class="item slide slide<?php echo ( 0 == $i ) ? esc_attr( ( $i + 1 ) . ' active' ) : esc_attr( ( $i + 1 ) ); ?>">
 			<div class="row">
 				<div class="container">
 					<div class="text-left carousel-content bounceInDown">
 						<h3 data-animation="animated bounceInDown"><?php the_title(); ?></h3>
 						<?php
-						if(!empty($get_description)){
+						if ( ! empty( $get_description ) ) {
 						?>
 						<h4 data-animation="animated bounceInUp">
 						<?php
-							echo '' . $get_description . '';
+							esc_html_e( $get_description );
 						?>
 						</h4>
 						<?php
