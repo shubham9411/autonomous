@@ -18,7 +18,7 @@
 			if ( is_single() ) {
 				the_title( '<h2 class="entry-title">', '</h2>' );
 			} else {
-				the_title( '<h3 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark" class="' . anomous_new_class() . '">', '</a></h3>' );
+				the_title( '<h4 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark" class="' . anomous_new_class() . '">', '</a></h4>' );
 			}
 		?>
 	</header><!-- .entry-header -->

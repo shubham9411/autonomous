@@ -507,11 +507,14 @@ nav .btn-primary a{
 	border-radius: 0;
 }
 .navbar-default .navbar-nav>li>a{
-	color: #ddd;
+	color: #fff;
 }
 .navbar-default .navbar-nav>li>a:hover,
 .navbar-default .navbar-nav>li .active>a{
 	color: #d9230f;
+}
+.navbar-default .navbar-nav li ul .active a{
+	color: #fff;
 }
 /*========== Media Queries ============*/
 /*--------------------------------------------------Large-------------------------------------------------*/

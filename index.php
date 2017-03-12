@@ -16,7 +16,7 @@ get_header();
 ?>
 
 <div class="container wrap">
-	<div id="primary" class="content-area col-xs-12 col-md-8">
+	<div id="primary" class="content-area col-xs-12 col-md-9">
 		<main id="main" class="site-main" role="main">
 		<?php if( have_posts() ): ?>
 			<?php
@@ -48,12 +48,12 @@ get_header();
 		</nav>
 		<?php else: ?>
 			<main>
-				<h1 class="center"><?php _e( "No Post found " ); ?></h1>
+				<h1 class="center"><?php _e( "No Result found " ); ?></h1>
 				<hr/>
 			</main>
 		<?php endif; ?>
 	</div><!-- #primary -->
-	<div class="col-xs-12 col-md-4">
+	<div class="col-xs-12 col-md-3">
 		<?php get_sidebar(); ?>
 	</div>
 </div><!-- .wrap -->
