@@ -185,12 +185,12 @@ if ( ! function_exists( 'anomous_custom_excerpt_length' ) ) {
 }
 if ( ! function_exists( 'anomous_excerpt_more' ) ) {
 	/**
-	 * Function for returning the excerpt with read more link 
+	 * Function for returning the excerpt with read more link
 	 *
 	 * @param string $more string with read more text.
 	 */
 	function anomous_excerpt_more( $more ) {
-		return ' ...<a class="read-more" href="'. get_permalink( get_the_ID() ) . '">' . __( 'Read More' , 'anomous' ) . '</a>';
+		return ' ...<a class="read-more" href="' . get_permalink( get_the_ID() ) . '">' . __( 'Read More' , 'anomous' ) . '</a>';
 	}
 	add_filter( 'excerpt_more', 'anomous_excerpt_more' );
 }

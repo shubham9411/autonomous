@@ -35,10 +35,10 @@ function anomous_save_checkbox( $post_id ) {
 	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
 		return ;
 	}
-	if ( ! isset( $_POST['anomous_checkbox_new_nonce_'] ) || ! wp_verify_nonce( $_POST[ 'anomous_checkbox_new_nonce_' ] , 'anomous_checkbox_new_nonce_' . $post_id ) ) {
+	if ( ! isset( $_POST['anomous_checkbox_new_nonce_'] ) || ! wp_verify_nonce( $_POST['anomous_checkbox_new_nonce_'] , 'anomous_checkbox_new_nonce_' . $post_id ) ) {
 			return ;
 		}
-	if (! current_user_can( 'edit_post' , $post_id ) ) {
+	if ( ! current_user_can( 'edit_post' , $post_id ) ) {
 		return ;
 	}
 	if ( isset( $_POST['anomous_new_checkbox'] ) ) {

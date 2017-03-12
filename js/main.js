@@ -2,18 +2,17 @@ jQuery( document ).ready(function() {
 	pillsResponsive();
  });
 function navbarAffix() {
-	if( jQuery( '#site-header-nav' ).hasClass( 'affix' ) ){
-		if ( ! jQuery( '#site-header-nav' ).hasClass( 'navbar-fixed-top' ) && jQuery( window ).width() > 767 ){
-			jQuery( '#site-header-nav' ).addClass( 'navbar-fixed-top' ).css( 'display','none' );
+	if ( jQuery( '#site-header-nav' ).hasClass( 'affix' ) ) {
+		if ( ! jQuery( '#site-header-nav' ).hasClass( 'navbar-fixed-top' ) && jQuery( window ).width() > 767 ) {
+			jQuery( '#site-header-nav' ).addClass( 'navbar-fixed-top' ).css( 'display', 'none' );
 			setTimeout(function() {
-				jQuery( '#site-header-nav' ).css( 'opacity', '0' ).css( 'display','block' );
+				jQuery( '#site-header-nav' ).css( 'opacity', '0' ).css( 'display', 'block' );
 			}, 1 );
 			setTimeout(function() {
 				jQuery( '#site-header-nav' ).css( 'opacity', '1' ).addClass( 'nav-transition' );
 			}, 100 );
 		}
-	}
-	else {
+	} else {
 		jQuery( '#site-header-nav' ).removeClass( 'navbar-fixed-top' );
 	}
 }
@@ -25,51 +24,35 @@ jQuery( window ).resize(function() {
  });
 function pillsResponsive() {
 	jQuerywindow = jQuery( window );
-	if ( jQuerywindow.width() > 768 ){
+	if ( jQuerywindow.width() > 768 ) {
 		jQuery( '.tabs-home' ).addClass( 'nav-justified' );
-	}
-	else{
+	} else {
 		jQuery( '.tabs-home' ).removeClass( 'nav-justified' );
 	}
 }
 (function( $ ) {
-
-    //Function to animate slider captions 
-	function doAnimations( elems ) {
-		//Cache the animationend event in a variable
-		var animEndEv = 'webkitAnimationEnd animationend';
-		
-		elems.each(function () {
+	var $myCarousel = $( '#myCarousel' ), //Variables on page load 
+		$firstAnimatingElems = $myCarousel.find( '.item:first' ).find( '[data-animation ^= "animated"]' );
+	function doAnimations( elems ) { //Function to animate slider captions
+		var animEndEv = 'webkitAnimationEnd animationend'; //Cache the animationend event in a variable
+		elems.each(function() {
 			var $this = $( this ),
-				$animationType = $this.data('animation');
-			$this.addClass( $animationType ).one( animEndEv, function () {
+				$animationType = $this.data( 'animation' );
+			$this.addClass( $animationType ).one( animEndEv, function() {
 				$this.removeClass( $animationType );
 			});
 		});
 	}
-	
-	//Variables on page load 
-	var $myCarousel = $( '#myCarousel' ),
-		$firstAnimatingElems = $myCarousel.find( '.item:first' ).find( "[data-animation ^= 'animated']" );
-		
-	//Initialize carousel 
-	$myCarousel.carousel();
-	
-	//Animate captions in first slide on page load 
-	doAnimations( $firstAnimatingElems );
-	
-	//Pause carousel  
-	$myCarousel.carousel( 'pause' );
-	
-	
-	//Other slides to be animated on carousel slide event 
-	$myCarousel.on( 'slide.bs.carousel', function (e) {
+	$myCarousel.carousel(); //Initialize carousel
+	doAnimations( $firstAnimatingElems ); //Animate captions in first slide on page load
+	$myCarousel.carousel( 'pause' ); //Pause carousel
+	$myCarousel.on( 'slide.bs.carousel', function (e) { //Other slides to be animated on carousel slide event
 		var $animatingElems = $( e.relatedTarget ).find( "[data-animation ^= 'animated']" );
 		doAnimations( $animatingElems );
-	});  
-    $( '#myCarousel' ).carousel({
-        interval: 3000,
-        pause: "false"
-    });
+	});
+	$( '#myCarousel' ).carousel({
+		interval: 3000,
+		pause: "false"
+	});
 	
- })(jQuery);	
+ })( jQuery );

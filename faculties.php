@@ -10,8 +10,8 @@
 get_header();
 $dept_name = array(
 	'anomous_cse' => 'Computer Science Engineering',
-	'anomous_ece' => 'Electronic and Comm. engineering', 
-	'anomous_me' => 'Mechanical engineering', 
+	'anomous_ece' => 'Electronic and Comm. engineering',
+	'anomous_me' => 'Mechanical engineering',
 	'anomous_bce' => 'Biochemical engineering',
 	'anomous_ee' => 'Electrical engineering',
 	'anomous_ce' => 'Civil engineering',
@@ -36,9 +36,9 @@ $dept_name = array(
 		}
 		foreach ( $blog_user as $user ) {
 			?>
-			<a href="<?php echo get_author_posts_url( $user->id );?>">
+			<a href="<?php echo esc_url( get_author_posts_url( $user->id ) );?>">
 				<div class="card">
-					<img src="<?php echo esc_url( get_avatar_url( $user->id , array( 'size' => 250) ) );?>" alt="Avatar" class="img-responsive">
+					<img src="<?php echo esc_url( get_avatar_url( $user->id , array( 'size' => 250 ) ) );?>" alt="Avatar" class="img-responsive">
 					<div class="faculty-details">
 						<h3><b><?php echo esc_html( $user->display_name );?></b></h3> 
 						<h3><?php echo esc_html( get_user_meta( $user->id, 'faculty_position' )[0] );?></h3>

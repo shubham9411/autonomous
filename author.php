@@ -14,7 +14,7 @@ get_header();
 	<div id="primary" class="content-area col-xs-12">
 		<section class="container-fluid no-padding author-info">
 			<?php
-			$curauth = ( isset( $_GET[ 'author_name' ] ) ) ? get_user_by( 'slug' , $author_name ) : get_userdata( intval( $author ) );
+			$curauth = ( isset( $_GET['author_name'] ) ) ? get_user_by( 'slug' , $author_name ) : get_userdata( intval( $author ) );
 			$user_id = $curauth->ID;
 			?>
 			<hr />

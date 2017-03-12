@@ -35,7 +35,7 @@ $post_count = $loop->post_count;
 		$loop->the_post();
 		$get_description = get_post( get_post_thumbnail_id() )->post_excerpt;
 	?>
-		<div class="item slide slide<?php echo ( 0 == $i ) ? esc_attr( ( $i + 1 ) . ' active' ) : esc_attr( ( $i + 1 ) ); ?>">
+		<div class="item slide slide<?php echo ( 0 == $i ) ? esc_attr( ( $i + 1 ) . ' active' ) : esc_attr( ( $i + 1 ) ); //XSS: ok?>">
 			<div class="row">
 				<div class="container">
 					<div class="text-left carousel-content bounceInDown">

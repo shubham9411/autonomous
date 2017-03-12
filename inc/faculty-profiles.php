@@ -10,7 +10,7 @@
 /**
  * Function for adding custom fields to Profile menu
  *
- * @param array $user user object 
+ * @param array $user user object.
  */
 function anomous_add_custom_user_profile_fields( $user ) {
 ?>
@@ -50,7 +50,7 @@ function anomous_add_custom_user_profile_fields( $user ) {
 				<label for="faculty_qual"><?php esc_html_e( 'Qualification' , 'autonomous' ); ?>
 			</label></th>
 			<td>
-				<input type="text" name="faculty_qual" id="faculty_qual" value="<?php echo esc_html( get_the_author_meta( 'faculty_qual' , $user->ID ));?>">
+				<input type="text" name="faculty_qual" id="faculty_qual" value="<?php echo esc_html( get_the_author_meta( 'faculty_qual' , $user->ID ) );?>">
 				<span class="description"><?php esc_html_e( 'Plese Enter your Qualification' , 'autonomous' ); ?></span>
 			</td>
 		</tr>
@@ -59,7 +59,7 @@ function anomous_add_custom_user_profile_fields( $user ) {
 				<label for="faculty_exp"><?php esc_html_e( 'Experience', 'autonomous' ); ?>
 			</label></th>
 			<td>
-				<input type="number" name="faculty_exp" id="faculty_exp" value="<?php echo esc_html( get_the_author_meta( 'faculty_exp' , $user->ID ));?>">
+				<input type="number" name="faculty_exp" id="faculty_exp" value="<?php echo esc_html( get_the_author_meta( 'faculty_exp' , $user->ID ) );?>">
 				<span class="description"><?php esc_html_e( 'Plese enter your Experience' , 'autonomous' ); ?></span>
 			</td>
 		</tr>
@@ -79,14 +79,13 @@ function anomous_add_custom_user_profile_fields( $user ) {
 /**
  * Function for saving profiles info of faculties
  *
- * @param int $user_id user id of the particular user
+ * @param int $user_id user id of the particular user.
  */
 function anomous_save_custom_user_profile_fields( $user_id ) {
 	
 	if ( ! current_user_can( 'edit_user' , $user_id ) ) {
-		return FALSE;
+		return false;
 	}
-	
 	update_usermeta( $user_id, 'dept', $_POST['dept'] );
 	update_usermeta( $user_id, 'faculty_position', $_POST['faculty_position'] );
 	update_usermeta( $user_id, 'faculty_qual', $_POST['faculty_qual'] );
