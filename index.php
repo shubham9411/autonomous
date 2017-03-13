@@ -48,7 +48,7 @@ get_header();
 		</nav>
 		<?php else : ?>
 			<main>
-				<h1 class="center"><?php ecs_html_e( 'No Result found...' ); ?></h1>
+				<h1 class="center"><?php esc_html_e( 'No Result found...' , 'autonomous' ); ?></h1>
 				<hr/>
 			</main>
 		<?php endif; ?>

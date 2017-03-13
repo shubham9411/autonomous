@@ -40,11 +40,11 @@ $dept_name = array(
 				<div class="card">
 					<img src="<?php echo esc_url( get_avatar_url( $user->id , array( 'size' => 250 ) ) );?>" alt="Avatar" class="img-responsive">
 					<div class="faculty-details">
-						<h3><b><?php echo esc_html( $user->display_name );?></b></h3> 
-						<h3><?php echo esc_html( get_user_meta( $user->id, 'faculty_position' )[0] );?></h3>
-						<h3><?php echo esc_html( get_user_meta( $user->id, 'faculty_qual' )[0] );?></h3>
-						<h3><?php echo esc_html( get_user_meta( $user->id, 'faculty_exp' )[0] );?> Years Experience </h3>
-						<h3><?php echo esc_html( get_user_meta( $user->id, 'faculty_specialization' )[0] );?></h3>
+						<h4><b><?php echo esc_html( $user->display_name );?></b></h4> 
+						<h4><?php echo esc_html( get_user_meta( $user->id, 'faculty_position' )[0] );?></h4>
+						<h4><?php echo esc_html( get_user_meta( $user->id, 'faculty_qual' )[0] );?></h4>
+						<h4><?php echo esc_html( get_user_meta( $user->id, 'faculty_exp' )[0] );?> Years Experience </h4>
+						<h4><?php echo esc_html( get_user_meta( $user->id, 'faculty_specialization' )[0] );?></h4>
 					</div>
 				</div>
 			</a>
