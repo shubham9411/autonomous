@@ -239,6 +239,41 @@ if ( ! function_exists( 'anomous_featured_profile' ) ) {
 	add_shortcode( 'featured_profile' ,'anomous_featured_profile' );
 }
 
+if ( ! function_exists( 'anomous_clg_gallery' ) ) {
+	/**
+	 * Function for Showing the Featured Images of Departments.
+	 */
+	function anomous_clg_gallery() {
+		if ( anomous_is_dept() && get_field('clg_gallery') ) :
+			$galleries = get_field('clg_gallery');
+			?>
+			<section id="dept-gallery" class="widget widget-gallery">
+				<h4>Departments Insight!</h4>
+				<div id="myCarousel" class="carousel slide" data-ride="carousel">
+					<div class="carousel-inner" role="listbox">
+						<?php for( $i = 0; $i < 5; $i++ ) {
+						if( ! $galleries || ! isset( $galleries[$i] ) ) {
+							break;
+						}
+						?>
+						<div class="item <?php echo ( $i == 0 ) ? 'active' : ''; ?>">
+							<img id="dept-img-<?php esc_attr_e( $i+1 );?>" src="<?php esc_html_e( $galleries[$i]->guid );?>" class="img-responsive dept-img" alt="<?php esc_html_e( $galleries[$i]->post_excerpt );?>">
+						</div>
+						<div id="dept-modal-<?php esc_attr_e( $i+1 );?>" class="modal">
+							<span class="close" onclick="document.getElementById('dept-modal-<?php esc_attr_e( $i+1 );?>').style.display='none'">&times;</span>
+							<img id="dept-img-modal-<?php esc_attr_e( $i+1 );?>" class="modal-content" >
+							<div id="dept-img-caption-<?php esc_attr_e( $i+1 );?>" class="caption"></div>
+						</div>
+						<?php } ?>
+					</div>
+				</div>
+			</section>
+		<?php
+		endif;
+	}
+	add_shortcode( 'clg_gallery' ,'anomous_clg_gallery' );
+}
+
 /**
  * Template Tags file.
  */
