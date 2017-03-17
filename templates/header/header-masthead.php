@@ -17,5 +17,15 @@
 			<h1 class="site-title" id="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<h2 class="site-description" id="site-description"><?php bloginfo( 'description' ); ?></h2>
 		</div>
+		<div class="header-search-box">
+			<form action="/" method="get">
+				<div class="form-group">
+					<div class="input">
+						<input type="text" class="form-control top-search" name="s" id="search" value="" placeholder="Search" >
+						<i class="form-control-feedback glyphicon glyphicon-search"></i>
+					</div>
+				</div>
+			</form>
+		</div>
 	</div>
 </div><!-- #masthead -->

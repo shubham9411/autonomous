@@ -1,7 +1,7 @@
 <form action="/" method="get">
-	<div class="form-group">
-		<div class="input">
-			<input type="text" class="form-control" name="s" id="search" value="" placeholder="Search" >
-		</div>
+	<div class="input form-group has-feedback">
+		<label class="control-label sr-only">Search</label>
+		<input type="text" class="form-control" name="s" id="search" value="" placeholder="Search" />
+		<i class="form-control-feedback glyphicon glyphicon-search"></i>
 	</div>
 </form>

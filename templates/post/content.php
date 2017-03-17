@@ -19,7 +19,7 @@
 			if ( is_single() ) {
 				the_title( '<h2 class="entry-title">', '</h2>' );
 			} else {
-				the_title( '<h3 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' );
+				the_title( '<h4 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h4>' );
 			}
 		?>
 	</header><!-- .entry-header -->
@@ -34,7 +34,7 @@
 
 	<div class="entry-content">
 		<?php
-			if( ! is_home() && ! is_search() ):
+			if ( ! is_home() && ! is_search() ) :
 		?>
 		<p class="entry-date">
 		<?php
