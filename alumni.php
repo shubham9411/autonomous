@@ -43,16 +43,20 @@ get_header();
 </section>
 <div class="modals">
 	<div class="modal fade" id="joinAlumniModal" role="dialog">
-		<div class="modal-dialog modal-lg">
+		<div class="modal-dialog modal-md">
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="modal-title">Welcome!</h4>
+					<h4 class="modal-title">Welcome! Alumni/Student</h4>
 				</div>
-				<div class="modal-body">
-					<p>This is a large modal.</p>
+				<div class="modal-body text-center">
+					<p>Login/Sign Up to connect with the Community!</p>
+					<ul class="alumni-login">
+						<li class="btn btn-warning"><a href="https://btkit.almaconnect.com/signin"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+						<li class="btn btn-info"><a href="https://btkit.almaconnect.com/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+					</ul>
 				</div>
-				<div class="modal-footer">
+				<div class="modal-footer alumni-modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 				</div>
 			</div>

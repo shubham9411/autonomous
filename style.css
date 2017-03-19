@@ -520,8 +520,13 @@ nav .btn-primary a{
 	color: #fff;
 }
 .navbar-default .navbar-nav>li>a:hover,
-.navbar-default .navbar-nav>li .active>a{
-	color: #d9230f;
+.navbar-default .navbar-nav>li.active>a:hover{
+	color: rgba(255, 255, 255, 0.8);
+	text-shadow: black 3px 5px 1px;
+}
+.navbar-default .navbar-nav>li.active>a{
+	color: rgba(255, 255, 255, 0.8);
+	text-shadow: black 3px 5px 1px;
 }
 .navbar-default .navbar-nav li ul .active a{
 	color: #fff;
@@ -621,6 +626,13 @@ nav .btn-primary a{
 	.modal-content {
 		width: 100%;
 	}
+}
+
+.alumni-login li a{
+	color: white;
+}
+.alumni-modal-footer{
+	padding: 10px;
 }
 /*========== Media Queries ============*/
 /*--------------------------------------------------Large-------------------------------------------------*/
