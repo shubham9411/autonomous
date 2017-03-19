@@ -448,24 +448,29 @@ nav .btn-primary a{
 .sidebar{
 	padding-top: 13px;
 }
-#faculty .card{
+#faculty .card,
+#alumni .card{
 	margin: 0 auto;
 	margin-top: 20px;
 	transition: 0.3s;
 	max-width: 20em;
 	margin-left: 1em;
 }
-#faculty .card:hover{
+#faculty .card:hover,
+#alumni .card:hover{
 	margin-top: 15px;
 	margin-bottom: 5px;
 }
-.faculty-details h3:first-child{
+.faculty-details h3:first-child,
+.alumni-details h3:first-child{
 	margin: 20px 0 10px 0;
 }
-.faculty-details h3{
+.faculty-details h3,
+.alumni-details h3{
 	margin: 5px 0;
 }
-.faculty-wrap{
+.faculty-wrap,
+.alumni-wrap{
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: flex-start;
@@ -679,7 +684,8 @@ nav .btn-primary a{
 		box-sizing:border-box;
 		clear:both
 	}
-	.faculty-wrap{
+	.faculty-wrap,
+	.alumni-wrap{
 		justify-content: center;
 	}
 	.navbar-default .navbar-nav .open .dropdown-menu>li>a{
@@ -737,7 +743,8 @@ nav .btn-primary a{
 		box-sizing:border-box;
 		clear:both
 	}
-	.faculty-wrap{
+	.faculty-wrap,
+	.alumni-wrap{
 		justify-content: center;
 	}
 	.navbar-default .navbar-nav .open .dropdown-menu>li>a{

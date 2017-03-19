@@ -28,6 +28,7 @@ if ( ! function_exists( 'anomous_setup' ) ) {
 		) );
 
 		add_image_size( 'anomous-thumbnail-avatar', 100, 100, true );
+		add_image_size( 'anomous-alumni-avatar', 250, 250, true );
 		add_image_size( 'anomous-carousel', 1024, 768, true );
 
 		add_editor_style( array( 'css/editor-style.css' ) );
@@ -50,6 +51,7 @@ if ( ! function_exists( 'anomous_scripts' ) ) {
 	 * @since 1.0
 	 */
 	function anomous_scripts() {
+
 		wp_enqueue_style( 'anomous-style' , get_stylesheet_uri() , array( 'anomous-bootstrap', 'anomous-fa', 'anomous-animate' ) , '1.0' , 'all' );
 
 		wp_enqueue_style( 'anomous-bootstrap' , get_theme_file_uri( '/css/bootstrap.css' ) , array() , '3.3.7' , 'all' );
@@ -118,7 +120,7 @@ function anomous_new_class() {
 		$class = 'new-post';
 		return $class;
 	}
-	return 'lol';
+	return '';
 }
 
 /**
@@ -221,10 +223,11 @@ if ( ! function_exists( 'anomous_featured_profile' ) ) {
 			$avatar_src = get_avatar_url( $dept_hod[ID] , array( 'size' => 200 ) );
 			$desc = get_user_meta( $dept_hod[ID] , 'description' )[0];
 			$specialization = get_user_meta( $dept_hod[ID] , 'faculty_specialization' )[0];
+			$auth_url = get_author_posts_url( $dept_hod[ID] );
 			?>
 			<section id="hod-profile" class="widget widget-hod">
 				<h4 class="text-center"><?php esc_html_e( $title );?></h4 class="text-center">
-				<a href="#" class="hod-section">
+				<a href="<?php echo esc_url( $auth_url );?>" class="hod-section">
 					<img src="<?php esc_html_e( $avatar_src );?>" class="img-responsive img-circle" alt="Avatar" >
 					<div class="hod-info">
 						<h4 class=""><strong><?php esc_html_e( $name ); ?></strong></h4>
@@ -246,15 +249,13 @@ if ( ! function_exists( 'anomous_clg_gallery' ) ) {
 	function anomous_clg_gallery() {
 		if ( anomous_is_dept() && get_field('clg_gallery') ) :
 			$galleries = get_field('clg_gallery');
+			$count_img = count( $galleries );
 			?>
 			<section id="dept-gallery" class="widget widget-gallery">
-				<h4>Departments Insight!</h4>
+				<!-- <h4>Department Insight!</h4> -->
 				<div id="myCarousel" class="carousel slide" data-ride="carousel">
 					<div class="carousel-inner" role="listbox">
-						<?php for( $i = 0; $i < 5; $i++ ) {
-						if( ! $galleries || ! isset( $galleries[$i] ) ) {
-							break;
-						}
+						<?php for( $i = 0; $i < $count_img; $i++ ) {
 						?>
 						<div class="item <?php echo ( $i == 0 ) ? 'active' : ''; ?>">
 							<img id="dept-img-<?php esc_attr_e( $i+1 );?>" src="<?php esc_html_e( $galleries[$i]->guid );?>" class="img-responsive dept-img" alt="<?php esc_html_e( $galleries[$i]->post_excerpt );?>">
@@ -275,6 +276,54 @@ if ( ! function_exists( 'anomous_clg_gallery' ) ) {
 }
 
 /**
+ * Function for checking if page is Alumni Page
+ */
+function anomous_is_alumni() {
+	global $post;
+	$alumni = get_page_by_title( 'Alumni' );
+	wp_reset_postdata();
+	if ( is_page() && get_the_ID() == $alumni->ID )
+		return true;
+	else
+		return false;
+}
+
+/**
+ * Function for alumni login/signin navbar
+ */
+function anomous_alumni_nav() {
+	?>
+	<ul class="nav navbar-nav navbar-right">
+		<li><a href="https://btkit.almaconnect.com/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+		<li><a href="https://btkit.almaconnect.com/signin"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+	</ul>
+	<?php
+}
+
+/**
+ * Function for returning Alumni excerpt
+ */
+function alumni_the_excerpt() {
+	global $post;
+	$excerpt = get_the_excerpt();
+	$charlength = 100;
+
+	if ( mb_strlen( $excerpt ) > $charlength ) {
+		$subex = mb_substr( $excerpt, 0, $charlength - 5 );
+		$exwords = explode( ' ', $subex );
+		$excut = - ( mb_strlen( $exwords[ count( $exwords ) - 1 ] ) );
+		if ( $excut < 0 ) {
+			echo mb_substr( $subex, 0, $excut );
+		} else {
+			echo $subex;
+		}
+	} else {
+		echo $excerpt;
+	}
+	echo '...';
+}
+
+/**
  * Template Tags file.
  */
 require( 'inc/template-tags.php' );
@@ -289,6 +338,11 @@ require( 'inc/walker-nav.php' );
  * Carousel Post type
  */
 require( 'inc/carousel-post-type.php' );
+
+/**
+ * Alumni Post type
+ */
+require( 'inc/alumni-post-type.php' );
 
 /**
  * Faculty Profiles
