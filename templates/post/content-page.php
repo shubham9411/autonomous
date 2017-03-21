@@ -20,7 +20,7 @@
 			the_content();
 
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'autonomous' ),
+				'before' => '<hr /><div class="page-links">' . __( 'Pages:', 'autonomous' ),
 				'after'  => '</div>',
 			) );
 		?>

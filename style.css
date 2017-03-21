@@ -448,24 +448,29 @@ nav .btn-primary a{
 .sidebar{
 	padding-top: 13px;
 }
-#faculty .card{
+#faculty .card,
+#alumni .card{
 	margin: 0 auto;
 	margin-top: 20px;
 	transition: 0.3s;
 	max-width: 20em;
 	margin-left: 1em;
 }
-#faculty .card:hover{
+#faculty .card:hover,
+#alumni .card:hover{
 	margin-top: 15px;
 	margin-bottom: 5px;
 }
-.faculty-details h3:first-child{
+.faculty-details h3:first-child,
+.alumni-details h3:first-child{
 	margin: 20px 0 10px 0;
 }
-.faculty-details h3{
+.faculty-details h3,
+.alumni-details h3{
 	margin: 5px 0;
 }
-.faculty-wrap{
+.faculty-wrap,
+.alumni-wrap{
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: flex-start;
@@ -515,8 +520,13 @@ nav .btn-primary a{
 	color: #fff;
 }
 .navbar-default .navbar-nav>li>a:hover,
-.navbar-default .navbar-nav>li .active>a{
-	color: #d9230f;
+.navbar-default .navbar-nav>li.active>a:hover{
+	color: rgba(255, 255, 255, 0.8);
+	text-shadow: black 3px 5px 1px;
+}
+.navbar-default .navbar-nav>li.active>a{
+	color: rgba(255, 255, 255, 0.8);
+	text-shadow: black 3px 5px 1px;
 }
 .navbar-default .navbar-nav li ul .active a{
 	color: #fff;
@@ -579,19 +589,19 @@ nav .btn-primary a{
 	padding: 10px 0;
 	height: 150px;
 }
-.modal-content, .caption {
+.modal-content, .caption { 
 	-webkit-animation-name: zoom;
 	-webkit-animation-duration: 0.6s;
 	animation-name: zoom;
 	animation-duration: 0.6s;
 }
 @-webkit-keyframes zoom {
-	from {-webkit-transform:scale(0)}
+	from {-webkit-transform:scale(0)} 
 	to {-webkit-transform:scale(1)}
 }
 
 @keyframes zoom {
-	from {transform:scale(0)}
+	from {transform:scale(0)} 
 	to {transform:scale(1)}
 }
 
@@ -617,6 +627,12 @@ nav .btn-primary a{
 		width: 100%;
 	}
 }
+
+.alumni-login li a{
+	color: white;
+}
+.alumni-modal-footer{
+	padding: 10px;
 /*------------------------top announcements -------------------------*/
 #text-carousel .carousel-content{
 	text-align: center;
@@ -697,7 +713,8 @@ nav .btn-primary a{
 		box-sizing:border-box;
 		clear:both
 	}
-	.faculty-wrap{
+	.faculty-wrap,
+	.alumni-wrap{
 		justify-content: center;
 	}
 	.navbar-default .navbar-nav .open .dropdown-menu>li>a{
@@ -755,7 +772,8 @@ nav .btn-primary a{
 		box-sizing:border-box;
 		clear:both
 	}
-	.faculty-wrap{
+	.faculty-wrap,
+	.alumni-wrap{
 		justify-content: center;
 	}
 	.navbar-default .navbar-nav .open .dropdown-menu>li>a{
