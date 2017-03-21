@@ -18,11 +18,13 @@
 	<body <?php body_class(); ?> data-spy="scroll" data-target=".navbar" data-offset="50">
 		<div class="page">
 			<header class="header" id="header">
-			
+
 				<?php get_template_part( 'templates/header/header' , 'masthead' ); ?>
 
 				<?php get_template_part( 'templates/header/header' , 'navigation' ); ?>
-			
+
+				<?php get_template_part( 'templates/header/header' , 'notification' ); ?>
+
 			</header> <!-- .header-->
 
 			<div class="content">

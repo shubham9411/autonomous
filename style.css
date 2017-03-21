@@ -1,5 +1,5 @@
 /*
-Theme Name: Autonomous 
+Theme Name: Autonomous
 Author: Shubham Pandey
 Author URI: http://shubhampandey.in/about/
 Theme URI: http://shubhampandey/autonomous
@@ -107,7 +107,7 @@ textarea:focus{
 }
 
 /*========Carousel=========*/
-.item.active{
+#myCarousel .item.active {
 	width: 100%;
 	max-height: 30em;
 	min-height: 30em;
@@ -633,6 +633,23 @@ nav .btn-primary a{
 }
 .alumni-modal-footer{
 	padding: 10px;
+/*------------------------top announcements -------------------------*/
+#text-carousel .carousel-content{
+	text-align: center;
+	padding: 0.4em;
+	background-color:#E53935;
+	color: white;
+}
+.white-text{
+	color: white;
+}
+.white-text:hover,
+.white-text:active,
+.white-text:focus{
+	color: white;
+}
+#text-carousel p{
+	margin-top: 9px;
 }
 /*========== Media Queries ============*/
 /*--------------------------------------------------Large-------------------------------------------------*/
@@ -645,7 +662,7 @@ nav .btn-primary a{
 
 @media only screen and (max-width: 1199px) and (min-width: 992px) {
 }
-   
+
 /*--------------------------------------------------tablet-------------------------------------------------*/
 
 @media only screen and (max-width: 991px) and (min-width: 768px) {
@@ -664,7 +681,7 @@ nav .btn-primary a{
 /*--------------------------------------------------phone-------------------------------------------------*/
 
 @media only screen and (max-width: 767px) and (min-width: 480px) {
-	.item.active{
+	#myCarousel .item.active{
 		width: 100%;
 		max-height: 20em;
 		min-height: 20em;
@@ -718,7 +735,7 @@ nav .btn-primary a{
 /*--------------------------------------------------phone-------------------------------------------------*/
 
 @media only screen and (max-width: 479px) {
-	.item.active{
+	#myCarousel .item.active{
 		width: 100%;
 		max-height: 15em;
 		min-height: 15em;
@@ -744,7 +761,7 @@ nav .btn-primary a{
 		align-items: center;
 		padding-left: 0;
 	}
-	.carousel-content{
+	#myCarousel .carousel-content{
 		display: none;
 	}
 	.table-date{

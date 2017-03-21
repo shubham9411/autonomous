@@ -348,3 +348,8 @@ require( 'inc/alumni-post-type.php' );
  * Faculty Profiles
  */
 require( 'inc/faculty-profiles.php' );
+
+/**
+ * Notifications
+ */
+require( 'inc/notification-post-type.php' );
