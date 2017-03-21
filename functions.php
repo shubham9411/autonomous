@@ -294,3 +294,8 @@ require( 'inc/carousel-post-type.php' );
  * Faculty Profiles
  */
 require( 'inc/faculty-profiles.php' );
+
+/**
+ * Notifications
+ */
+require( 'inc/notification-post-type.php' );
