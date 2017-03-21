@@ -1,5 +1,5 @@
 /*
-Theme Name: Autonomous 
+Theme Name: Autonomous
 Author: Shubham Pandey
 Author URI: http://shubhampandey.in/about/
 Theme URI: http://shubhampandey/autonomous
@@ -107,7 +107,7 @@ textarea:focus{
 }
 
 /*========Carousel=========*/
-.item.active{
+.item.active mycarousel{
 	width: 100%;
 	max-height: 30em;
 	min-height: 30em;
@@ -579,19 +579,19 @@ nav .btn-primary a{
 	padding: 10px 0;
 	height: 150px;
 }
-.modal-content, .caption { 
+.modal-content, .caption {
 	-webkit-animation-name: zoom;
 	-webkit-animation-duration: 0.6s;
 	animation-name: zoom;
 	animation-duration: 0.6s;
 }
 @-webkit-keyframes zoom {
-	from {-webkit-transform:scale(0)} 
+	from {-webkit-transform:scale(0)}
 	to {-webkit-transform:scale(1)}
 }
 
 @keyframes zoom {
-	from {transform:scale(0)} 
+	from {transform:scale(0)}
 	to {transform:scale(1)}
 }
 
@@ -617,6 +617,15 @@ nav .btn-primary a{
 		width: 100%;
 	}
 }
+
+/*------------------------top announcements -------------------------*/
+#text-carousel .carousel-content{
+	text-align: center;
+	padding: 0.4em;
+	background-color:#E53935;
+	color: white;
+}
+
 /*========== Media Queries ============*/
 /*--------------------------------------------------Large-------------------------------------------------*/
 
@@ -628,7 +637,7 @@ nav .btn-primary a{
 
 @media only screen and (max-width: 1199px) and (min-width: 992px) {
 }
-   
+
 /*--------------------------------------------------tablet-------------------------------------------------*/
 
 @media only screen and (max-width: 991px) and (min-width: 768px) {
@@ -647,7 +656,7 @@ nav .btn-primary a{
 /*--------------------------------------------------phone-------------------------------------------------*/
 
 @media only screen and (max-width: 767px) and (min-width: 480px) {
-	.item.active{
+	.item.active mycarousel{
 		width: 100%;
 		max-height: 20em;
 		min-height: 20em;
@@ -700,7 +709,7 @@ nav .btn-primary a{
 /*--------------------------------------------------phone-------------------------------------------------*/
 
 @media only screen and (max-width: 479px) {
-	.item.active{
+	.item.active mycarousel{
 		width: 100%;
 		max-height: 15em;
 		min-height: 15em;
