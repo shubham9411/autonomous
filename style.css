@@ -1,5 +1,5 @@
 /*
-Theme Name: Autonomous 
+Theme Name: Autonomous
 Author: Shubham Pandey
 Author URI: http://shubhampandey.in/about/
 Theme URI: http://shubhampandey/autonomous
@@ -579,19 +579,19 @@ nav .btn-primary a{
 	padding: 10px 0;
 	height: 150px;
 }
-.modal-content, .caption { 
+.modal-content, .caption {
 	-webkit-animation-name: zoom;
 	-webkit-animation-duration: 0.6s;
 	animation-name: zoom;
 	animation-duration: 0.6s;
 }
 @-webkit-keyframes zoom {
-	from {-webkit-transform:scale(0)} 
+	from {-webkit-transform:scale(0)}
 	to {-webkit-transform:scale(1)}
 }
 
 @keyframes zoom {
-	from {transform:scale(0)} 
+	from {transform:scale(0)}
 	to {transform:scale(1)}
 }
 
@@ -646,7 +646,7 @@ nav .btn-primary a{
 
 @media only screen and (max-width: 1199px) and (min-width: 992px) {
 }
-   
+
 /*--------------------------------------------------tablet-------------------------------------------------*/
 
 @media only screen and (max-width: 991px) and (min-width: 768px) {
