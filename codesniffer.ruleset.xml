@@ -13,8 +13,10 @@
 		<exclude name="PEAR.Functions.FunctionCallSignature.Indent" />
 		<exclude name="WordPress.VIP.RestrictedFunctions" />
 	</rule>
+	<rule ref="PHPCompatibility">
+		<exclude name="PHP.NewFunctionArrayDereferencing" />
+	</rule>
 
 	<!-- Include sniffs for PHP cross-version compatibility. -->
 	<config name="testVersion" value="5.2-99.0"/>
-	<rule ref="PHPCompatibility"/>
 </ruleset>

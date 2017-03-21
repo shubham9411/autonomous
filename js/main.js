@@ -63,4 +63,9 @@ function pillsResponsive() {
 		$('#dept-img-modal-' + modal_no).attr( 'src', this.src );
 		$('#dept-img-caption-' + modal_no).html( this.alt );
 	});
+	if ( 0 != $('#joinAlumniModal').length) {
+		setTimeout( function(){
+			$('#joinAlumniModal').modal();
+		}, 5000 );
+	}
  })( jQuery ); 
