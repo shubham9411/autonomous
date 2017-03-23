@@ -102,7 +102,7 @@ if ( ! function_exists( 'anomous_dept_menu' ) ) {
 						$fac_categ = array_search( "$title" , $dept_names );
 						$fac_categ  = substr( $fac_categ , 8 );
 					?>
-					<a href="<?php echo get_the_permalink( get_page_by_title( 'Faculties' ) ) . '#' . esc_attr( $fac_categ );?>" >Faculties</a>
+					<a id="link-modal-faculty" href="<?php echo get_the_permalink( get_page_by_title( 'Faculties' ) ) . '#' . esc_attr( $fac_categ );?>" data-toggle="modal" data-target="#modalFaculties" >Faculties</a>
 				</li>
 				<li>
 					<a href="<?php echo esc_url( $time_table->guid );?>" target="_blank">Time Table </a>
@@ -111,8 +111,8 @@ if ( ! function_exists( 'anomous_dept_menu' ) ) {
 				if ( $dept_syllabus ) :
 				?>
 				<li>
-					<a  data-toggle="collapse" data-target="#syllabusModal" href="#syllabus">Syllabus</a>
-					<div id="syllabusModal" class="collapse">
+					<a  data-toggle="collapse" data-target="#syllabusCollapse" href="#syllabus">Syllabus</a>
+					<div id="syllabusCollapse" class="collapse">
 						<ul class="">
 						<?php
 							foreach ($dept_syllabus as $key => $value) {
@@ -129,6 +129,50 @@ if ( ! function_exists( 'anomous_dept_menu' ) ) {
 				?>
 			</ul>
 		</section>
+		<div class="modals">
+			<div class="modal fade" id="modalFaculties" role="dialog">
+				<div class="modal-dialog modal-lg">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close close-button" data-dismiss="modal">&times;</button>
+							<h4 class="modal-title">Our Faculties!</h4>
+						</div>
+						<div class="modal-body">
+							<?php
+								global $post, $dept_names;
+								$title = get_the_title( $post->ID );
+								$fac_categ = array_search( "$title" , $dept_names );
+								$args = array(
+								'meta_key'     => 'dept',
+								'meta_value'   => $fac_categ,
+							);
+							$blog_user = get_users( $args );
+							foreach ( $blog_user as $user ) {
+								?>
+								<a href="<?php echo esc_url( get_author_posts_url( $user->id ) );?>" class="list-group-item">
+									<div class="row">
+										<div class="col-sm-3">
+											<img src="<?php echo esc_url( get_avatar_url( $user->id , array( 'size' => 250 ) ) );?>" alt="Avatar" class="img-responsive">
+										</div>
+										<div class="col-sm-9">
+											<h4><b><?php echo esc_html( $user->display_name );?></b></h4> 
+											<h4><?php echo esc_html( get_user_meta( $user->id, 'faculty_position' )[0] );?></h4>
+											<h4><?php echo esc_html( get_user_meta( $user->id, 'faculty_qual' )[0] );?></h4>
+											<h4><?php echo esc_html( get_user_meta( $user->id, 'faculty_specialization' )[0] );?></h4>
+										</div>
+									</div>
+								</a>
+								<?php
+							}
+							?>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 		<?php
 		endif;
 	}
