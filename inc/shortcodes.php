@@ -92,41 +92,43 @@ if ( ! function_exists( 'anomous_dept_menu' ) ) {
 				$attr['title'] = 'Useful Links'; //Fallback.
 			}
 		?>
-			<h1 class="widget-title"><?php esc_html_e( $attr[ 'title' ] );?></h1>
+		<section id="depts-gallery">
+			<h2 class="widget-title"><?php esc_html_e( $attr[ 'title' ] );?></h2>
 			<ul id="dept-links-menu">
+				<li>
+					<?php
+						global $post, $dept_names;
+						$title = get_the_title( $post->ID );
+						$fac_categ = array_search( "$title" , $dept_names );
+						$fac_categ  = substr( $fac_categ , 8 );
+					?>
+					<a href="<?php echo get_the_permalink( get_page_by_title( 'Faculties' ) ) . '#' . esc_attr( $fac_categ );?>" >Faculties</a>
+				</li>
 				<li>
 					<a href="<?php echo esc_url( $time_table->guid );?>" target="_blank">Time Table </a>
 				</li>
+				<?php
+				if ( $dept_syllabus ) :
+				?>
 				<li>
-					<a data-toggle="modal" data-target="#syllabusModal" href="#syllabus">Syllabus</a>
-				</li>
-			</ul>
-			<div class="modal fade" id="syllabusModal" role="dialog">
-				<div class="modal-dialog">
-					<!-- Modal content-->
-					<div class="modal-content">
-						<div class="modal-header">
-							<button type="button" class="close close-button" data-dismiss="modal">×</button>
-							<h4><span class="fa fa-graduation-cap"></span> Syllabus</h4>
-						</div>
-						<div class="modal-body">
-							<ul class="list-group">
-							<?php
-								$year = array( 
-									1 => 'First',
-									2 => 'Second',
-									3 => 'Third',
-								 );
-								foreach ($dept_syllabus as $key => $value) {
-									$syllabus_link = wp_get_attachment_url( $value );
-									echo '<a class="list-group-item" href="' . $syllabus_link . '" target="_blank">' . $year[$key+1] . ' Year</a>';
-								}
-							?>
-							</ul>
-						</div>
+					<a  data-toggle="collapse" data-target="#syllabusModal" href="#syllabus">Syllabus</a>
+					<div id="syllabusModal" class="collapse">
+						<ul class="">
+						<?php
+							foreach ($dept_syllabus as $key => $value) {
+								$syllabus_link = wp_get_attachment_url( $value );
+								$caption = wp_get_attachment_caption( $value );
+								echo '<li class="list-group-"><a href="' . $syllabus_link . '" target="_blank">' . $caption . '</a></li>';
+							}
+						?>
+						</ul>
 					</div>
-				</div>
-			</div>
+				</li>
+				<?php
+				endif;
+				?>
+			</ul>
+		</section>
 		<?php
 		endif;
 	}

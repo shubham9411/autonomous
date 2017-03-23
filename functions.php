@@ -291,6 +291,11 @@ require( 'inc/faculty-profiles.php' );
 require( 'inc/notification-post-type.php' );
 
 /**
- * Notifications
+ * Shortcodes
  */
 require( 'inc/shortcodes.php' );
+
+/**
+ * Constants
+ */
+require( 'inc/constants.php' );

@@ -7,7 +7,6 @@
  * @since 1.0
  */
 
-
 get_header();
 ?>
 <section id="alumni" class="alumni">
