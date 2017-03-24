@@ -8,30 +8,21 @@
  */
 
 get_header();
-$dept_name = array(
-	'anomous_cse' => 'Computer Science Engineering',
-	'anomous_ece' => 'Electronic and Comm. engineering',
-	'anomous_me' => 'Mechanical engineering',
-	'anomous_bce' => 'Biochemical engineering',
-	'anomous_ee' => 'Electrical engineering',
-	'anomous_ce' => 'Civil engineering',
-	'anomous_che' => 'Chemical engineering',
-	'anomous_asd' => 'Applied and science engineering',
-	'anomous_mca' => 'MCA',
-);
+global $dept_names;
 ?>
 <section id="faculty" class="faculty">
 	<div class="container faculty-wrap">
 	<?php
-	foreach ( $dept_name as $key => $dept ) {
+	foreach ( $dept_names as $key => $dept ) {
 		$args = array(
 			'meta_key'     => 'dept',
 			'meta_value'   => $key,
 		);
 		$blog_user = get_users( $args );
 		if ( 0 != count( $blog_user ) ) {
+			$fac_categ = substr( $key , 8 );
 		?>
-			<div class="col-xs-12 well"><h2><?php echo esc_html( $dept ); ?></h2></div>
+			<div id="<?php esc_attr_e( $fac_categ );?>" class="col-xs-12 well"><h2><?php echo esc_html( $dept ); ?></h2></div>
 		<?php
 		}
 		foreach ( $blog_user as $user ) {

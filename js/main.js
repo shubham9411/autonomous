@@ -1,5 +1,13 @@
 jQuery( document ).ready(function() {
 	pillsResponsive();
+	faculty_modal();
+ });
+jQuery( window ).scroll(function() {
+	navbarAffix();
+ });
+jQuery( window ).resize(function() {
+	pillsResponsive();
+	faculty_modal();
  });
 function navbarAffix() {
 	if ( jQuery( '#site-header-nav' ).hasClass( 'affix' ) ) {
@@ -16,12 +24,6 @@ function navbarAffix() {
 		jQuery( '#site-header-nav' ).removeClass( 'navbar-fixed-top' );
 	}
 }
-jQuery( window ).scroll(function() {
-	navbarAffix();
- });
-jQuery( window ).resize(function() {
-	pillsResponsive();
- });
 function pillsResponsive() {
 	jQuerywindow = jQuery( window );
 	if ( jQuerywindow.width() > 768 ) {
@@ -68,4 +70,11 @@ function pillsResponsive() {
 			$('#joinAlumniModal').modal();
 		}, 5000 );
 	}
- })( jQuery ); 
+ })( jQuery );
+function faculty_modal() {
+	(function( $ ){
+		if( $( window ).width() < 991 ) {
+			$('#link-modal-faculty').attr( 'data-target' , '' ).attr( 'data-toggle' , '' );
+		}
+	 })( jQuery );
+}

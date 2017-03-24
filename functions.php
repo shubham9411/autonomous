@@ -353,3 +353,18 @@ require( 'inc/faculty-profiles.php' );
  * Notifications
  */
 require( 'inc/notification-post-type.php' );
+
+/**
+ * Hall of Fame
+ */
+require( 'inc/hall-of-fame.php' );
+
+/**
+ * Constants
+ */
+require( 'inc/constants.php' );
+
+/**
+ * Constants
+ */
+require( 'inc/shortcodes.php' );

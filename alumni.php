@@ -7,7 +7,6 @@
  * @since 1.0
  */
 
-
 get_header();
 ?>
 <section id="alumni" class="alumni">
@@ -46,7 +45,7 @@ get_header();
 		<div class="modal-dialog modal-md">
 			<div class="modal-content">
 				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<button type="button" class="close close-button" data-dismiss="modal">&times;</button>
 					<h4 class="modal-title">Welcome! Alumni/Student</h4>
 				</div>
 				<div class="modal-body text-center">

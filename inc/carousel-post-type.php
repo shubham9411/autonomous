@@ -29,7 +29,7 @@ function anomous_carousel_post() {
 	);
 
 	$args = array(
-		'labels'                   => $labels,
+		'labels'              => $labels,
 		'description'         => 'Carousel For Website',
 		'public'              => true,
 		'show_ui'             => true,
