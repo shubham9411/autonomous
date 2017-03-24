@@ -633,6 +633,7 @@ nav .btn-primary a{
 }
 .alumni-modal-footer{
 	padding: 10px;
+}
 /*------------------------top announcements -------------------------*/
 #text-carousel .carousel-content{
 	text-align: center;
@@ -649,7 +650,14 @@ nav .btn-primary a{
 	color: white;
 }
 #text-carousel p{
-	margin-top: 9px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+.close-button{
+	color: #444;
+}
+.close-button:hover{
+	color: #555;
 }
 /*========== Media Queries ============*/
 /*--------------------------------------------------Large-------------------------------------------------*/

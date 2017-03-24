@@ -13,7 +13,7 @@ $notification = array(
 );
 $loop = new WP_Query( $notification );
 ?><div id="text-carousel" class="carousel slide" data-ride="carousel">
-	<div class="row">
+	<div class="row-fluid">
 		<div class="carousel-inner">
 		<?php
 			$post_count = $loop->post_count;
