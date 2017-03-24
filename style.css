@@ -653,6 +653,12 @@ nav .btn-primary a{
 	margin-top: 5px;
 	margin-bottom: 5px;
 }
+.close-button{
+	color: #444;
+}
+.close-button:hover{
+	color: #555;
+}
 /*========== Media Queries ============*/
 /*--------------------------------------------------Large-------------------------------------------------*/
 
