@@ -686,6 +686,16 @@ nav .btn-primary a{
 	color: #fff;
 	background: #388e3c;
 }
+.hof-title{
+	position: fixed;
+	bottom: 0;
+	background: rgba(0, 0, 0, 0.5);
+	width: 100%;
+	font-style: italic;
+	font-size: 1.2em;
+	padding: 10px;
+	color: #fff;
+}
 /*========== Media Queries ============*/
 /*--------------------------------------------------Large-------------------------------------------------*/
 

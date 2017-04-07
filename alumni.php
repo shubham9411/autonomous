@@ -12,16 +12,16 @@ get_header();
 <section id="alumni" class="alumni">
 	<div class="container alumni-wrap">
 		<?php
-		$categ = array(
+		$alumni = array(
 			'post_type'        => 'alumnus_anomous',
 			'posts_per_page'   => 10,
 		);
-		$loop = new WP_Query( $categ );
+		$loop = new WP_Query( $alumni );
 		if ( $loop->have_posts() ) : while ( $loop->have_posts() ) : $loop->the_post();
 		?>
 		<a href="<?php the_permalink();?>">
 			<div class="card">
-				<?php the_post_thumbnail( 'anomous-alumni-avatar' , 'class=img-responsive' ); ?>
+				<?php the_post_thumbnail( 'anomous-medium-avatar' , 'class=img-responsive' ); ?>
 				<div class="alumni-details">
 					<h4><b><?php the_title();?></b></h4>
 					<h5><b><?php alumni_the_excerpt();?></b></h5>

@@ -63,6 +63,14 @@ if ( ! function_exists( 'anomous_scripts' ) ) {
 		wp_enqueue_script( 'anomous-main' , get_theme_file_uri( '/js/main.js' ) , array( 'jquery', 'anomous-bootstrap-js' ) , '1.0' , true );
 
 		wp_enqueue_script( 'anomous-bootstrap-js' , get_theme_file_uri( '/js/bootstrap.js' ) , array( 'jquery' ) , '3.3.7' , true );
+
+		if ( anomous_is_dept() ) {
+			wp_enqueue_style( 'anomous-owl-css' , get_theme_file_uri( '/css/owl.carousel.min.css' ) , array() , '2.2.1' , 'all' );
+
+			wp_enqueue_script( 'anomous-owl-js' , get_theme_file_uri( '/js/owl.carousel.min.js' ) , array( 'jquery' ) , '2.2.1' , true );
+
+			wp_enqueue_script( 'anomous-owl-carousel-main' , get_theme_file_uri( '/js/owl-carousel-main.js' ) , array( 'anomous-owl-js' ) , '2.2.1' , true );
+		}
 	}
 	add_action( 'wp_enqueue_scripts' , 'anomous_scripts' );
 }
@@ -321,6 +329,50 @@ function alumni_the_excerpt() {
 		echo $excerpt;
 	}
 	echo '...';
+}
+
+/**
+ * Function for Rendering HOF carousel
+ */
+function anomous_hof_render() {
+	?>
+	<section>
+		<hr />
+		<h1><u>Hall of Fame</u></h1>
+		<div class="owl-carousel" id="hof-carousel">
+			<?php
+			$title = get_the_title();
+			$title = explode(" ", $title)[0];
+			$hof = array(
+				'post_type'        => 'hof_anomous',
+				'posts_per_page'   => 200,
+				'tax_query' => array(
+					'relation'  => 'AND',
+						array(
+							'taxonomy'         => 'hof-student',
+							'field'            => 'name',
+							'terms'            => array( $title ),
+							'include_children' => true,
+							'operator'         => 'IN'
+						),
+					),
+			);
+			$loop = new WP_Query( $hof );
+			if ( $loop->have_posts() ) : while ( $loop->have_posts() ) : $loop->the_post();
+			?>
+			<div class="hof">
+				<div class="hof-wrap">
+				<?php the_post_thumbnail( 'anomous-alumni-avatar', 'class=img-responsive' );?>
+				<div><span class="hof-title"><?php the_title(); ?></span></div>
+				</div>
+			</div>
+		<?php
+		endwhile;
+		endif;
+			?>
+		</div>
+	</section>
+	<?php
 }
 
 /**

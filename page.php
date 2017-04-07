@@ -26,6 +26,11 @@ get_header();
 			?>
 
 		</main><!-- #main -->
+		<?php
+		if ( anomous_is_dept() ) {
+			anomous_hof_render();
+		}
+		?>
 	</div><!-- #primary -->
 	<div class="col-xs-12 col-md-3">
 		<?php get_sidebar(); ?>
