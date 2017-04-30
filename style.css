@@ -3,7 +3,7 @@ Theme Name: Autonomous
 Author: Shubham Pandey
 Author URI: http://shubhampandey.in/about/
 Theme URI: http://shubhampandey/autonomous
-Description: Theme For Website
+Description: Theme For Website of College
 Version: 1.0
 Text Domain: autonomous
 */
@@ -552,13 +552,13 @@ nav .btn-primary a{
 .navbar-header{
 	padding-top: 1.2em;
 }
-#hod-profile{
+.widget_featured_profile{
 	border: 1px solid #ddd;
 	border-radius: 10px;
 	padding: 1em;
 	margin-top: 18px;
 }
-#hod-profile .img-circle{
+.widget_featured_profile .img-circle{
 	border: 5px solid #ddd;
 }
 .hod-info{

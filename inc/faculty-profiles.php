@@ -14,7 +14,7 @@
  */
 function anomous_add_custom_user_profile_fields( $user ) {
 ?>
-	<h3><?php esc_html_e( 'Extra Profile Infodrmation' , 'autonomous' ); ?></h3>
+	<h3><?php esc_html_e( 'Extra Profile Information' , 'autonomous' ); ?></h3>
 	
 	<table class="form-table">
 		<tr>
@@ -42,7 +42,7 @@ function anomous_add_custom_user_profile_fields( $user ) {
 			</label></th>
 			<td>
 				<input type="text" name="faculty_position" id="faculty_position" value="<?php echo esc_html( get_the_author_meta( 'faculty_position', $user->ID ) );?>">
-				<span class="description"><?php esc_html_e( 'Plese Enter your Position ex. Assistent Professor' , 'autonomous' ); ?></span>
+				<span class="description"><?php esc_html_e( 'Plese Enter your Position ex. Assistant Professor' , 'autonomous' ); ?></span>
 			</td>
 		</tr>
 		<tr>
