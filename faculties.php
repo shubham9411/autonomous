@@ -8,15 +8,18 @@
  */
 
 get_header();
-global $dept_names;
-?>
+// global $;
+$dept_names = (get_theme_mod( 'dept_choices', '' ));
+$user_data = get_user_meta( 12 );
+?> 
 <section id="faculty" class="faculty">
 	<div class="container faculty-wrap">
 	<?php
 	foreach ( $dept_names as $key => $dept ) {
 		$args = array(
-			'meta_key'     => 'dept',
+			'meta_key'     => 'profile_department',
 			'meta_value'   => $key,
+			'fields'       => 'id',
 		);
 		$blog_user = get_users( $args );
 		if ( 0 != count( $blog_user ) ) {
@@ -26,16 +29,14 @@ global $dept_names;
 		<?php
 		}
 		foreach ( $blog_user as $user ) {
+			$user_data = get_userdata( $user );
 			?>
-			<a href="<?php echo esc_url( get_author_posts_url( $user->id ) );?>">
+			<a href="<?php echo esc_url( get_author_posts_url( $user ) );?>">
 				<div class="card">
-					<img src="<?php echo esc_url( get_avatar_url( $user->id , array( 'size' => 250 ) ) );?>" alt="Avatar" class="img-responsive">
+					<img src="<?php echo esc_url( get_avatar_url( $user , array( 'size' => 250 ) ) );?>" alt="Avatar" class="img-responsive">
 					<div class="faculty-details">
-						<h4><b><?php echo esc_html( $user->display_name );?></b></h4> 
-						<h4><?php echo esc_html( get_user_meta( $user->id, 'faculty_position' )[0] );?></h4>
-						<h4><?php echo esc_html( get_user_meta( $user->id, 'faculty_qual' )[0] );?></h4>
-						<h4><?php echo esc_html( get_user_meta( $user->id, 'faculty_exp' )[0] );?> Years Experience </h4>
-						<h4><?php echo esc_html( get_user_meta( $user->id, 'faculty_specialization' )[0] );?></h4>
+						<h4><b><?php echo esc_html( get_the_author_meta('display_name',$user) );?></b></h4> 
+						<?php anomous_user_details( $user ); ?>
 					</div>
 				</div>
 			</a>

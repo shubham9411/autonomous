@@ -212,6 +212,7 @@ add_filter('widget_text','do_shortcode');
  */
 function anomous_is_dept() {
 	global $post;
+	wp_reset_postdata();
 	$academics = get_page_by_title( 'Academics' );
 	if (is_page() && $post->post_parent == $academics->ID ) {
 		return true;
@@ -311,7 +312,46 @@ function anomous_hof_render() {
 	</section>
 	<?php
 }
+/**
+ * Function for printing all the additional details of a user 
+ */
+function anomous_user_details( $user ) {
+	$group_ID = 351;
+	$fields = array();
+	$fields = apply_filters('acf/field_group/get_fields', $fields, $group_ID);
+	if( $fields )
+	{
+		foreach( $fields as $field )
+		{
+			if ( $field['name'] == 'profile_department' ) {
+				continue;
+			}
+			$value = get_field( $field['name'], 'user_'.$user );
+			if ( $field['name'] == 'profile_experience' ) {
+				echo '<h4>' . $value . ' Years of Experience</h4>';
+				continue;
+			}
+			echo '<h4>' . $value . '</h4>';
+		}
+	}
+}
 
+function my_acf_update_value( $value, $post_id, $field  ) {
+    // only do it to certain custom fields
+    if( $field['name'] == 'profile_department' ) {
+    	$group_ID = 351;
+		$fields = array();
+		$fields = apply_filters('acf/field_group/get_fields', $fields, $group_ID);
+        set_theme_mod( 'dept_choices', $fields[0]['choices']);
+    }
+
+	// don't forget to return to be saved in the database
+    return $value;
+    
+}
+
+// acf/update_value - filter for every field
+add_filter('acf/update_value', 'my_acf_update_value', 10, 3);
 /**
  * Template Tags file.
  */
@@ -334,11 +374,6 @@ require( 'inc/carousel-post-type.php' );
 require( 'inc/alumni-post-type.php' );
 
 /**
- * Faculty Profiles
- */
-require( 'inc/faculty-profiles.php' );
-
-/**
  * Notifications
  */
 require( 'inc/notification-post-type.php' );
@@ -347,11 +382,6 @@ require( 'inc/notification-post-type.php' );
  * Hall of Fame
  */
 require( 'inc/hall-of-fame.php' );
-
-/**
- * Constants
- */
-require( 'inc/constants.php' );
 
 /**
  * Constants

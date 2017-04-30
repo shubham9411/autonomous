@@ -38,10 +38,10 @@ class Featured_Profile extends WP_Widget {
 			$title = get_field( 'user_profile' );
 			$dept_hod = get_field( 'featured_profile' );
 			$name = $dept_hod['display_name'];
-			$avatar_src = get_avatar_url( $dept_hod[ID] , array( 'size' => 200 ) );
-			$desc = get_user_meta( $dept_hod[ID] , 'description' )[0];
-			$specialization = get_user_meta( $dept_hod[ID] , 'faculty_specialization' )[0];
-			$auth_url = get_author_posts_url( $dept_hod[ID] );
+			$avatar_src = get_avatar_url( $dept_hod['ID'] , array( 'size' => 200 ) );
+			$desc = get_user_meta( $dept_hod['ID'] , 'description' )[0];
+			$specialization = get_user_meta( $dept_hod['ID'] , 'faculty_specialization' )[0];
+			$auth_url = get_author_posts_url( $dept_hod['ID'] );
 			?>
 			<h4 class="text-center"><?php esc_html_e( $title );?></h4 class="text-center">
 			<a href="<?php echo esc_url( $auth_url );?>" class="hod-section">
@@ -105,7 +105,8 @@ class Department_Menu extends WP_Widget {
 		<ul id="dept-links-menu">
 			<li>
 				<?php
-					global $post, $dept_names;
+					global $post;
+					$dept_names = get_theme_mod( 'dept_choices', '' );
 					$title = get_the_title( $post->ID );
 					$fac_categ = array_search( "$title" , $dept_names );
 					$fac_categ  = substr( $fac_categ , 8 );
@@ -156,16 +157,16 @@ class Department_Menu extends WP_Widget {
 							$blog_user = get_users( $fac );
 							foreach ( $blog_user as $user ) {
 								?>
-								<a href="<?php echo esc_url( get_author_posts_url( $user->id ) );?>" class="list-group-item">
+								<a href="<?php echo esc_url( get_author_posts_url( $user->ID ) );?>" class="list-group-item">
 									<div class="row">
 										<div class="col-sm-3">
-											<img src="<?php echo esc_url( get_avatar_url( $user->id , array( 'size' => 250 ) ) );?>" alt="Avatar" class="img-responsive">
+											<img src="<?php echo esc_url( get_avatar_url( $user->ID , array( 'size' => 250 ) ) );?>" alt="Avatar" class="img-responsive">
 										</div>
 										<div class="col-sm-9">
 											<h4><b><?php echo esc_html( $user->display_name );?></b></h4> 
-											<h4><?php echo esc_html( get_user_meta( $user->id, 'faculty_position' )[0] );?></h4>
-											<h4><?php echo esc_html( get_user_meta( $user->id, 'faculty_qual' )[0] );?></h4>
-											<h4><?php echo esc_html( get_user_meta( $user->id, 'faculty_specialization' )[0] );?></h4>
+											<h4><?php echo esc_html( get_user_meta( $user->ID, 'faculty_position' )[0] );?></h4>
+											<h4><?php echo esc_html( get_user_meta( $user->ID, 'faculty_qual' )[0] );?></h4>
+											<h4><?php echo esc_html( get_user_meta( $user->ID, 'faculty_specialization' )[0] );?></h4>
 										</div>
 									</div>
 								</a>

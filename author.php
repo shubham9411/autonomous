@@ -16,16 +16,17 @@ get_header();
 			<?php
 			$curauth = ( isset( $_GET['author_name'] ) ) ? get_user_by( 'slug' , $author_name ) : get_userdata( intval( $author ) );
 			$user_id = $curauth->ID;
+			$user_data = get_user_meta( $user_id );
 			?>
 			<hr />
 			<div class="col-xs-12 col-sm-3 col-md-2 author-avatar">
 				<img src="<?php echo esc_url( get_avatar_url( $user_id , array( 'size' => 250 ) ) );?>" alt="Faculty Avatar" class="img-responsive img-circle">
 			</div>
 			<div class="col-xs-12 col-sm-8 col-md-10 faculty-details">
-				<h2><b><?php echo esc_html( get_author_name( $user_id ) );?></b></h2>
-				<h4><?php echo esc_html( get_user_meta( $user_id, 'faculty_position' )[0] );?></h4>
-				<h4><?php echo esc_html( get_user_meta( $user_id, 'faculty_qual' )[0] );?></h4>
-				<h4><?php echo esc_html( get_user_meta( $user_id, 'description' )[0] ); ?></h4>
+				<h2><b><?php echo esc_html( $curauth->display_name );?></b></h2>
+				<h4><?php echo esc_html( $user_data['faculty_position'][0] );?></h4>
+				<h4><?php echo esc_html( $user_data['faculty_qual'][0] );?></h4>
+				<h4><?php echo esc_html( $user_data['description'][0] );?></h4>
 			</div>
 			<hr class="col-xs-12" />
 		</section>
