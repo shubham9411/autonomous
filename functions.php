@@ -173,7 +173,7 @@ function anomous_carousel() {
 	while ( $loop->have_posts() ) :
 		$loop->the_post();
 		echo '#carousel .slide' . esc_html( $i ) . '{
-			background-image : url( ' . esc_attr( get_the_post_thumbnail_url( $post , $size = 'large' ) ) . ' );
+			background-image : url( ' . esc_attr( get_the_post_thumbnail_url( 0 , $size = 'large' ) ) . ' );
 			background-size: cover;
 			background-repeat: no-repeat;
 		}' . "\n";

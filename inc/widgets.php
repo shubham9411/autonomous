@@ -32,9 +32,9 @@ class Featured_Profile extends WP_Widget {
 	 * @param array $instance Saved values from database.
 	 */
 	public function widget( $args, $instance ) {
+		if ( anomous_is_dept() ) :
 		echo $args['before_widget'];
 		wp_reset_postdata();
-		if ( anomous_is_dept() ) :
 			$title = get_field( 'user_profile' );
 			$dept_hod = get_field( 'featured_profile' );
 			$name = $dept_hod['display_name'];
@@ -53,8 +53,8 @@ class Featured_Profile extends WP_Widget {
 				</div>
 			</a>
 		<?php
-		endif;
 		echo $args['after_widget'];
+		endif;
 	}
 
 } // class featured_profile.
@@ -90,9 +90,9 @@ class Department_Menu extends WP_Widget {
 	 * @param array $instance Saved values from database.
 	 */
 	public function widget( $args, $instance ) {
+		if ( anomous_is_dept() ) :
 		echo $args['before_widget'];
 		wp_reset_postdata();
-		if ( anomous_is_dept() ) :
 			$time_table = get_field( 'time_table' );
 			$dept_syllabus = get_field( 'dept_syllabus' );
 			if ( ! $time_table ) {

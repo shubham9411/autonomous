@@ -7,27 +7,30 @@
  * @since 1.0
  */
 
+wp_reset_postdata();
+$tab_category = get_field( 'tabs_categories' );
+$tabs = '';
+foreach ($tab_category as $key => $value) {
+	$active = ( $key == 0 ) ? 'active' : ' ';
+	$category = get_category( $value );
+	$tabs .= '<li role="presentation" class="' . $active . '"><a data-toggle="tab" href="#' . $category->slug . '">' . $category->name . '</a></li>';
+}
 ?><div class="row-fluid">
 	<ul class="nav nav-tabs tabs-home">
-		<li role="presentation" class="active"><a data-toggle="tab" href="#announcements">Announcements</a></li>
-		<li role="presentation"><a data-toggle="tab" href="#event">Event</a></li>
-		<li role="presentation"><a data-toggle="tab" href="#notice">Notice</a></li>
+		<?php echo $tabs; // WPCS xss ok. ?>
 	</ul>
 	<div class="tab-content">
-		<div class="tab-pane fade in" id="notice">
-			<?php $category_id = get_cat_ID( 'notices' ); ?>
-			<?php anomous_tabs_home( 'notices' ); ?>
-			<p class="text-right nounderline"><a href="<?php echo esc_url( get_category_link( $category_id ) );?>" title="Notices" class="btn btn-primary">Read More</a></p>
+	<?php
+	foreach ($tab_category as $key => $value) {
+		$category = get_category( $value );
+		$active = ( $key == 0 ) ? 'active' : ' ';
+	?>
+		<div class="tab-pane fade in <?php esc_html_e( $active );?>" id="<?php esc_attr_e( $category->slug ); ?>">
+			<?php anomous_tabs_home( $category->slug ); ?>
+			<p class="text-right nounderline"><a href="<?php echo esc_url( get_category_link( $category->term_id ) );?>" title="Notices" class="btn btn-primary">Read More</a></p>
 		</div>
-		<div class="tab-pane fade in" id="event">
-			<?php $category_id = get_cat_ID( 'events' ); ?>
-			<?php anomous_tabs_home( 'events' ); ?>
-			<p class="text-right nounderline"><a href="<?php echo esc_url( get_category_link( $category_id ) );?>" title="Events" class="btn btn-primary">Read More</a></p>
-		</div>
-		<div class="tab-pane fade in active" id="announcements">
-			<?php $category_id = get_cat_ID( 'announcements' ); ?>
-			<?php anomous_tabs_home( 'announcements' ); ?>
-			<p class="text-right nounderline"><a href="<?php echo esc_url( get_category_link( $category_id ) );?>" title="Announcements" class="btn btn-primary">Read More</a></p>
-		</div>
+	<?php
+	}
+	?>
 	</div>
 </div>
