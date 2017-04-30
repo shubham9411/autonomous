@@ -11,7 +11,7 @@ get_header();
 ?>
 <main class="container main">
 	<div class="col-xs-12 text-center">
-		<h1>Oops! That page can’t be found.</h1>
+		<h1>Oops! That page can&apos;t be found.</h1>
 		<hr />
 		<p>It looks like nothing was found at this location.</p>
 		<br />

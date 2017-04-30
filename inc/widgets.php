@@ -17,9 +17,9 @@ class Featured_Profile extends WP_Widget {
 	 */
 	function __construct() {
 		parent::__construct(
-			'featured_profile', // Base ID
-			esc_html__( 'Featured Profile', 'anomous' ), // Name
-			array( 'description' => esc_html__( 'Featured Profile', 'anomous' ), ) // Args
+			'featured_profile',
+			esc_html__( 'Featured Profile', 'autonomous' ),
+			array( 'description' => esc_html__( 'Featured Profile', 'autonomous' ), )
 		);
 	}
 
@@ -43,13 +43,13 @@ class Featured_Profile extends WP_Widget {
 			$specialization = get_user_meta( $dept_hod['ID'] , 'faculty_specialization' )[0];
 			$auth_url = get_author_posts_url( $dept_hod['ID'] );
 			?>
-			<h4 class="text-center"><?php esc_html_e( $title );?></h4 class="text-center">
+			<h4 class="text-center"><?php echo esc_html( $title );?></h4 class="text-center">
 			<a href="<?php echo esc_url( $auth_url );?>" class="hod-section">
-				<img src="<?php esc_html_e( $avatar_src );?>" class="img-responsive img-circle" alt="Avatar" >
+				<img src="<?php echo esc_html( $avatar_src );?>" class="img-responsive img-circle" alt="Avatar" >
 				<div class="hod-info">
-					<h4 class=""><strong><?php esc_html_e( $name ); ?></strong></h4>
-					<h4 class=""><?php esc_html_e( $specialization ); ?></h4>
-					<h5 class="visible-sm hod-desc"><?php esc_html_e( $desc ); ?></h5>
+					<h4 class=""><strong><?php echo esc_html( $name ); ?></strong></h4>
+					<h4 class=""><?php echo esc_html( $specialization ); ?></h4>
+					<h5 class="visible-sm hod-desc"><?php echo esc_html( $desc ); ?></h5>
 				</div>
 			</a>
 		<?php
@@ -75,9 +75,9 @@ class Department_Menu extends WP_Widget {
 	 */
 	function __construct() {
 		parent::__construct(
-			'department_menu', // Base ID
-			esc_html__( 'Department Menu', 'anomous' ), // Name
-			array( 'description' => esc_html__( 'Department Menu on the sidebar', 'anomous' ), ) // Args
+			'department_menu',
+			esc_html__( 'Department Menu', 'autonomous' ),
+			array( 'description' => esc_html__( 'Department Menu on the sidebar', 'autonomous' ), )
 		);
 	}
 
@@ -193,10 +193,10 @@ class Department_Menu extends WP_Widget {
 	 * @param array $instance Previously saved values from database.
 	 */
 	public function form( $instance ) {
-		$title = ! empty( $instance['title'] ) ? $instance['title'] : esc_html__( 'New title', 'text_domain' );
+		$title = ! empty( $instance['title'] ) ? $instance['title'] : esc_html__( 'New title', 'autonomous' );
 		?>
 		<p>
-		<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_attr_e( 'Title:', 'text_domain' ); ?></label> 
+		<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_attr_e( 'Title:', 'autonomous' ); ?></label> 
 		<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
 		</p>
 		<?php 

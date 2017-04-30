@@ -25,7 +25,7 @@ $user_data = get_user_meta( 12 );
 		if ( 0 != count( $blog_user ) ) {
 			$fac_categ = substr( $key , 8 );
 		?>
-			<div id="<?php esc_attr_e( $fac_categ );?>" class="col-xs-12 well"><h2><?php echo esc_html( $dept ); ?></h2></div>
+			<div id="<?php echo esc_attr( $fac_categ );?>" class="col-xs-12 well"><h2><?php echo esc_html( $dept ); ?></h2></div>
 		<?php
 		}
 		foreach ( $blog_user as $user ) {

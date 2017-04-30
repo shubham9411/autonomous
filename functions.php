@@ -7,6 +7,19 @@
  * @since 1.0
  */
 
+/**
+ * Set the content width in pixels, based on the theme's design and stylesheet.
+ *
+ * Priority 0 to make it available to lower priority callbacks.
+ *
+ * @global int $content_width
+ */
+function anomous_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'anomous_content_width', 900 );
+}
+add_action( 'after_setup_theme', 'anomous_content_width', 0 );
+
+
 if ( ! function_exists( 'anomous_setup' ) ) {
 	/**
 	 * Function for setting up all the required things
@@ -34,8 +47,8 @@ if ( ! function_exists( 'anomous_setup' ) ) {
 		add_editor_style( array( 'css/editor-style.css' ) );
 
 		register_nav_menus( array(
-			'top'    => __( 'Top Menu' , 'anomous' ),
-			'social' => __( 'Social' , 'anomous' ),
+			'top'    => __( 'Top Menu' , 'autonomous' ),
+			'social' => __( 'Social' , 'autonomous' ),
 		) );
 	}
 	add_action( 'after_setup_theme' , 'anomous_setup' );
@@ -138,18 +151,18 @@ function anomous_new_class() {
  */
 function anomous_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'anomous' ),
+		'name'          => esc_html__( 'Sidebar', 'autonomous' ),
 		'id'            => 'sidebar-1',
-		'description'   => esc_html__( 'Add widgets here.', 'anomous' ),
+		'description'   => esc_html__( 'Add widgets here.', 'autonomous' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
 	register_sidebar( array(
-		'name'          => esc_html__( 'Footer', 'anomous' ),
+		'name'          => esc_html__( 'Footer', 'autonomous' ),
 		'id'            => 'footer',
-		'description'   => esc_html__( 'Footer Widgets', 'anomous' ),
+		'description'   => esc_html__( 'Footer Widgets', 'autonomous' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
@@ -200,7 +213,7 @@ if ( ! function_exists( 'anomous_excerpt_more' ) ) {
 	 * @param string $more string with read more text.
 	 */
 	function anomous_excerpt_more( $more ) {
-		return ' ...<a class="read-more" href="' . get_permalink( get_the_ID() ) . '">' . __( 'Read More' , 'anomous' ) . '</a>';
+		return ' ...<a class="read-more" href="' . get_permalink( get_the_ID() ) . '">' . __( 'Read More' , 'autonomous' ) . '</a>';
 	}
 	add_filter( 'excerpt_more', 'anomous_excerpt_more' );
 }

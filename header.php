@@ -19,11 +19,11 @@
    .ho  `sdddhhhyhmmmdyyhhhdddddhhhyydmmmmy           oh.
   .h+          ``-dmmy.``         ``.ymmmmh            +h.
  `ho  `       /mmmmmmmmmmo       .dmmmmmmmms        ~~  oh`
- oy  .h`       ymmmmmmmmmm:       /mmmmmmmmmy`      -d.  yo
-.d-  ymy       `dmmmmmmmmmd.       ymmmmmmmmmh`     /my  -d.
-oy  -mmm+       /mmmmmmmmmmy       .dmmmmmmmmmy     ymm-  yo
-h+  +mmmd-       smmmmmmmmmm+       /mmmmmmmmmm-   :mmm+  +h
-d/  smmmmh`      `dmmmmmmmmmd`       smmmmmmmmm:  `dmmms  /d
+ oy  .h`       ymmmmmmmmmm:       /mmmmmmmmmy`      -d.  yo      ____  _           _     _                     
+.d-  ymy       `dmmmmmmmmmd.       ymmmmmmmmmh`     /my  -d.    / ___|| |__  _   _| |__ | |__   __ _ _ __ ___  
+oy  -mmm+       /mmmmmmmmmmy       .dmmmmmmmmmy     ymm-  yo    \___ \| '_ \| | | | '_ \| '_ \ / _` | '_ ` _ \ 
+h+  +mmmd-       smmmmmmmmmm+       /mmmmmmmmmm-   :mmm+  +h     ___) | | | | |_| | |_) | | | | (_| | | | | | |
+d/  smmmmh`      `dmmmmmmmmmd`       smmmmmmmmm:  `dmmms  /d    |____/|_| |_|\__,_|_.__/|_| |_|\__,_|_| |_| |_|
 d/  smmmmms       :mmmmmmmmm+        `dmmmmmmmd.  smmmms  /d
 h+  +mmmmmm/       smmmmmmmh  +       /mmmmmmmy  /mmmmm+  +h
 oy  -mmmmmmd.      `dmmmmmd- +m/       smmmmmd. .dmmmmm-  yo
@@ -40,7 +40,7 @@ oy  -mmmmmmd.      `dmmmmmd- +m/       smmmmmd. .dmmmmm-  yo
                ./oys+:.`            `.:+syo/.
                    `-/+osssssssssssso+/-`
 
-   Proudly powered by WordPress — http://wordpress.org/
+   Proudly powered by WordPress - http://wordpress.org/
    Designed and Developed By
 -->
 <!DOCTYPE html>

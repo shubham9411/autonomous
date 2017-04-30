@@ -560,6 +560,7 @@ nav .btn-primary a{
 }
 .widget_featured_profile .img-circle{
 	border: 5px solid #ddd;
+	margin: 0 auto;
 }
 .hod-info{
 	text-align: center;

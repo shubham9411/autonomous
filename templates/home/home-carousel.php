@@ -45,7 +45,7 @@ $post_count = $loop->post_count;
 						?>
 						<h4 data-animation="animated bounceInUp">
 						<?php
-							esc_html_e( $get_description );
+							echo esc_html( $get_description );
 						?>
 						</h4>
 						<?php

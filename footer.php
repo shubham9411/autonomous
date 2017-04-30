@@ -17,7 +17,7 @@
 	<footer class="footer" id="footer-second">
 		<div class="container">
 			<div class="copyright">
-				<p> B.T.K.I.T. Dwarahat © <?php echo esc_html( current_time( 'Y' ) );?>. All Rights Reserved.</p>
+				<p> B.T.K.I.T. Dwarahat &copy; <?php echo esc_html( current_time( 'Y' ) );?>. All Rights Reserved.</p>
 			</div>
 			<div class="social">
 				<div class="facebook"><a href="https://www.facebook.com/btkit.official" target="_blank"><i class="fa fa-facebook"></i><span class="sr-only">Facebook</span></a></div>
