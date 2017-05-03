@@ -22,7 +22,11 @@ get_header();
 			<?php
 				/* Start the Loop */
 				while ( have_posts() ) : the_post();
-					get_template_part( 'templates/post/content', '' );
+					if ( get_post_type( $post ) == 'gallery_anomous' ) :
+						get_template_part( 'templates/post/content', 'gallery' );
+					else :
+						get_template_part( 'templates/post/content', '' );
+					endif;
 					echo '<hr />';
 				endwhile; // End of the loop.
 			?>

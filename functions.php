@@ -293,7 +293,7 @@ function anomous_hof_render() {
 		<div class="owl-carousel" id="hof-carousel">
 			<?php
 			$title = get_the_title();
-			$title = explode(" ", $title)[0];
+			$title = htmlspecialchars_decode( $title );
 			$hof = array(
 				'post_type'        => 'hof_anomous',
 				'posts_per_page'   => 200,
@@ -314,7 +314,7 @@ function anomous_hof_render() {
 			<div class="hof">
 				<div class="hof-wrap">
 				<?php the_post_thumbnail( 'anomous-alumni-avatar', 'class=img-responsive' );?>
-				<div><span class="hof-title"><?php the_title(); ?></span></div>
+				<div class="hof-title"><span><?php the_title(); ?></span><div><?php echo get_field('batch'); ?></div></div>
 				</div>
 			</div>
 		<?php
@@ -350,21 +350,34 @@ function anomous_user_details( $user ) {
 }
 
 function my_acf_update_value( $value, $post_id, $field  ) {
-    // only do it to certain custom fields
-    if( $field['name'] == 'profile_department' ) {
-    	$group_ID = 351;
+	// only do it to certain custom fields
+	if( $field['name'] == 'profile_department' ) {
+		$group_ID = 351;
 		$fields = array();
 		$fields = apply_filters('acf/field_group/get_fields', $fields, $group_ID);
-        set_theme_mod( 'dept_choices', $fields[0]['choices']);
-    }
+		set_theme_mod( 'dept_choices', $fields[0]['choices'] );
+	}
 
 	// don't forget to return to be saved in the database
-    return $value;
-    
+	return $value;
 }
 
 // acf/update_value - filter for every field
 add_filter('acf/update_value', 'my_acf_update_value', 10, 3);
+
+/**
+ * Our Faculty does not love the word Howdy. :(
+ */
+function anomous_remove_howdy( $wp_admin_bar ) {
+    $my_account=$wp_admin_bar->get_node('my-account');
+    $newtitle = str_replace( 'Howdy,', 'Namaskar !', $my_account->title );
+    $wp_admin_bar->add_node( array(
+        'id' => 'my-account',
+        'title' => $newtitle,
+    ) );
+}
+add_filter( 'admin_bar_menu', 'anomous_remove_howdy',25 );
+
 /**
  * Template Tags file.
  */
@@ -385,6 +398,11 @@ require( 'inc/carousel-post-type.php' );
  * Alumni Post type
  */
 require( 'inc/alumni-post-type.php' );
+
+/**
+ * Alumni Post type
+ */
+require( 'inc/gallery-post-type.php' );
 
 /**
  * Notifications

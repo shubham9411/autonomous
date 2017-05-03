@@ -1,6 +1,6 @@
 <?php
 /**
- * Post type for gallery
+ * Post type for Carousel
  *
  * @package WordPress
  * @subpackage Autonomous

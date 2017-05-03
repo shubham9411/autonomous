@@ -24,9 +24,7 @@ get_header();
 			</div>
 			<div class="col-xs-12 col-sm-8 col-md-10 faculty-details">
 				<h2><b><?php echo esc_html( $curauth->display_name );?></b></h2>
-				<h4><?php echo esc_html( $user_data['faculty_position'][0] );?></h4>
-				<h4><?php echo esc_html( $user_data['faculty_qual'][0] );?></h4>
-				<h4><?php echo esc_html( $user_data['description'][0] );?></h4>
+				<?php anomous_user_details( $user_id ); ?>
 			</div>
 			<hr class="col-xs-12" />
 		</section>

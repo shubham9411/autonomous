@@ -40,7 +40,7 @@ class Featured_Profile extends WP_Widget {
 			$name = $dept_hod['display_name'];
 			$avatar_src = get_avatar_url( $dept_hod['ID'] , array( 'size' => 200 ) );
 			$desc = get_user_meta( $dept_hod['ID'] , 'description' )[0];
-			$specialization = get_user_meta( $dept_hod['ID'] , 'faculty_specialization' )[0];
+			$specialization = $value = get_field( 'profile_specialisation', 'user_'.$dept_hod['ID'] );
 			$auth_url = get_author_posts_url( $dept_hod['ID'] );
 			?>
 			<h4 class="text-center"><?php echo esc_html( $title );?></h4 class="text-center">
@@ -107,9 +107,8 @@ class Department_Menu extends WP_Widget {
 				<?php
 					global $post;
 					$dept_names = get_theme_mod( 'dept_choices', '' );
-					$title = get_the_title( $post->ID );
+					$title = htmlspecialchars_decode( get_the_title( $post->ID ) );
 					$fac_categ = array_search( "$title" , $dept_names );
-					$fac_categ  = substr( $fac_categ , 8 );
 				?>
 				<a id="link-modal-faculty" href="<?php echo get_the_permalink( get_page_by_title( 'Faculties' ) ) . '#' . esc_attr( $fac_categ );?>" data-toggle="modal" data-target="#modalFaculties" >Faculties</a>
 			</li>
@@ -147,11 +146,12 @@ class Department_Menu extends WP_Widget {
 						</div>
 						<div class="modal-body">
 							<?php
-								global $post, $dept_names;
-								$title = get_the_title( $post->ID );
+								global $post;
+								$dept_names = get_theme_mod( 'dept_choices', '' );
+								$title = htmlspecialchars_decode(get_the_title( $post->ID ));
 								$fac_categ = array_search( "$title" , $dept_names );
 								$fac = array(
-								'meta_key'     => 'dept',
+								'meta_key'     => 'profile_department',
 								'meta_value'   => $fac_categ,
 							);
 							$blog_user = get_users( $fac );
@@ -164,9 +164,7 @@ class Department_Menu extends WP_Widget {
 										</div>
 										<div class="col-sm-9">
 											<h4><b><?php echo esc_html( $user->display_name );?></b></h4> 
-											<h4><?php echo esc_html( get_user_meta( $user->ID, 'faculty_position' )[0] );?></h4>
-											<h4><?php echo esc_html( get_user_meta( $user->ID, 'faculty_qual' )[0] );?></h4>
-											<h4><?php echo esc_html( get_user_meta( $user->ID, 'faculty_specialization' )[0] );?></h4>
+											<?php anomous_user_details( $user->ID ); ?>
 										</div>
 									</div>
 								</a>

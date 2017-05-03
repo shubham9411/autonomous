@@ -8,8 +8,7 @@
  */
 
 get_header();
-// global $;
-$dept_names = (get_theme_mod( 'dept_choices', '' ));
+$dept_names = get_theme_mod( 'dept_choices', '' );
 $user_data = get_user_meta( 12 );
 ?> 
 <section id="faculty" class="faculty">

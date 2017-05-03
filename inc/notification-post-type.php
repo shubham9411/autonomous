@@ -1,6 +1,6 @@
 <?php
 /**
- * Post type for gallery
+ * Post type for Notification
  *
  * @package WordPress
  * @subpackage Autonomous

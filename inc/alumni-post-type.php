@@ -29,7 +29,7 @@ function anomous_alumnus_post() {
 	);
 
 	$args = array(
-		'labels'                   => $labels,
+		'labels'              => $labels,
 		'description'         => 'Alumni Profiles',
 		'public'              => true,
 		'show_ui'             => true,

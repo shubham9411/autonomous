@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Alumni
+ * Template Name: Alumni template
  *
  * @package WordPress
  * @subpackage Autonomous
