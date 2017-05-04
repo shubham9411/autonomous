@@ -43,6 +43,7 @@ if ( ! function_exists( 'anomous_setup' ) ) {
 		add_image_size( 'anomous-thumbnail-avatar', 100, 100, true );
 		add_image_size( 'anomous-alumni-avatar', 250, 250, true );
 		add_image_size( 'anomous-carousel', 1024, 768, true );
+		add_image_size( 'anomous-gallery-cover', 300, 400, true );
 
 		add_editor_style( array( 'css/editor-style.css' ) );
 
@@ -83,6 +84,10 @@ if ( ! function_exists( 'anomous_scripts' ) ) {
 			wp_enqueue_script( 'anomous-owl-js' , get_theme_file_uri( '/js/owl.carousel.min.js' ) , array( 'jquery' ) , '2.2.1' , true );
 
 			wp_enqueue_script( 'anomous-owl-carousel-main' , get_theme_file_uri( '/js/owl-carousel-main.js' ) , array( 'anomous-owl-js' ) , '2.2.1' , true );
+		}
+		if ( get_post_type( ) == 'gallery_anomous' ) {
+			wp_enqueue_script( 'masonry' );
+			wp_enqueue_script( 'masonry-main' , get_theme_file_uri( '/js/masonry-main.js' ) , array( 'masonry' ) , '1.0' , true );
 		}
 	}
 	add_action( 'wp_enqueue_scripts' , 'anomous_scripts' );

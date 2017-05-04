@@ -41,7 +41,7 @@ oy  -mmmmmmd.      `dmmmmmd- +m/       smmmmmd. .dmmmmm-  yo
                    `-/+osssssssssssso+/-`
 
    Proudly powered by WordPress - http://wordpress.org/
-   Designed and Developed By
+   Designed and Developed By Shubham Pandey with Rohit Juyal
 -->
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>

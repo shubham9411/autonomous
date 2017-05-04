@@ -20,7 +20,7 @@
 		<div class="header-search-box">
 			<form action="/" method="get">
 				<div class="form-group">
-					<div class="input">
+					<div class="search-input">
 						<input type="text" class="form-control top-search" name="s" id="search" value="" placeholder="Search" >
 						<i class="form-control-feedback glyphicon glyphicon-search"></i>
 					</div>
