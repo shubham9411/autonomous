@@ -14,8 +14,8 @@
 
 get_header();
 ?>
-<div class="container wrap">
-	<div id="primary" class="content-area col-xs-12 col-md-9">
+<div class="container-fluid wrap">
+	<div id="primary" class="content-area col-xs-12">
 		<main id="main" class="site-main" role="main">
 			<div class="grid" data-masonry='{ "itemSelector": ".grid-item", "columnWidth": 200 }'>
 			<?php if ( have_posts() ) : ?>
@@ -34,9 +34,6 @@ get_header();
 		</main>
 		<?php endif; ?>
 	</div><!-- #primary -->
-	<div class="col-xs-12 col-md-3">
-		<?php get_sidebar(); ?>
-	</div>
 </div><!-- .wrap -->
 
 <?php get_footer();

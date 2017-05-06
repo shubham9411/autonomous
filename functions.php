@@ -43,7 +43,7 @@ if ( ! function_exists( 'anomous_setup' ) ) {
 		add_image_size( 'anomous-thumbnail-avatar', 100, 100, true );
 		add_image_size( 'anomous-alumni-avatar', 250, 250, true );
 		add_image_size( 'anomous-carousel', 1024, 768, true );
-		add_image_size( 'anomous-gallery-cover', 300, 400, true );
+		add_image_size( 'anomous-gallery-cover', 250, 300, true );
 
 		add_editor_style( array( 'css/editor-style.css' ) );
 
