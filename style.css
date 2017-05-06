@@ -368,6 +368,7 @@ nav .btn-primary a{
 }
 #footer-widgets ul{
 	padding-left: 0;
+	font-size: 1.1em;
 }
 #footer-widgets .address li{
 	padding-left: 20px;
@@ -552,9 +553,9 @@ nav .btn-primary a{
 .navbar-header{
 	padding-top: 1.2em;
 }
-.widget_featured_profile{
+.widget_featured_profile,#secondary .widget{
 	border: 1px solid #ddd;
-	border-radius: 10px;
+	border-radius: 2px;
 	padding: 1em;
 	margin-top: 18px;
 }
@@ -870,6 +871,9 @@ nav .btn-primary a{
 		color: #388e3c;
 		background: #fff;
 	}
+	.hof-title {
+		font-size: 1em;
+	}
 }
 /*--------------------------------------------------phone-------------------------------------------------*/
 
@@ -929,5 +933,16 @@ nav .btn-primary a{
 	#menu-top li ul li a:focus{
 		color: #388e3c;
 		background: #fff;
+	}
+	.hof-title {
+		display: block;
+		position: fixed;
+		bottom: 0;
+		background: rgba(0, 0, 0, 0.5);
+		width: 100%;
+		font-style: italic;
+		font-size: 1em;
+		padding: 10px;
+		color: #fff;
 	}
 }

@@ -21,7 +21,7 @@ if ( ! is_active_sidebar( 'footer' ) ) {
 			</li>
 			<li>
 				<i class="fa fa-envelope"></i>
-				<strong>Email: </strong> director@kecua.ac.in
+				<strong>Email: </strong> <a href="mailto:director@kecua.ac.in" style="color:#ccc">director@kecua.ac.in</a>
 			</li>
 			<li>
 				<i class="fa fa-globe"></i>
