@@ -85,10 +85,6 @@ if ( ! function_exists( 'anomous_scripts' ) ) {
 
 			wp_enqueue_script( 'anomous-owl-carousel-main' , get_theme_file_uri( '/js/owl-carousel-main.js' ) , array( 'anomous-owl-js' ) , '2.2.1' , true );
 		}
-		if ( get_post_type( ) == 'gallery_anomous' ) {
-			wp_enqueue_script( 'masonry' );
-			wp_enqueue_script( 'masonry-main' , get_theme_file_uri( '/js/masonry-main.js' ) , array( 'masonry' ) , '1.0' , true );
-		}
 	}
 	add_action( 'wp_enqueue_scripts' , 'anomous_scripts' );
 }
@@ -374,14 +370,31 @@ add_filter('acf/update_value', 'my_acf_update_value', 10, 3);
  * Our Faculty does not love the word Howdy. :(
  */
 function anomous_remove_howdy( $wp_admin_bar ) {
-    $my_account=$wp_admin_bar->get_node('my-account');
-    $newtitle = str_replace( 'Howdy,', 'Namaskar !', $my_account->title );
-    $wp_admin_bar->add_node( array(
-        'id' => 'my-account',
-        'title' => $newtitle,
-    ) );
+	$my_account=$wp_admin_bar->get_node('my-account');
+	$newtitle = str_replace( 'Howdy,', 'Namaskar !', $my_account->title );
+	$wp_admin_bar->add_node( array(
+		'id' => 'my-account',
+		'title' => $newtitle,
+	) );
 }
 add_filter( 'admin_bar_menu', 'anomous_remove_howdy',25 );
+
+/**
+ * Function for excluding Some of the Categories from less privilage users
+ * 
+ * @param  string $exclusions String contains all the excluded terms sql
+ * @param  array $args        Array 
+ * @return string            
+ */
+function anomous_list_terms_exclusions( $exclusions, $args ) {
+	global $pagenow;
+	if (in_array($pagenow,array('post.php','post-new.php')) && 
+		!current_user_can('see_special_cats')) {
+		$exclusions = " {$exclusions} AND t.slug NOT IN ( 'events','news', 'notices', 'announcements' )";
+	}
+	return $exclusions;
+}
+add_filter('list_terms_exclusions', 'anomous_list_terms_exclusions', 10, 2);
 
 /**
  * Template Tags file.

@@ -32,14 +32,14 @@ get_header();
 			<?php
 			if ( get_next_posts_link() ) :
 			?>
-			<li class="btn btn-primary alignleft">
+			<li class="btn btn-info alignleft">
 				<?php next_posts_link( 'Previous' ); ?>
 			</li>
 			<?php
 			endif;
 			if ( get_previous_posts_link() ) :
 			?>
-			<li class="btn btn-primary alignright">
+			<li class="btn btn-info alignright">
 				<?php previous_posts_link( 'Next' ); ?>
 			</li>
 			<?php

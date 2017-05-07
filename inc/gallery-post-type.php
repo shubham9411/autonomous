@@ -44,6 +44,16 @@ function anomous_gallery_post() {
 			'thumbnail',
 			'editor',
 		),
+		'capabilities' => array(
+			'edit_post'          => 'hod_priv',
+			'read_post'          => 'hod_priv',
+			'delete_post'        => 'hod_priv',
+			'edit_posts'         => 'hod_priv',
+			'edit_others_posts'  => 'hod_priv',
+			'delete_posts'       => 'hod_priv',
+			'publish_posts'      => 'hod_priv',
+			'read_private_posts' => 'hod_priv'
+		),
 	);
 
 	register_post_type( 'gallery_anomous', $args );

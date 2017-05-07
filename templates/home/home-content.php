@@ -27,7 +27,7 @@ foreach ($tab_category as $key => $value) {
 	?>
 		<div class="tab-pane fade in <?php echo esc_html( $active );?>" id="<?php echo esc_attr( $category->slug ); ?>">
 			<?php anomous_tabs_home( $category->slug ); ?>
-			<p class="text-right nounderline"><a href="<?php echo esc_url( get_category_link( $category->term_id ) );?>" title="Notices" class="btn btn-primary">Read More</a></p>
+			<p class="text-right nounderline"><a href="<?php echo esc_url( get_category_link( $category->term_id ) );?>" title="Notices" class="btn btn-info">Read More</a></p>
 		</div>
 	<?php
 	}

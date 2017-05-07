@@ -322,6 +322,10 @@ textarea:focus{
 	background-color: rgba(0, 0, 0, 0.4 );
 	padding: 1em;
 }
+#primary ul{
+	list-style: initial;
+	padding-left: 10px;
+}
 
 /*======PAgination ========*/
 .pagination{
@@ -447,7 +451,7 @@ nav .btn-primary a{
 	font-size: 1.3em;
 }
 .sidebar{
-	padding-top: 13px;
+	margin-bottom: 20px;
 }
 #faculty .card,
 #alumni .card{
@@ -488,11 +492,13 @@ nav .btn-primary a{
 	width: 150px;
 	-webkit-transition: width 0.2s ease-in-out;
 	transition: width 0.4s ease-in-out;
-	background: #388e3c;
-	color: #fff;
+	background: #029acf;
+	color: #000;
+	background: white;
+    color: black;
 }
 .header-search-box .glyphicon{
-	color: white;
+	color: black;
 }
 .header-search-box{
 	float: right;
@@ -501,19 +507,20 @@ nav .btn-primary a{
 }
 /*********** Temp design ***********/
 #masthead{
-	/*background: rgba(102, 51, 153, 0.24);*/
-	background: #43a047;
+	background: white;
+
 }
-#site-title a{
-	color: white;
+/*#site-title a{
+	/*color: white;
 }
 #site-description{
-	color: white;
+	/*color: white;
+}*/
+.custom-image a img{
+	width: 80%;
 }
 #site-header-nav{
-	background: rgba(102, 51, 153, 0.24);
-	background: -webkit-linear-gradient(#e72510, #d9230f 6%, #cb210e);
-	background: #388e3c;
+	background: #029acf;
 	border: 0;
 	border-radius: 0;
 }
@@ -521,13 +528,13 @@ nav .btn-primary a{
 #menu-top li a:active,
 #menu-top li a:hover{
 	background: #fff;
-	color: #388e3c;
+	color: #029acf;
 }
 #menu-top li a{
 	color: white;
 }
 #menu-top li.active a{
-	color: #388e3c;
+	color: #029acf;
 	background: #fff;
 }
 .navbar-default .navbar-nav>li>a{
@@ -536,15 +543,13 @@ nav .btn-primary a{
 .navbar-default .navbar-nav>li>a:hover,
 .navbar-default .navbar-nav>li.active>a:hover{
 	color: rgba(255, 255, 255, 0.8);
-	/*text-shadow: black 3px 5px 1px;*/
 }
 .navbar-default .navbar-nav>li.active>a{
 	color: rgba(255, 255, 255, 0.8);
-	/*text-shadow: black 3px 5px 1px;*/
 }
 .navbar-default .navbar-nav li ul .active a{
 	color: #fff;
-	background: #388e3c;
+	background: #029acf;
 }
 .navbar-default .navbar-brand,
 .navbar-default .navbar-brand:hover{
@@ -577,17 +582,17 @@ nav .btn-primary a{
 	opacity: 0.7;
 }
 .modal {
-	display: none; /* Hidden by default */
-	position: fixed; /* Stay in place */
-	z-index: 999999; /* Sit on top */
-	padding-top: 100px; /* Location of the box */
+	display: none;
+	position: fixed;
+	z-index: 999999;
+	padding-top: 100px;
 	left: 0;
 	top: 0;
-	width: 100%; /* Full width */
-	height: 100%; /* Full height */
-	overflow: auto; /* Enable scroll if needed */
-	background-color: rgb(0,0,0); /* Fallback color */
-	background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+	width: 100%; 
+	height: 100%; 
+	overflow: auto;
+	background-color: rgb(0,0,0); 
+	background-color: rgba(0,0,0,0.9);
 }
 .modal-content {
 	margin: auto;
@@ -679,14 +684,14 @@ nav .btn-primary a{
 #menu-top li ul li a:active,
 #menu-top li ul li a:focus{
 	color: #fff;
-	background: #388e3c;
+	background: #029acf;
 }
 #menu-top li ul li a{
-	color: #388e3c;
+	color: #029acf;
  }
  #menu-top li ul li.active a{
 	color: #fff;
-	background: #388e3c;
+	background: #029acf;
 }
 .hof-title{
 	display: none;
@@ -788,25 +793,26 @@ nav .btn-primary a{
 	.top-search{
 		width: 20px;
 		border: 0;
-		background: #43a047;
 		box-shadow: initial;
 		cursor: pointer;
 		-webkit-box-shadow: initial;
 		-webkit-transition: width 0.2s ease-in-out;
 		transition: width 0.4s ease-in-out;
-		color: #fff;
+		color: #000;
+		background: white;
 	}
 	#search:focus{
 		border: 0;
-		background: #388e3c;
+		background: white;
 		box-shadow: initial;
 		cursor: pointer;
 		box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
 		-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
-		    border: 1px solid #dddddd;
+		border: 1px solid #dddddd;
 	}
-	.glyphicon-search{
+	.header-search-box .glyphicon{
 		cursor: pointer;
+		color: black;
 	}
 }
 /*--------------------------------------------------phone-------------------------------------------------*/
@@ -868,7 +874,7 @@ nav .btn-primary a{
 	#menu-top li ul li a:hover,
 	#menu-top li ul li a:active,
 	#menu-top li ul li a:focus{
-		color: #388e3c;
+		color: #029acf;
 		background: #fff;
 	}
 	.hof-title {
@@ -931,7 +937,7 @@ nav .btn-primary a{
 	#menu-top li ul li a:hover,
 	#menu-top li ul li a:active,
 	#menu-top li ul li a:focus{
-		color: #388e3c;
+		color: #029acf;
 		background: #fff;
 	}
 	.hof-title {

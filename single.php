@@ -25,8 +25,8 @@ get_header(); ?>
 					<hr class="gap col-xs-12" />
 					<?php
 					the_post_navigation( array(
-						'prev_text' => '<span class="sr-only">' . __( 'Previous Post', 'autonomous' ) . '</span><span aria-hidden="true" class="btn btn-primary nav-subtitle">' . __( 'Previous', 'autonomous' ) . '</span>',
-						'next_text' => '<span class="sr-only">' . __( 'Next Post', 'autonomous' ) . '</span><span aria-hidden="true" class="btn btn-primary nav-subtitle">' . __( 'Next', 'autonomous' ) . '</span>',
+						'prev_text' => '<span class="sr-only">' . __( 'Previous Post', 'autonomous' ) . '</span><span aria-hidden="true" class="btn btn-info nav-subtitle">' . __( 'Previous', 'autonomous' ) . '</span>',
+						'next_text' => '<span class="sr-only">' . __( 'Next Post', 'autonomous' ) . '</span><span aria-hidden="true" class="btn btn-info nav-subtitle">' . __( 'Next', 'autonomous' ) . '</span>',
 					) );
 					?>
 					<div class="clearfix"></div>

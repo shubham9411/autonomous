@@ -15,11 +15,8 @@ get_header();
 	</div>
 </section>
 <main class="container main">
-	<div class="col-xs-12 col-md-9 home-main">
+	<div class="col-xs-12 home-main">
 		<?php get_template_part( 'templates/home/home' , 'content' ); ?>
-	</div>
-	<div class="col-xs-12 col-md-3 sidebar nounderline">
-		<?php get_sidebar(); ?>
 	</div>
 </main>
 <?php get_footer(); ?>

@@ -43,6 +43,16 @@ function hof_carousel_post() {
 			'title',
 			'thumbnail',
 		),
+		'capabilities' => array(
+			'edit_post'          => 'hod_priv',
+			'read_post'          => 'hod_priv',
+			'delete_post'        => 'hod_priv',
+			'edit_posts'         => 'hod_priv',
+			'edit_others_posts'  => 'hod_priv',
+			'delete_posts'       => 'hod_priv',
+			'publish_posts'      => 'hod_priv',
+			'read_private_posts' => 'hod_priv'
+		),
 	);
 
 	register_post_type( 'hof_anomous', $args );
@@ -88,7 +98,16 @@ function hof_taxonomy() {
 		'query_var'         => true,
 		'rewrite'           => array( 'slug' => 'hall-of-fame','with_front' => false ),
 		'query_var'         => true,
-		'capabilities'      => array(),
+		'capabilities' => array(
+			'edit_post'          => 'update_core',
+			'read_post'          => 'update_core',
+			'delete_post'        => 'update_core',
+			'edit_posts'         => 'update_core',
+			'edit_others_posts'  => 'update_core',
+			'delete_posts'       => 'update_core',
+			'publish_posts'      => 'update_core',
+			'read_private_posts' => 'update_core'
+		),
 	);
 
 	register_taxonomy( 'hof-student', array( 'hof_anomous' ), $args );
