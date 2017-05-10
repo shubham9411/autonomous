@@ -76,6 +76,7 @@ textarea:focus{
 	margin-top: 0;
 }
 #site-title a{
+	font-weight: bold;
 	font-size: 0.5em;
 }
 #site-description{
@@ -762,6 +763,12 @@ nav .btn-primary a{
 .pagination-btn a,
 .pagination-btn a:hover{
 	color: white;
+}
+.widget.widget_department_menu ul{
+	padding-left: 1.5em;
+}
+.widget.widget_department_menu ul>li{
+	list-style-type: disc;
 }
 /*========== Media Queries ============*/
 /*--------------------------------------------------Large-------------------------------------------------*/

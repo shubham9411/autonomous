@@ -24,7 +24,7 @@
 		?>
 	</header><!-- .entry-header -->
 
-	<?php if ( '' !== get_the_post_thumbnail() && ! is_single() ) : ?>
+	<?php if ( '' !== get_the_post_thumbnail() && is_single() ) : ?>
 		<div class="post-thumbnail">
 			<a href="<?php the_permalink(); ?>">
 				<?php the_post_thumbnail( 'autonomous-featured-image' ); ?>
@@ -34,7 +34,7 @@
 
 	<div class="entry-content">
 		<?php
-			if ( ! is_home() && ! is_search() ) :
+			if ( is_single() ) :
 		?>
 		<p class="entry-date">
 		<?php
