@@ -10,7 +10,6 @@
 			autoplayTimeout:2000,
 			autoplayHoverPause:true
 		});
-		console.log('lol480')
 	} else if( width < 767) {
 		owl.owlCarousel({
 			items:3,
@@ -20,7 +19,6 @@
 			autoplayTimeout:2000,
 			autoplayHoverPause:true
 		});
-		console.log('lol767')
 	} else {
 		owl.owlCarousel({
 			items:4,

@@ -289,27 +289,30 @@ function alumni_the_excerpt() {
 function anomous_hof_render() {
 	?>
 	<section>
+	<?php
+	$title = get_the_title();
+	$title = htmlspecialchars_decode( $title );
+	$hof = array(
+		'post_type'        => 'hof_anomous',
+		'posts_per_page'   => 200,
+		'tax_query' => array(
+			'relation'  => 'AND',
+				array(
+					'taxonomy'         => 'hof-student',
+					'field'            => 'name',
+					'terms'            => array( $title ),
+					'include_children' => true,
+					'operator'         => 'IN'
+				),
+			),
+	);
+	$loop = new WP_Query( $hof );
+	if ( $loop->have_posts() ) {
+	?>
 		<hr />
 		<h1><u>Hall of Fame</u></h1>
 		<div class="owl-carousel" id="hof-carousel">
 			<?php
-			$title = get_the_title();
-			$title = htmlspecialchars_decode( $title );
-			$hof = array(
-				'post_type'        => 'hof_anomous',
-				'posts_per_page'   => 200,
-				'tax_query' => array(
-					'relation'  => 'AND',
-						array(
-							'taxonomy'         => 'hof-student',
-							'field'            => 'name',
-							'terms'            => array( $title ),
-							'include_children' => true,
-							'operator'         => 'IN'
-						),
-					),
-			);
-			$loop = new WP_Query( $hof );
 			if ( $loop->have_posts() ) : while ( $loop->have_posts() ) : $loop->the_post();
 			?>
 			<div class="hof">
@@ -323,6 +326,9 @@ function anomous_hof_render() {
 		endif;
 			?>
 		</div>
+		<?php
+		}
+	?>
 	</section>
 	<?php
 }

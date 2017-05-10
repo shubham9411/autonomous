@@ -17,7 +17,7 @@ get_header();
 <div class="container-fluid wrap">
 	<div id="primary" class="content-area col-xs-12">
 		<main id="main" class="site-main" role="main">
-			<div class="grid" data-masonry='{ "itemSelector": ".grid-item", "columnWidth": 200 }'>
+			<div class="grid">
 			<?php if ( have_posts() ) : ?>
 				<?php
 					/* Start the Loop */

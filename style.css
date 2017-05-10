@@ -70,6 +70,7 @@ textarea:focus{
 #site-header-nav{
 	margin-bottom: 0;
 	z-index: 99999;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
 }
 #site-title{
 	margin-top: 0;
@@ -757,6 +758,10 @@ nav .btn-primary a{
 	text-align: center;
 	font-weight: bold;
 	text-shadow: black 3px 4px 4px;
+}
+.pagination-btn a,
+.pagination-btn a:hover{
+	color: white;
 }
 /*========== Media Queries ============*/
 /*--------------------------------------------------Large-------------------------------------------------*/
