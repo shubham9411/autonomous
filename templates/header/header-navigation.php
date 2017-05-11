@@ -29,9 +29,6 @@
 					'walker' => new Walker_Nav_top(),
 				);
 				wp_nav_menu( $args );
-				if ( anomous_is_alumni() ) {
-					anomous_alumni_nav();
-				}
 				?>
 		</div><!--.nav-collapse -->
 	</div>

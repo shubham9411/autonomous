@@ -19,12 +19,12 @@ get_header();
 		$loop = new WP_Query( $alumni );
 		if ( $loop->have_posts() ) : while ( $loop->have_posts() ) : $loop->the_post();
 		?>
-		<a href="<?php the_permalink();?>">
+		<a href="#alum">
 			<div class="card">
 				<?php the_post_thumbnail( 'anomous-medium-avatar' , 'class=img-responsive' ); ?>
 				<div class="alumni-details">
 					<h4><b><?php the_title();?></b></h4>
-					<h5><b><?php alumni_the_excerpt();?></b></h5>
+					<!-- <h5><b><?php alumni_the_excerpt();?></b></h5> -->
 				</div>
 			</div>
 		</a>
@@ -38,6 +38,13 @@ get_header();
 				'link_after'  => '</span>',
 		) );
 		?>
+	</div>
+</section>
+<section>
+	<div class="text-center" style="margin-top: 2em;margin-bottom: 2em">
+		<h1 >And Many More to Come!</h1>
+		<h2>We are collecting our Alumni Profiles.</h2>
+		<p><b>Students/Alumni <a href="https://btkit.almaconnect.com/signup" target="_blank">Sign Up!</a> here</b></p>
 	</div>
 </section>
 <div class="modals">

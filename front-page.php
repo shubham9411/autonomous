@@ -9,14 +9,21 @@
 
 get_header();
 ?>
-<section class="container">
-	<div id="carousel">
-		<?php get_template_part( 'templates/home/home' , 'carousel' ); ?>
+<div class="container">
+	<div class="col-xs-12 col-sm-9">
+		<section class="">
+			<div id="carousel">
+				<?php get_template_part( 'templates/home/home' , 'carousel' ); ?>
+			</div>
+		</section>
+		<main class=" main">
+			<div class="col-xs-12 home-main">
+				<?php get_template_part( 'templates/home/home' , 'content' ); ?>
+			</div>
+		</main>
 	</div>
-</section>
-<main class="container main">
-	<div class="col-xs-12 home-main">
-		<?php get_template_part( 'templates/home/home' , 'content' ); ?>
+	<div class="col-xs-12 col-sm-3">
+		<?php get_sidebar();?>
 	</div>
-</main>
+</div>
 <?php get_footer(); ?>

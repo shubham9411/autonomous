@@ -16,15 +16,22 @@ $user_data = get_user_meta( 12 );
 	<?php
 	foreach ( $dept_names as $key => $dept ) {
 		$args = array(
-			'meta_key'     => 'profile_department',
-			'meta_value'   => $key,
+			'meta_query' => array(
+			array(
+					'key'     => 'profile_department',
+					'value'   => $key,
+					'compare' => '=='
+				),
+			),
+			'orderby'      => 'meta_value_num',
+			'meta_key'     => 'profile_experience',
 			'fields'       => 'id',
+			'order'        => 'DSC',
 		);
 		$blog_user = get_users( $args );
 		if ( 0 != count( $blog_user ) ) {
-			$fac_categ = substr( $key , 8 );
 		?>
-			<div id="<?php echo esc_attr( $fac_categ );?>" class="col-xs-12 well"><h2><?php echo esc_html( $dept ); ?></h2></div>
+			<div id="<?php echo esc_attr( $key );?>" class="col-xs-12 well"><h2><?php echo esc_html( $dept ); ?></h2></div>
 		<?php
 		}
 		foreach ( $blog_user as $user ) {
@@ -32,7 +39,7 @@ $user_data = get_user_meta( 12 );
 			?>
 			<a href="<?php echo esc_url( get_author_posts_url( $user ) );?>">
 				<div class="card">
-					<img src="<?php echo esc_url( get_avatar_url( $user , array( 'size' => 250 ) ) );?>" alt="Avatar" class="img-responsive">
+					<img src="<?php echo esc_url( get_field( 'profile_picture', 'user_'.$user) );?>" alt="Avatar" class="img-responsive">
 					<div class="faculty-details">
 						<h4><b><?php echo esc_html( get_the_author_meta('display_name',$user) );?></b></h4> 
 						<?php anomous_user_details( $user ); ?>

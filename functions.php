@@ -249,18 +249,6 @@ function anomous_is_alumni() {
 }
 
 /**
- * Function for alumni login/signin navbar
- */
-function anomous_alumni_nav() {
-	?>
-	<ul class="nav navbar-nav navbar-right">
-		<li><a href="https://btkit.almaconnect.com/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-		<li><a href="https://btkit.almaconnect.com/signin"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-	</ul>
-	<?php
-}
-
-/**
  * Function for returning Alumni excerpt
  */
 function alumni_the_excerpt() {
@@ -343,7 +331,7 @@ function anomous_user_details( $user ) {
 	{
 		foreach( $fields as $field )
 		{
-			if ( $field['name'] == 'profile_department' ) {
+			if ( $field['name'] == 'profile_department' || $field['name'] == 'profile_picture' ) {
 				continue;
 			}
 			$value = get_field( $field['name'], 'user_'.$user );
@@ -356,13 +344,13 @@ function anomous_user_details( $user ) {
 	}
 }
 
-function my_acf_update_value( $value, $post_id, $field  ) {
+function anomous_acf_update_value( $value, $post_id, $field  ) {
 	// only do it to certain custom fields
 	if( $field['name'] == 'profile_department' ) {
 		$group_ID = 351;
 		$fields = array();
 		$fields = apply_filters('acf/field_group/get_fields', $fields, $group_ID);
-		set_theme_mod( 'dept_choices', $fields[0]['choices'] );
+		set_theme_mod( 'dept_choices', $fields[1]['choices'] );
 	}
 
 	// don't forget to return to be saved in the database
@@ -370,7 +358,7 @@ function my_acf_update_value( $value, $post_id, $field  ) {
 }
 
 // acf/update_value - filter for every field
-add_filter('acf/update_value', 'my_acf_update_value', 10, 3);
+add_filter('acf/update_value', 'anomous_acf_update_value', 10, 3);
 
 /**
  * Our Faculty does not love the word Howdy. :(
