@@ -38,14 +38,15 @@ class Featured_Profile extends WP_Widget {
 			$title = get_field( 'user_profile' );
 			$dept_hod = get_field( 'featured_profile' );
 			$name = $dept_hod['display_name'];
-			$avatar_src = get_avatar_url( $dept_hod['ID'] , array( 'size' => 200 ) );
 			$desc = get_user_meta( $dept_hod['ID'] , 'description' )[0];
 			$specialization = $value = get_field( 'profile_specialisation', 'user_'.$dept_hod['ID'] );
 			$auth_url = get_author_posts_url( $dept_hod['ID'] );
+			$image = get_field( 'profile_picture', 'user_'.$dept_hod['ID'] );
+			$image_obj = wp_get_attachment_image( $image, 'anomous-alumni-avatar', "", array( "class" => "img-responsive img-circle") );
 			?>
 			<h4 class="text-center"><?php echo esc_html( $title );?></h4 class="text-center">
 			<a href="<?php echo esc_url( $auth_url );?>" class="hod-section">
-				<img src="<?php echo esc_html( $avatar_src );?>" class="img-responsive img-circle" alt="Avatar" >
+				<?php echo $image_obj;?>
 				<div class="hod-info">
 					<h4 class=""><strong><?php echo esc_html( $name ); ?></strong></h4>
 					<h4 class=""><?php echo esc_html( $specialization ); ?></h4>

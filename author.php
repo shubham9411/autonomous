@@ -17,10 +17,12 @@ get_header();
 			$curauth = ( isset( $_GET['author_name'] ) ) ? get_user_by( 'slug' , $author_name ) : get_userdata( intval( $author ) );
 			$user_id = $curauth->ID;
 			$user_data = get_user_meta( $user_id );
+			$image = get_field( 'profile_picture', 'user_'.$user_id );
+			$image_obj = wp_get_attachment_image( $image, 'anomous-alumni-avatar', "", array( "class" => "img-responsive img-circle") );
 			?>
 			<hr />
 			<div class="col-xs-12 col-sm-3 col-md-2 author-avatar">
-				<img src="<?php echo esc_url( get_avatar_url( $user_id , array( 'size' => 250 ) ) );?>" alt="Faculty Avatar" class="img-responsive img-circle">
+				<?php echo $image_obj;?>
 			</div>
 			<div class="col-xs-12 col-sm-8 col-md-10 faculty-details">
 				<h2><b><?php echo esc_html( $curauth->display_name );?></b></h2>

@@ -38,7 +38,7 @@ $post_count = $loop->post_count;
 		<div class="item slide slide<?php echo ( 0 == $i ) ? esc_attr( ( $i + 1 ) . ' active' ) : esc_attr( ( $i + 1 ) ); //XSS: ok?>">
 			<div class="row">
 				<div class="container">
-					<div class="text-left carousel-content bounceInDown">
+					<div class="text-left carousel-content bounceInDown text-message">
 						<h3 data-animation="animated bounceInDown"><?php the_title(); ?></h3>
 						<?php
 						if ( ! empty( $get_description ) ) {

@@ -77,6 +77,8 @@ if ( ! function_exists( 'anomous_scripts' ) ) {
 		wp_enqueue_script( 'anomous-main' , get_theme_file_uri( '/js/main.js' ) , array( 'jquery', 'anomous-bootstrap-js' ) , '1.0' , true );
 
 		wp_enqueue_script( 'anomous-bootstrap-js' , get_theme_file_uri( '/js/bootstrap.js' ) , array( 'jquery' ) , '3.3.7' , true );
+		
+		wp_enqueue_script( 'anomous-news-ticker' , get_theme_file_uri( '/js/news-ticker.min.js' ) , array( 'jquery' ) , '3.3.7' , true );
 
 		if ( anomous_is_dept() ) {
 			wp_enqueue_style( 'anomous-owl-css' , get_theme_file_uri( '/css/owl.carousel.min.css' ) , array() , '2.2.1' , 'all' );

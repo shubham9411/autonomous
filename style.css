@@ -71,6 +71,7 @@ textarea:focus{
 	margin-bottom: 0;
 	z-index: 99999;
 	/*box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);*/
+	font-size: 1.2em;
 }
 #site-title{
 	margin-top: 0;
@@ -345,7 +346,7 @@ nav .btn-primary a{
 }
 /**======Footer Widgets*/
 #footer-main{
-	background-color: #333;
+	background-color: #222;
 	color: #ccc;
 }
 #footer-main a{
@@ -370,7 +371,7 @@ nav .btn-primary a{
 	margin-top: 23px;
 }
 #footer-second{
-	background-color: #424242;
+	background-color: #333;
 }
 #footer-widgets ul{
 	padding-left: 0;
@@ -663,6 +664,7 @@ nav .btn-primary a{
 	padding: 0.4em;
 	background-color:#1976d2;
 	color: white;
+	font-size: 1.1em;
 }
 .white-text{
 	color: white;
@@ -769,6 +771,28 @@ nav .btn-primary a{
 }
 .widget.widget_department_menu ul>li{
 	list-style-type: disc;
+}
+.update-title{
+	margin-top: 9px;
+}
+.update-marquee .list-group{
+	margin-bottom: 0;
+}
+.update-wrap{
+	padding: 0;
+	border-bottom: 2px #ddd solid;
+	height: 35em;
+	overflow: hidden;
+}
+.update-wrap .read-more{
+	display: none;
+}
+.fac-avatar{
+	width: 250px;
+	height: 250px;
+}
+.text-message{
+	margin-top: 15em;
 }
 /*========== Media Queries ============*/
 /*--------------------------------------------------Large-------------------------------------------------*/
