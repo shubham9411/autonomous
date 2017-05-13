@@ -15,6 +15,7 @@ $user_data = get_user_meta( 12 );
 	<div class="container faculty-wrap">
 	<?php
 	foreach ( $dept_names as $key => $dept ) {
+		$except = get_user_by( 'email', 'shubham9411@gmail.com')->ID;
 		$args = array(
 			'meta_query' => array(
 			array(
@@ -27,6 +28,7 @@ $user_data = get_user_meta( 12 );
 			'meta_key'     => 'profile_experience',
 			'fields'       => 'id',
 			'order'        => 'DSC',
+			'exclude'       => array($except),
 		);
 		$blog_user = get_users( $args );
 		if ( 0 != count( $blog_user ) ) {

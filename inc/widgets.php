@@ -147,21 +147,31 @@ class Department_Menu extends WP_Widget {
 						</div>
 						<div class="modal-body">
 							<?php
-								global $post;
-								$dept_names = get_theme_mod( 'dept_choices', '' );
-								$title = htmlspecialchars_decode(get_the_title( $post->ID ));
-								$fac_categ = array_search( "$title" , $dept_names );
-								$fac = array(
-								'meta_key'     => 'profile_department',
-								'meta_value'   => $fac_categ,
+							global $post;
+							$dept_names = get_theme_mod( 'dept_choices', '' );
+							$title = htmlspecialchars_decode(get_the_title( $post->ID ));
+							$fac_categ = array_search( "$title" , $dept_names );
+							$fac = array(
+								'meta_query' => array(
+								array(
+										'key'     => 'profile_department',
+										'value'   => $fac_categ,
+										'compare' => '=='
+									),
+								),
+								'orderby'      => 'meta_value_num',
+								'meta_key'     => 'profile_experience',
+								'order'        => 'DSC',
 							);
 							$blog_user = get_users( $fac );
 							foreach ( $blog_user as $user ) {
+								$image = get_field( 'profile_picture', 'user_'.$user->ID );
+								$image_obj = wp_get_attachment_image( $image, 'anomous-alumni-avatar', "", array( "class" => "img-responsive") );
 								?>
 								<a href="<?php echo esc_url( get_author_posts_url( $user->ID ) );?>" class="list-group-item">
 									<div class="row">
 										<div class="col-sm-3">
-											<img src="<?php echo esc_url( get_avatar_url( $user->ID , array( 'size' => 250 ) ) );?>" alt="Avatar" class="img-responsive">
+											<?php echo $image_obj;?>
 										</div>
 										<div class="col-sm-9">
 											<h4><b><?php echo esc_html( $user->display_name );?></b></h4> 

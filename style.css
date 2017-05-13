@@ -66,6 +66,9 @@ textarea:focus{
 	margin-left: auto;
 	margin-right: auto;
 }
+#primary{
+	font-size: 1.2em;
+}
 /*========Masthead=========*/
 #site-header-nav{
 	margin-bottom: 0;
