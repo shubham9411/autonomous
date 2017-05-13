@@ -778,8 +778,6 @@ nav .btn-primary a{
 }
 .update-title{
 	margin-top: 9px;
-	-webkit-text-fill-color:transparent;
-	-webkit-text-stroke: 2px #f44336;
 	font-size: 33px;
 }
 .update-marquee .list-group{
@@ -927,7 +925,7 @@ nav .btn-primary a{
 	}
 	.update-wrap{
 		height: initial;
-		overflow: auto;
+		overflow: initial;
 	}
 }
 /*--------------------------------------------------phone-------------------------------------------------*/
@@ -1005,7 +1003,7 @@ nav .btn-primary a{
 	}
 	.update-wrap{
 		height: initial;
-		overflow: auto;
+		overflow: initial;
 	}
 	.front-page{
 		padding: 0;
@@ -1061,13 +1059,20 @@ nav .btn-primary a{
 	border:0px;
 }
 .update-wrap .list-group-item.new-post-red {
-	border: 0px;
-	background-color: #f44336;
+	/*background: tomato;
 	color: white;
+	border: 0;*/
 }
-.update-wrap .list-group-item:hover{
-	color: #f44336 !important;
-	background: white;
+.update-wrap .list-group-item.new-post-red:hover {
+	/*background: white;
+	color: #666;*/
+}
+.update-wrap .list-group-item.new-post-red .list-group-item-heading{
+	color: red;
+	font-weight: bold;
+}
+.update-wrap .list-group-item.new-post-red:hover .list-group-item-heading{
+	color: #555;
 }
 .nav-tabs{
 	border: 0;

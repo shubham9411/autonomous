@@ -1,6 +1,7 @@
 jQuery( document ).ready(function() {
 	pillsResponsive();
 	faculty_modal();
+	scroller();
  });
 jQuery( window ).scroll(function() {
 	navbarAffix();
