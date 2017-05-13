@@ -8,7 +8,16 @@ jQuery( window ).scroll(function() {
 jQuery( window ).resize(function() {
 	pillsResponsive();
 	faculty_modal();
+	scroller();
  });
+function scroller(){
+	jQuerywindow = jQuery( window );
+	if ( jQuerywindow.width() > 768 ) {
+	 jQuery('.update-marquee').easyTicker({
+		 direction: 'up'
+	 });
+ }
+}
 function navbarAffix() {
 	if ( jQuery( '#site-header-nav' ).hasClass( 'affix' ) ) {
 		if ( ! jQuery( '#site-header-nav' ).hasClass( 'navbar-fixed-top' ) && jQuery( window ).width() > 767 ) {
@@ -27,14 +36,14 @@ function navbarAffix() {
 function pillsResponsive() {
 	jQuerywindow = jQuery( window );
 	if ( jQuerywindow.width() > 768 ) {
-		jQuery( '.tabs-home' ).addClass( 'nav-justified' );
+		jQuery( '.tabs-home' ).addClass( 'nav-justified' ).removeClass( 'nav-proper' );
 	} else {
-		jQuery( '.tabs-home' ).removeClass( 'nav-justified' );
+		jQuery( '.tabs-home' ).removeClass( 'nav-justified' ).addClass( 'nav-proper' );
 	}
 }
 (function( $ ) {
 	var $myCarousel = $( '#myCarousel' ),
-		$firstAnimatingElems = $myCarousel.find( '.item:first' ).find( '[data-animation ^= "animated"]' ); //Variables on page load 
+		$firstAnimatingElems = $myCarousel.find( '.item:first' ).find( '[data-animation ^= "animated"]' ); //Variables on page load
 	function doAnimations( elems ) { //Function to animate slider captions
 		var animEndEv = 'webkitAnimationEnd animationend'; //Cache the animationend event in a variable
 		elems.each(function() {
@@ -56,7 +65,7 @@ function pillsResponsive() {
 		interval: 3000,
 		pause: 'false'
 	});
-	
+
  })( jQuery );
 (function( $ ){
 	$('.dept-img').click(function(){

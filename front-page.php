@@ -9,14 +9,14 @@
 
 get_header();
 ?>
-<div class="container">
-	<div class="col-xs-12 col-sm-9">
+<div class="container front-page">
+	<div class="col-xs-12 col-sm-9 carousel-wrap">
 		<section class="">
 			<div id="carousel">
 				<?php get_template_part( 'templates/home/home' , 'carousel' ); ?>
 			</div>
 		</section>
-		<main class=" main">
+		<main class=" main ">
 		<div class="col-xs-12 home-main">
 			<?php get_template_part( 'templates/home/home' , 'content' ); ?>
 		</div>
@@ -38,8 +38,10 @@ get_header();
 				<div class="list-group">
 				<?php
 				if ( $loop->have_posts() ) : while ( $loop->have_posts() ) : $loop->the_post();
+				$post_classes = 'list-group-item ';
+				$post_classes .= anomous_new_class() . '-red';
 				?>
-					<a href="<?php the_permalink();?>" class="list-group-item">
+					<a href="<?php the_permalink();?>" class="<?php echo $post_classes; ?>">
 						<h4 class="list-group-item-heading"><?php the_title();?></h4>
 						<p class="list-group-item-text"><?php the_excerpt();?></p>
 					</a>
@@ -52,11 +54,4 @@ get_header();
 		</div>
 	</div>
 </div>
-<script type="text/javascript">
-	jQuery(function(){
-			jQuery('.update-marquee').easyTicker({
-				direction: 'up'
-			});
-		});
-</script>
 <?php get_footer(); ?>
