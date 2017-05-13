@@ -15,7 +15,7 @@
  * @global int $content_width
  */
 function anomous_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'anomous_content_width', 900 );
+	$GLOBALS['content_width'] = apply_filters( 'anomous_content_width', 1200 );
 }
 add_action( 'after_setup_theme', 'anomous_content_width', 0 );
 
@@ -113,8 +113,12 @@ function anomous_tabs_home( $category ) {
 	<table class="table table-home">
 	<tbody>
 	<?php
+	$total_new = 0;
 	while ( $loop->have_posts() ) :
 		$loop->the_post();
+		if( anomous_new_class() == 'new-post' ){
+			$total_new++;
+		}
 	?>
 		 <tr>
 			<td class="table-date"><p class="flash-date entry-date"><?php echo esc_html( get_the_date() ); ?></p></td>
@@ -127,6 +131,7 @@ function anomous_tabs_home( $category ) {
 	<?php
 	endwhile;
 	?>
+	<input type="hidden" id="<?php echo $category . '-badge-value'; ?>" value="<?php echo $total_new;?>">
 	</tbody>
 	</table>
 	<?php

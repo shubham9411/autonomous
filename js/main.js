@@ -2,6 +2,7 @@ jQuery( document ).ready(function() {
 	pillsResponsive();
 	faculty_modal();
 	scroller();
+	badge();
  });
 jQuery( window ).scroll(function() {
 	navbarAffix();
@@ -87,4 +88,13 @@ function faculty_modal() {
 			$('#link-modal-faculty').attr( 'data-target' , '' ).attr( 'data-toggle' , '' );
 		}
 	 })( jQuery );
+}
+function badge(){
+	var tabs = jQuery( '#tabs-home' );
+	tabs.children('li').children('a').children('span').each(function(a,b){
+		var badge_span = jQuery(b);
+		var value = jQuery('#'+badge_span.attr('id')+'-value').val();
+		if(value!=0)
+		badge_span.html(value);
+	})
 }

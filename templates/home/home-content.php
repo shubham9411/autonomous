@@ -13,10 +13,10 @@ $tabs = '';
 foreach ($tab_category as $key => $value) {
 	$active = ( $key == 0 ) ? 'active' : ' ';
 	$category = get_category( $value );
-	$tabs .= '<li role="presentation" class="' . $active . '"><a data-toggle="tab" href="#' . $category->slug . '">' . $category->name . '</a></li>';
+	$tabs .= '<li role="presentation" class="' . $active . '"><a data-toggle="tab" href="#' . $category->slug . '">' . $category->name . '&nbsp;<span id="' . $category->slug . '-badge" class="badge"></span></a></li>';
 }
 ?><div class="row-fluid">
-	<ul class="nav nav-tabs tabs-home">
+	<ul class="nav nav-tabs tabs-home" id="tabs-home">
 		<?php echo $tabs; // WPCS xss ok. ?>
 	</ul>
 	<div class="tab-content">
