@@ -30,7 +30,7 @@ get_header();
 		$loop = new WP_Query( $post );
 	?>
 	<div class="col-xs-12 col-sm-3 update-wrap">
-		<div class="panel panel-default panel-lg">
+		<div class="panel panel-default panel-update">
 			<div class="panel-heading">
 				<h3 class="text-center update-title">Updates</h3>
 			</div>
@@ -38,11 +38,9 @@ get_header();
 				<div class="list-group">
 				<?php
 				if ( $loop->have_posts() ) : while ( $loop->have_posts() ) : $loop->the_post();
-				$post_classes = 'list-group-item ';
-				$post_classes .= anomous_new_class() . '-red';
 				?>
-					<a href="<?php the_permalink();?>" class="<?php echo $post_classes; ?>">
-						<h4 class="list-group-item-heading"><?php the_title();?></h4>
+					<a href="<?php the_permalink();?>" class="list-group-item">
+						<h4 class="list-group-item-heading <?php echo anomous_new_class();?>"><?php the_title();?></h4>
 						<p class="list-group-item-text"><?php the_excerpt();?></p>
 					</a>
 				<?php

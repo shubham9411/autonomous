@@ -18,7 +18,7 @@
 			<h2 class="site-description" id="site-description"><?php bloginfo( 'description' ); ?></h2>
 		</div>
 		<div class="header-search-box">
-			<form action="/" method="get">
+			<form action="<?php echo home_url();?>" method="get">
 				<div class="form-group">
 					<div class="search-input">
 						<input type="text" class="form-control top-search" name="s" id="search" value="" placeholder="Search" >

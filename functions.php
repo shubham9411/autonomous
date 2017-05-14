@@ -398,6 +398,39 @@ function anomous_list_terms_exclusions( $exclusions, $args ) {
 add_filter('list_terms_exclusions', 'anomous_list_terms_exclusions', 10, 2);
 
 /**
+ * Function for rendering College Logo at login Screen
+ */
+function anomous_login_logo() { ?>
+	<style type="text/css">
+	#login h1 a, .login h1 a {
+		background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/inc/College_logo.png);
+		background-repeat: no-repeat;
+		padding-bottom: 30px;
+	}
+	</style>
+<?php }
+add_action( 'login_enqueue_scripts', 'anomous_login_logo' );
+
+/**
+ * Change Login Logo URL
+ * 
+ * @return string Home URL
+ */
+function anomous_login_logo_url() {
+	return home_url();
+}
+add_filter( 'login_headerurl', 'anomous_login_logo_url' );
+
+/**
+ * Change Login URL Title
+ * @return String College Title
+ */
+function anomous_login_logo_url_title() {
+	return 'B T Kumaon Institute of Technology';
+}
+add_filter( 'login_headertitle', 'anomous_login_logo_url_title' );
+
+/**
  * Template Tags file.
  */
 require( 'inc/template-tags.php' );

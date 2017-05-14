@@ -29,11 +29,11 @@ if ( ! is_active_sidebar( 'footer' ) ) {
 			</li>
 			<li>
 				<i class="fa fa-phone"></i>
-				<strong>Phone:</strong> +91.5966-244250
+				<strong>Phone:</strong> 05966-244250
 			</li>
 			<li>
 				<i class="fa fa-phone"></i>
-				<strong>Fax:</strong> +91.5966-244114
+				<strong>Fax:</strong> 05966-244114
 			</li>
 		</ul>
 	</section>
