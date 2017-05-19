@@ -19,6 +19,7 @@ get_header();
 			$user_data = get_user_meta( $user_id );
 			$image = get_field( 'profile_picture', 'user_'.$user_id );
 			$image_obj = wp_get_attachment_image( $image, 'anomous-alumni-avatar', "", array( "class" => "img-responsive img-circle") );
+			$desc = get_user_meta( $user_id , 'description' )[0];
 			?>
 			<hr />
 			<div class="col-xs-12 col-sm-3 col-md-2 author-avatar">
@@ -27,6 +28,22 @@ get_header();
 			<div class="col-xs-12 col-sm-8 col-md-10 faculty-details">
 				<h2><b><?php echo esc_html( $curauth->display_name );?></b></h2>
 				<?php anomous_user_details( $user_id ); ?>
+				<h4>
+					<span><?php
+					if( $curauth->user_email ) {
+						echo '<b>Email : </b>' . $curauth->user_email .'&nbsp;&nbsp;';
+					}
+					?></span>
+					<span><?php
+					if( $curauth->user_url ) {
+						echo '<b>Website : </b>' . $curauth->user_url ;
+					}
+					?></span>
+				</h4>
+				<h4><?php
+				if( $desc )
+					echo '<b>Description : </b>' . $desc;
+				?></h4>
 			</div>
 			<hr class="col-xs-12" />
 		</section>

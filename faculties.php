@@ -9,7 +9,6 @@
 
 get_header();
 $dept_names = get_theme_mod( 'dept_choices', '' );
-$user_data = get_user_meta( 12 );
 ?> 
 <section id="faculty" class="faculty">
 	<div class="container faculty-wrap">
@@ -37,7 +36,6 @@ $user_data = get_user_meta( 12 );
 		<?php
 		}
 		foreach ( $blog_user as $user ) {
-			$user_data = get_userdata( $user );
 			$image = get_field( 'profile_picture', 'user_'.$user );
 			$image_obj = wp_get_attachment_image( $image, 'anomous-alumni-avatar', "", array( "class" => "img-responsive") );
 			?>

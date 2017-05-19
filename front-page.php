@@ -51,5 +51,10 @@ get_header();
 			</div>
 		</div>
 	</div>
+	<div class="col-xs-12 col-sm-3 no-padding">
+		<div class="panel panel-default more-update">
+			<div class="panel-heading" style="height: 58px"><a href="<?php echo get_permalink( get_option( 'page_for_posts' ) );?>" class="btn btn-warning pull-right">More Updates</a></div>
+		</div>
+	</div>
 </div>
 <?php get_footer(); ?>

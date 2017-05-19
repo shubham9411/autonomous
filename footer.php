@@ -20,7 +20,7 @@
 			<p> B.T.K.I.T. Dwarahat &copy; <?php echo esc_html( current_time( 'Y' ) );?>. All Rights Reserved.</p>
 		</div>
 		<div class="designer pull-right">
-			<p>Designed and Developed By <a href="https://shubhampandey.in" title="WordPress Developer" rel="designer">Shubham Pandey</a> &amp; <a href="https://facebook.com/rohit.juyal.507" rel="designer">Rohit Juyal</a></p>
+			<p>Designed and Developed By <a href="https://shubhampandey.in" title="WordPress Developer" rel="designer">Shubham Pandey</a> &amp; <a href="https://facebook.com/rohit.juyal.507" rel="designer">Rohit Juyal</a> CSE Dept.</p>
 		</div>
 		
 	</div>

@@ -81,7 +81,7 @@ textarea:focus{
 }
 #site-title a{
 	font-weight: bold;
-	font-size: 0.5em;
+	font-size: 0.6em;
 }
 #site-description{
 	font-size: 1.3em;
@@ -448,7 +448,8 @@ nav .btn-primary a{
 	margin-top: 20px;
 	transition: 0.3s;
 	max-width: 20em;
-	margin-left: 1em;
+	margin-left: 0.5em;
+	margin-right: 0.5em;
 }
 #faculty .card:hover,
 #alumni .card:hover{
@@ -796,6 +797,11 @@ nav .btn-primary a{
 .designer a:hover{
 	color: #ff8a03;
 }
+.more-update,
+.more-update .panel-heading{
+	border-radius: 0;
+	border-top: 0;
+}
 /*========== Media Queries ============*/
 /*--------------------------------------------------Large-------------------------------------------------*/
 
@@ -1027,6 +1033,8 @@ nav .btn-primary a{
 /*---new-------------------------------------------------*/
 .home-main{
 	box-shadow: 2px 2px 23px -6px;
+	box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+	-webkit-box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 	margin-bottom: 15px;
 }
 .home-main .nav-tabs.nav-justified>li>a,

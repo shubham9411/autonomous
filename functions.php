@@ -343,7 +343,8 @@ function anomous_user_details( $user ) {
 			}
 			$value = get_field( $field['name'], 'user_'.$user );
 			if ( $field['name'] == 'profile_experience' ) {
-				echo '<h4>' . $value . ' Years of Experience</h4>';
+				if ( $value > 1 )
+					echo '<h4>' . $value . ' Years of Experience</h4>';
 				continue;
 			}
 			echo '<h4>' . $value . '</h4>';
