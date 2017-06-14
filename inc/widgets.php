@@ -151,6 +151,7 @@ class Department_Menu extends WP_Widget {
 							$dept_names = get_theme_mod( 'dept_choices', '' );
 							$title = htmlspecialchars_decode(get_the_title( $post->ID ));
 							$fac_categ = array_search( "$title" , $dept_names );
+							$except = get_user_by( 'email', 'shubham9411@gmail.com')->ID;
 							$fac = array(
 								'meta_query' => array(
 								array(
@@ -162,6 +163,7 @@ class Department_Menu extends WP_Widget {
 								'orderby'      => 'meta_value_num',
 								'meta_key'     => 'profile_experience',
 								'order'        => 'DSC',
+								'exclude'       => array($except),
 							);
 							$blog_user = get_users( $fac );
 							foreach ( $blog_user as $user ) {

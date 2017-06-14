@@ -31,5 +31,13 @@ $loop = new WP_Query( $notification );
 			endwhile;
 			?>
 		</div>
+		<a class="left carousel-control" href="#text-carousel" data-slide="prev">
+			<span class="glyphicon glyphicon-chevron-left text-carousel-button"></span>
+			<span class="sr-only">Previous</span>
+		</a>
+		<a class="right carousel-control" href="#text-carousel" data-slide="next">
+			<span class="glyphicon glyphicon-chevron-right text-carousel-button"></span>
+			<span class="sr-only">Next</span>
+		</a>
 	</div>
 </div>

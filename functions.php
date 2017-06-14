@@ -186,7 +186,7 @@ function anomous_carousel() {
 	echo '<style type="text/css">' . "\n";
 	$args = array(
 		'post_type'      => 'carousel_anomous',
-		'posts_per_page' => 5,
+		'posts_per_page' => 10,
 		);
 	$loop = new WP_Query( $args );
 	$post_count = $loop->post_count;
@@ -234,7 +234,7 @@ add_filter('widget_text','do_shortcode');
 function anomous_is_dept() {
 	global $post;
 	wp_reset_postdata();
-	$academics = get_page_by_title( 'Academics' );
+	$academics = get_page_by_title( 'Departments' );
 	if (is_page() && $post->post_parent == $academics->ID ) {
 		return true;
 	} else {
@@ -372,7 +372,7 @@ add_filter('acf/update_value', 'anomous_acf_update_value', 10, 3);
  * Our Faculty does not love the word Howdy. :(
  */
 function anomous_remove_howdy( $wp_admin_bar ) {
-	$my_account=$wp_admin_bar->get_node('my-account');
+	$my_account= $wp_admin_bar->get_node('my-account');
 	$newtitle = str_replace( 'Howdy,', 'Namaskar !', $my_account->title );
 	$wp_admin_bar->add_node( array(
 		'id' => 'my-account',

@@ -19,11 +19,11 @@
    .ho  `sdddhhhyhmmmdyyhhhdddddhhhyydmmmmy           oh.
   .h+          ``-dmmy.``         ``.ymmmmh            +h.
  `ho  `       /mmmmmmmmmmo       .dmmmmmmmms        ~~  oh`
- oy  .h`       ymmmmmmmmmm:       /mmmmmmmmmy`      -d.  yo      ____  _           _     _                     
-.d-  ymy       `dmmmmmmmmmd.       ymmmmmmmmmh`     /my  -d.    / ___|| |__  _   _| |__ | |__   __ _ _ __ ___  
-oy  -mmm+       /mmmmmmmmmmy       .dmmmmmmmmmy     ymm-  yo    \___ \| '_ \| | | | '_ \| '_ \ / _` | '_ ` _ \ 
-h+  +mmmd-       smmmmmmmmmm+       /mmmmmmmmmm-   :mmm+  +h     ___) | | | | |_| | |_) | | | | (_| | | | | | |
-d/  smmmmh`      `dmmmmmmmmmd`       smmmmmmmmm:  `dmmms  /d    |____/|_| |_|\__,_|_.__/|_| |_|\__,_|_| |_| |_|
+ oy  .h`       ymmmmmmmmmm:       /mmmmmmmmmy`      -d.  yo      ____ _____ _  _____ _____ 
+.d-  ymy       `dmmmmmmmmmd.       ymmmmmmmmmh`     /my  -d.    | __ )_   _| |/ /_ _|_   _|
+oy  -mmm+       /mmmmmmmmmmy       .dmmmmmmmmmy     ymm-  yo    |  _ \ | | | ' / | |  | |  
+h+  +mmmd-       smmmmmmmmmm+       /mmmmmmmmmm-   :mmm+  +h    | |_) || | | . \ | |  | |  
+d/  smmmmh`      `dmmmmmmmmmd`       smmmmmmmmm:  `dmmms  /d    |____/ |_| |_|\_\___| |_|  
 d/  smmmmms       :mmmmmmmmm+        `dmmmmmmmd.  smmmms  /d
 h+  +mmmmmm/       smmmmmmmh  +       /mmmmmmmy  /mmmmm+  +h
 oy  -mmmmmmd.      `dmmmmmd- +m/       smmmmmd. .dmmmmm-  yo

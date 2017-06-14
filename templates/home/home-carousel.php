@@ -14,7 +14,7 @@
  */
 $args = array(
 	'post_type'      => 'carousel_anomous',
-	'posts_per_page' => 5,
+	'posts_per_page' => 10,
 );
 $loop = new WP_Query( $args );
 $post_count = $loop->post_count;
